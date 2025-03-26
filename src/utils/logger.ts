@@ -8,7 +8,7 @@ dotenv.config();
 
 const logtailToken = process.env.TEST_SERVER_BILLING || "TEST_SERVER_BILLING";
 // Initialize Logtail
-const logtail = new Logtail(logtailToken );
+const logtail = new Logtail(logtailToken);
 
 // Define log format
 const logFormat = winston.format.combine(

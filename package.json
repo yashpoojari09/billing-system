@@ -2,20 +2,21 @@
   "name": "billing-system",
   "version": "1.0.0",
   "main": "index.js",
- "scripts": {
-  "test": "echo \"Tests passed\"",
-  "dev": "nodemon src/server.ts",
-  "build": "rimraf dist && prisma generate && tsc",
-  "start": "nodemon src/server.ts",
-  "ts.check": "tsc --noEmit",
-  "add-build": "git add dist",
-  "postinstall": "prisma generate"
-},
-
+  "scripts": {
+    "test": "echo \"Tests passed\"",
+    "dev": "nodemon src/server.ts",
+    "build": "rimraf dist && prisma generate && tsc",
+    "start": "nodemon src/server.ts",
+    "ts.check": "tsc --noEmit",
+    "add-build": "git add dist",
+    "postinstall": "prisma generate"
+  },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@logtail/node": "^0.5.2",
+    "@logtail/winston": "^0.5.2",
     "@nestjs/jwt": "^11.0.0",
     "@nestjs/passport": "^11.0.5",
     "@prisma/client": "^6.5.0",
