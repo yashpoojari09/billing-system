@@ -9,6 +9,7 @@ import tenantRoutes from "./routes/tenants";
 import { errorHandler } from "./middlewares/error";
 // import inventoryRoutes from "./routes/inventory";
 // import taxationRoutes from "./routes/taxation";
+import logger from "./utils/logger"
 
 
 dotenv.config();
@@ -33,10 +34,20 @@ app.use("/api/tenants", tenantRoutes);
 // app.use("/api/taxation", taxationRoutes);
 
 
-
+logger.info("Server is Starting...")
 // Health check route
 app.get("/", (_req, res) => {
     res.send({ message: "Multi-Tenant Billing API is running" });
 });
+
+// Example logging route
+app.get("/test-log", (_req, res) => {
+    logger.info("📢 Test log from Vercel");
+    res.send({ message: "Log sent to Logtail" });
+  });
+
+  app.get("/test-env", (_req, res) => {
+    res.json({ TEST_SERVER_BILLING: process.env.TEST_SERVER_BILLING });
+  });
     
 export default app;
