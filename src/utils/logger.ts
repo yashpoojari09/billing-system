@@ -1,8 +1,14 @@
 import winston from "winston";
 import { Logtail } from "@logtail/node";
 import { LogtailTransport } from "@logtail/winston";
+import dotenv from "dotenv";
 
-const logtail = new Logtail('test_server_billing');
+dotenv.config();
+
+
+const logtailToken = process.env.TEST_SERVER_BILLING || "TEST_SERVER_BILLING";
+// Initialize Logtail
+const logtail = new Logtail(logtailToken );
 
 // Define log format
 const logFormat = winston.format.combine(
