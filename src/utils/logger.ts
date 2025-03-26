@@ -5,10 +5,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
-const logtailToken = process.env.TEST_SERVER_BILLING || "TEST_SERVER_BILLING";
+// Ensure Logtail token exists
+if (!process.env.TEST_SERVER_BILLING) {
+  throw new Error("Logtail token is missing! Check your .env file.");
+}
 // Initialize Logtail
-const logtail = new Logtail(logtailToken);
+const logtail = new Logtail(process.env.TEST_SERVER_BILLING);
 
 // Define log format
 const logFormat = winston.format.combine(
