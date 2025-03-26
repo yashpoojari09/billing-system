@@ -10,14 +10,12 @@
     "ts.check": "tsc --noEmit",
     "add-build": "git add dist",
     "postinstall": "prisma generate"
-     
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
- 
-},
+  },
   "author": "",
   "license": "ISC",
   "description": "",
@@ -57,6 +55,4 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
-  
 }
-
