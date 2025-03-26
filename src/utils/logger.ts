@@ -3,7 +3,7 @@ import { Logtail } from "@logtail/node";
 import { LogtailTransport } from "@logtail/winston";
 import dotenv from "dotenv"
 dotenv.config();
-const logtail = new Logtail(process.env.TEST_SERVER_BILLING!);
+const logtail = new Logtail(process.env.TEST_SERVER_BILLING!  );
 
 
 // Ensure Logtail token exists
