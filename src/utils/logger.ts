@@ -3,11 +3,12 @@ import { Logtail } from "@logtail/node";
 import { LogtailTransport } from "@logtail/winston";
 import dotenv from "dotenv"
 dotenv.config();
-const logtail = new Logtail(process.env.TEST_SERVER_BILLING!  );
-
+const logtail = new Logtail(process.env.BETTERSTACK_SOURCE_TOKEN!, {
+  endpoint:process.env.BETTERSTACK_INGESTING_HOST
+});
 
 // Ensure Logtail token exists
-if (!process.env.TEST_SERVER_BILLING) {
+if (!process.env.BETTERSTACK_SOURCE_TOKEN) {
   throw new Error("Logtail token is missing! Check your .env file.");
 }
 // Initialize Logtail
@@ -34,9 +35,6 @@ const logger = winston.createLogger({
     new winston.transports.File({ filename: 'rejections.log' }),
   ],
 
-});
-process.on("exit", async () => {
-  await logtail.flush();
 });
 
 
