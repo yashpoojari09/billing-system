@@ -28,7 +28,7 @@ export const createTenant = async (req: Request, res: Response, next:NextFunctio
 };
 
 // GET All Tenants (Superadmin Only)
-export const getAllTenants = async (req: Request, res: Response, next:NextFunction): Promise<void> => {
+export const getAllTenants = async (_req: Request, res: Response, next:NextFunction): Promise<void> => {
   try {
     const tenants = await prisma.tenant.findMany();
     res.json(tenants);

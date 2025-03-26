@@ -11,8 +11,6 @@ import { errorHandler } from "./middlewares/error";
 // import taxationRoutes from "./routes/taxation";
 
 
-
-
 dotenv.config();
 
 const app = express();
@@ -27,7 +25,6 @@ app.use(errorHandler);
 
 
 
-
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tenants", tenantRoutes);
@@ -38,7 +35,7 @@ app.use("/api/tenants", tenantRoutes);
 
 
 // Health check route
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
     res.send({ message: "Multi-Tenant Billing API is running" });
 });
     

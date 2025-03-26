@@ -12,7 +12,7 @@ class AppError extends Error {
 }
 
 // Global Error Handler
-const errorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+const errorHandler = (err: any, req: Request, res: Response, _next: NextFunction) => {
   let { statusCode, message } = err;
 
   if (!statusCode) statusCode = 500;

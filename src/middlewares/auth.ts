@@ -15,7 +15,7 @@ export const authenticateJWT = (req: Request, res: Response, next: NextFunction)
     }
     req.user = user;
     logger.info(`User ${user.email} authenticated successfully`);
-    next();
+    return next();
   })(req, res, next);
 };
 
