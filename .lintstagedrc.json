@@ -1,8 +1,8 @@
 {
-    "*.ts": [
-      "npm run ts.check",
-      "npm run build",
-      "git add dist",
-      "vercel --prod"
-    ]
+  "*.ts": [
+    "npm run ts.check",
+    "npm run build",
+    "git add dist"
+  ],
+  "*": ["vercel --prod"]
 }
