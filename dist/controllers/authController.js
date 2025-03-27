@@ -230,7 +230,7 @@ const transporter = nodemailer_1.default.createTransport({
     service: "Gmail",
     auth: {
         user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
-        pass: process.env.EMAIL_PASSWORD, // Your email password or App Password
+        pass: process.env.EMAIL_PASS, // Your email password or App Password
     },
 });
 const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
