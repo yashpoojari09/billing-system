@@ -11,11 +11,6 @@
     "add-build": "git add dist",
     "postinstall": "prisma generate"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "author": "",
   "license": "ISC",
   "description": "",
@@ -42,17 +37,26 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/connect": "^3.4.38",
     "@types/cors": "^2.8.17",
+    "@types/estree": "^1.0.7",
     "@types/express": "^5.0.1",
+    "@types/json-schema": "^7.0.15",
     "@types/jsonwebtoken": "^9.0.9",
-    "@types/node": "^22.13.10",
+    "@types/node": "^18.19.83",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
     "@types/winston": "^2.4.4",
+    "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
-  }
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.28.0"
+  },
+  "include": [
+    "src",
+    "global.d.ts"
+  ]
 }

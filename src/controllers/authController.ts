@@ -89,7 +89,7 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
     }
 
     // 🔹 Hash new password if provided
-    let updatedData: any = { name, email, role, tenantId };
+    const updatedData: any = { name, email, role, tenantId };
     if (password) {
       updatedData.password = await bcrypt.hash(password, 10);
     }
