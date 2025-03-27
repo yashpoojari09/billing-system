@@ -12,11 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
+exports.resetPassword = exports.forgotPassword = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
+const nodemailer_1 = __importDefault(require("nodemailer"));
 const prisma = new client_1.PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key"; // Use env variable
 const REFRESH_SECRET = process.env.REFRESH_SECRET || "your_refresh_secret";
@@ -26,7 +27,10 @@ const REFRESH_TOKEN_EXPIRY = "1d"; // Long-lived token
 const generateTokens = (userId) => {
     const accessToken = jsonwebtoken_1.default.sign({ id: userId }, JWT_SECRET, { expiresIn: ACCESS_TOKEN_EXPIRY });
     const refreshToken = jsonwebtoken_1.default.sign({ id: userId }, REFRESH_SECRET, { expiresIn: REFRESH_TOKEN_EXPIRY });
-    return { accessToken, refreshToken };
+    const resetToken = jsonwebtoken_1.default.sign({ id: userId }, JWT_SECRET, {
+        expiresIn: "1h",
+    });
+    return { accessToken, refreshToken, resetToken };
 };
 // ✅ REGISTER USER
 const registerUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -105,6 +109,7 @@ const updateUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.updateUser = updateUser;
+// Refresh Token
 const refreshAccessToken = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { refreshToken } = req.body;
@@ -149,4 +154,77 @@ const logoutUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.logoutUser = logoutUser;
+// Forgot Password Token
+const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email } = req.body;
+    if (!email) {
+        res.status(400).json({ error: "Email is required" });
+        return;
+    }
+    try {
+        const user = yield prisma.user.findUnique({ where: { email } });
+        if (!user)
+            res.status(404).json({ error: "User not found" });
+        // Generate reset token
+        const resetToken = jsonwebtoken_1.default.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+        // Store Token in Database
+        yield prisma.user.update({
+            where: { email },
+            data: { resetToken },
+        });
+        // Send Email
+        const resetUrl = `https://billing-system-lemon.vercel.app/auth/reset-password?token=${resetToken}`;
+        yield sendResetEmail(email, resetUrl);
+        res.json({ message: "Password reset link sent to your email." });
+    }
+    catch (error) {
+        res.status(500).json({ error: "Something went wrong!" });
+    }
+});
+exports.forgotPassword = forgotPassword;
+// Helper Function to Send Email
+const sendResetEmail = (email, resetUrl) => __awaiter(void 0, void 0, void 0, function* () {
+    const transporter = nodemailer_1.default.createTransport({
+        service: "Gmail",
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+        },
+    });
+    yield transporter.sendMail({
+        from: `"Billing System" <no-reply@billing.com>`,
+        to: email,
+        subject: "Password Reset Request",
+        html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
+    });
+});
+// Reset Password
+const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { token, newPassword } = req.body;
+    if (!token || !newPassword) {
+        res.status(400).json({ error: "Token and new password are required" });
+        return;
+    }
+    try {
+        // Verify the token
+        const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
+        const user = yield prisma.user.findUnique({ where: { id: decoded.userId } });
+        if (!user || user.resetToken !== token) {
+            res.status(400).json({ error: "Invalid or expired token" });
+            return;
+        }
+        // Hash new password
+        const hashedPassword = yield bcrypt_1.default.hash(newPassword, 10);
+        // Update password and clear reset token
+        yield prisma.user.update({
+            where: { id: user.id },
+            data: { password: hashedPassword, resetToken: null },
+        });
+        res.json({ message: "Password reset successful. You can now log in." });
+    }
+    catch (error) {
+        res.status(500).json({ error: "Invalid or expired token" });
+    }
+});
+exports.resetPassword = resetPassword;
 //# sourceMappingURL=authController.js.map

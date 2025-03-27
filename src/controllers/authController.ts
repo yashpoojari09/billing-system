@@ -157,55 +157,55 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
   }
 };
 
-// Forgot Password Token
-export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
-  const { email } = req.body;
+// // Forgot Password Token
+// export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
+//   const { email } = req.body;
 
-  if (!email) {
-     res.status(400).json({ error: "Email is required" });
-     return;
-  }
+//   if (!email) {
+//      res.status(400).json({ error: "Email is required" });
+//      return;
+//   }
 
-  try {
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user)  res.status(404).json({ error: "User not found" })
+//   try {
+//     const user = await prisma.user.findUnique({ where: { email } });
+//     if (!user)  res.status(404).json({ error: "User not found" })
 
-    // Generate reset token
-    const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+//     // Generate reset token
+//     const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
 
-    // Store Token in Database
-    await prisma.user.update({
-      where: { email },
-      data: { resetToken },
-    });
+//     // Store Token in Database
+//     await prisma.user.update({
+//       where: { email },
+//       data: { resetToken },
+//     });
 
-    // Send Email
-    const resetUrl = `https://billing-system-lemon.vercel.app/auth/reset-password?token=${resetToken}`;
-    await sendResetEmail(email, resetUrl);
+//     // Send Email
+//     const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+//     await sendResetEmail(email, resetUrl);
 
-    res.json({ message: "Password reset link sent to your email." });
-  } catch (error) {
-    res.status(500).json({ error: "Something went wrong!" });
-  }
-};
+//     res.json({ message: "Password reset link sent to your email." });
+//   } catch (errorhttp://localhost:3000/) {
+//     res.status(500).json({ error: "Something went wrong!" });
+//   }
+// };
 
-// Helper Function to Send Email
-const sendResetEmail = async (email: string, resetUrl: string) => {
-  const transporter = nodemailer.createTransport({
-    service: "Gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+// // Helper Function to Send Email
+// const sendResetEmail = async (email: string, resetUrl: string) => {
+//   const transporter = nodemailer.createTransport({
+//     service: "Gmail",
+//     auth: {
+//       user: process.env.EMAIL_USER,
+//       pass: process.env.EMAIL_PASS,
+//     },
+//   });
 
-  await transporter.sendMail({
-    from: `"Billing System" <no-reply@billing.com>`,
-    to: email,
-    subject: "Password Reset Request",
-    html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
-  });
-};
+//   await transporter.sendMail({
+//     from: `"Billing System" <no-reply@billing.com>`,
+//     to: email,
+//     subject: "Password Reset Request",
+//     html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
+//   });
+// };
 
 // Reset Password
 export const resetPassword = async (req: Request, res: Response):Promise<void>=> {
@@ -240,3 +240,49 @@ export const resetPassword = async (req: Request, res: Response):Promise<void>=>
     res.status(500).json({ error: "Invalid or expired token" });
   }
 };
+
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+    pass: process.env.EMAIL_PASSWORD, // Your email password or App Password
+  },
+});
+
+export const forgotPassword = async (req: Request, res: Response):Promise<any> => {
+  const { email } = req.body;
+
+  try {
+    // Check if user exists
+    const user = await prisma.user.findUnique({
+      where: { email },
+    });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    // Generate a reset token (JWT)
+    const resetToken = jwt.sign({ email }, JWT_SECRET, {
+      expiresIn: "1h", // The token expires in 1 hour
+    });
+
+    // Send the reset link to the user's email
+    const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Password Reset",
+      html: `<p>Click the link below to reset your password:</p><a href="${resetLink}">${resetLink}</a>`,
+    });
+
+    return res.status(200).json({ message: "Password reset link sent to email." });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Something went wrong." });
+  }}
