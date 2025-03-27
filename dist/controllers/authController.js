@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.resetPassword = exports.forgotPassword = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
+exports.forgotPassword = exports.resetPassword = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
@@ -154,50 +154,47 @@ const logoutUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.logoutUser = logoutUser;
-// Forgot Password Token
-const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { email } = req.body;
-    if (!email) {
-        res.status(400).json({ error: "Email is required" });
-        return;
-    }
-    try {
-        const user = yield prisma.user.findUnique({ where: { email } });
-        if (!user)
-            res.status(404).json({ error: "User not found" });
-        // Generate reset token
-        const resetToken = jsonwebtoken_1.default.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
-        // Store Token in Database
-        yield prisma.user.update({
-            where: { email },
-            data: { resetToken },
-        });
-        // Send Email
-        const resetUrl = `https://billing-system-lemon.vercel.app/auth/reset-password?token=${resetToken}`;
-        yield sendResetEmail(email, resetUrl);
-        res.json({ message: "Password reset link sent to your email." });
-    }
-    catch (error) {
-        res.status(500).json({ error: "Something went wrong!" });
-    }
-});
-exports.forgotPassword = forgotPassword;
-// Helper Function to Send Email
-const sendResetEmail = (email, resetUrl) => __awaiter(void 0, void 0, void 0, function* () {
-    const transporter = nodemailer_1.default.createTransport({
-        service: "Gmail",
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-        },
-    });
-    yield transporter.sendMail({
-        from: `"Billing System" <no-reply@billing.com>`,
-        to: email,
-        subject: "Password Reset Request",
-        html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
-    });
-});
+// // Forgot Password Token
+// export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
+//   const { email } = req.body;
+//   if (!email) {
+//      res.status(400).json({ error: "Email is required" });
+//      return;
+//   }
+//   try {
+//     const user = await prisma.user.findUnique({ where: { email } });
+//     if (!user)  res.status(404).json({ error: "User not found" })
+//     // Generate reset token
+//     const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+//     // Store Token in Database
+//     await prisma.user.update({
+//       where: { email },
+//       data: { resetToken },
+//     });
+//     // Send Email
+//     const resetUrl = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+//     await sendResetEmail(email, resetUrl);
+//     res.json({ message: "Password reset link sent to your email." });
+//   } catch (errorhttp://localhost:3000/) {
+//     res.status(500).json({ error: "Something went wrong!" });
+//   }
+// };
+// // Helper Function to Send Email
+// const sendResetEmail = async (email: string, resetUrl: string) => {
+//   const transporter = nodemailer.createTransport({
+//     service: "Gmail",
+//     auth: {
+//       user: process.env.EMAIL_USER,
+//       pass: process.env.EMAIL_PASS,
+//     },
+//   });
+//   await transporter.sendMail({
+//     from: `"Billing System" <no-reply@billing.com>`,
+//     to: email,
+//     subject: "Password Reset Request",
+//     html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
+//   });
+// };
 // Reset Password
 const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { token, newPassword } = req.body;
@@ -227,4 +224,43 @@ const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.resetPassword = resetPassword;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const transporter = nodemailer_1.default.createTransport({
+    service: "Gmail",
+    auth: {
+        user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+        pass: process.env.EMAIL_PASSWORD, // Your email password or App Password
+    },
+});
+const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email } = req.body;
+    try {
+        // Check if user exists
+        const user = yield prisma.user.findUnique({
+            where: { email },
+        });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        // Generate a reset token (JWT)
+        const resetToken = jsonwebtoken_1.default.sign({ email }, JWT_SECRET, {
+            expiresIn: "1h", // The token expires in 1 hour
+        });
+        // Send the reset link to the user's email
+        const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+        yield transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: "Password Reset",
+            html: `<p>Click the link below to reset your password:</p><a href="${resetLink}">${resetLink}</a>`,
+        });
+        return res.status(200).json({ message: "Password reset link sent to email." });
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Something went wrong." });
+    }
+});
+exports.forgotPassword = forgotPassword;
 //# sourceMappingURL=authController.js.map
