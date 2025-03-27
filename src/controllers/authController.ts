@@ -3,19 +3,26 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { PrismaClient } from "@prisma/client";
 import { AppError } from "../middlewares/error";
-
+import nodemailer from "nodemailer"
 
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key"; // Use env variable
 const REFRESH_SECRET = process.env.REFRESH_SECRET || "your_refresh_secret";
+
+
+
 const ACCESS_TOKEN_EXPIRY = "6h"; // Short-lived token
 const REFRESH_TOKEN_EXPIRY = "1d"; // Long-lived token
+
 
 // ✅ Function to generate tokens
 const generateTokens = (userId: string) => {
   const accessToken = jwt.sign({ id: userId }, JWT_SECRET, { expiresIn: ACCESS_TOKEN_EXPIRY });
   const refreshToken = jwt.sign({ id: userId }, REFRESH_SECRET, { expiresIn: REFRESH_TOKEN_EXPIRY });
-  return { accessToken, refreshToken };
+  const resetToken = jwt.sign({ id:userId}, JWT_SECRET!, {
+    expiresIn: "1h",
+  });
+      return { accessToken, refreshToken, resetToken};
 };
 
 // ✅ REGISTER USER
@@ -103,6 +110,7 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
   }
 };
 
+// Refresh Token
 export const refreshAccessToken = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { refreshToken } = req.body;
@@ -146,5 +154,89 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
     res.json({ message: "Logged out successfully" });
   } catch (error) {
     next(error);
+  }
+};
+
+// Forgot Password Token
+export const forgotPassword = async (req: Request, res: Response): Promise<void> => {
+  const { email } = req.body;
+
+  if (!email) {
+     res.status(400).json({ error: "Email is required" });
+     return;
+  }
+
+  try {
+    const user = await prisma.user.findUnique({ where: { email } });
+    if (!user)  res.status(404).json({ error: "User not found" })
+
+    // Generate reset token
+    const resetToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: "1h" });
+
+    // Store Token in Database
+    await prisma.user.update({
+      where: { email },
+      data: { resetToken },
+    });
+
+    // Send Email
+    const resetUrl = `https://billing-system-lemon.vercel.app/auth/reset-password?token=${resetToken}`;
+    await sendResetEmail(email, resetUrl);
+
+    res.json({ message: "Password reset link sent to your email." });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong!" });
+  }
+};
+
+// Helper Function to Send Email
+const sendResetEmail = async (email: string, resetUrl: string) => {
+  const transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  await transporter.sendMail({
+    from: `"Billing System" <no-reply@billing.com>`,
+    to: email,
+    subject: "Password Reset Request",
+    html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
+  });
+};
+
+// Reset Password
+export const resetPassword = async (req: Request, res: Response):Promise<void>=> {
+  const { token, newPassword } = req.body;
+
+  if (!token || !newPassword) {
+     res.status(400).json({ error: "Token and new password are required" });
+     return;
+  }
+
+  try {
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+    const user = await prisma.user.findUnique({ where: { id: decoded.userId } });
+
+    if (!user || user.resetToken !== token) {
+       res.status(400).json({ error: "Invalid or expired token" });
+       return;
+    }
+
+    // Hash new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update password and clear reset token
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { password: hashedPassword, resetToken: null },
+    });
+
+    res.json({ message: "Password reset successful. You can now log in." });
+  } catch (error) {
+    res.status(500).json({ error: "Invalid or expired token" });
   }
 };

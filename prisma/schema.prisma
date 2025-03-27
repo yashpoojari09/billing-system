@@ -16,6 +16,8 @@ model User {
   tenantId String?
   tenant   Tenant? @relation(fields: [tenantId], references: [id])
   refreshTokens RefreshToken[] //to establish the relation between refreshTokens
+  resetToken  String?  // Optional field to store the reset token
+  resetTokenExpiry DateTime? // Optional field to store token expiration time
 }
 model RefreshToken {
   id        String   @id @default(uuid())

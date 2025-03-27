@@ -12,10 +12,10 @@
     "postinstall": "prisma generate"
   },
   "husky": {
-  "hooks": {
-    "pre-commit": "npx lint-staged"
-  }
-},
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
   "author": "",
   "license": "ISC",
   "description": "",
@@ -33,6 +33,7 @@
     "express-async-errors": "^3.1.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.10.0",
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
@@ -49,6 +50,7 @@
     "@types/json-schema": "^7.0.15",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^18.19.83",
+    "@types/nodemailer": "^6.4.17",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
     "@types/winston": "^2.4.4",
