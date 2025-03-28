@@ -269,7 +269,7 @@ const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function*
             expiresIn: "1h", // The token expires in 1 hour
         });
         // Send the reset link to the user's email
-        const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+        const resetLink = `${process.env.CLIENT_URL}/auth/reset-password?token=${resetToken}`;
         yield transporter.sendMail({
             from: process.env.EMAIL_USER,
             to: email,

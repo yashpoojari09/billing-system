@@ -213,7 +213,7 @@ export const resetToken = async (req: Request, res: Response): Promise<void> => 
   const { token } = req.params; // Extract token from URL
 
   try {
-    const decoded = jwt.verify(token,JWT_SECRET) as { email: string };
+    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
     
     // Check if the user exists
     const user = await prisma.user.findUnique({
@@ -296,7 +296,7 @@ export const forgotPassword = async (req: Request, res: Response):Promise<any> =
     });
 
     // Send the reset link to the user's email
-    const resetLink = `${process.env.CLIENT_URL}/reset-password?token=${resetToken}`;
+    const resetLink = `${process.env.CLIENT_URL}/auth/reset-password?token=${resetToken}`;
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
