@@ -208,12 +208,16 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
 // };
 
 // ✅ GET Controller - Verify Reset Token
-export const resetToken = async (req: Request, res: Response):Promise<void> => {
-  const { token } = req.params;
+// ✅ Verify Reset Token
+export const verifyResetToken = async (req: Request, res: Response): Promise<void> => {
+  const { token } = req.params; // Extract token from URL
 
   try {
-    const user = await prisma.user.findFirst({
-      where: { resetToken: token },
+    const decoded = jwt.verify(token,JWT_SECRET) as { email: string };
+    
+    // Check if the user exists
+    const user = await prisma.user.findUnique({
+      where: { email: decoded.email },
     });
 
     if (!user) {
@@ -223,8 +227,7 @@ export const resetToken = async (req: Request, res: Response):Promise<void> => {
 
     res.status(200).json({ message: "Valid token." });
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-    res.status(500).json({ message: "Server error", error: errorMessage });
+    res.status(400).json({ message: "Invalid or expired token." });
   }
 };
 

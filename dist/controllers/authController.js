@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.forgotPassword = exports.resetPassword = exports.resetToken = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
+exports.forgotPassword = exports.resetPassword = exports.verifyResetToken = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
@@ -196,11 +196,14 @@ exports.logoutUser = logoutUser;
 //   });
 // };
 // ✅ GET Controller - Verify Reset Token
-const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token } = req.params;
+// ✅ Verify Reset Token
+const verifyResetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { token } = req.params; // Extract token from URL
     try {
-        const user = yield prisma.user.findFirst({
-            where: { resetToken: token },
+        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
+        // Check if the user exists
+        const user = yield prisma.user.findUnique({
+            where: { email: decoded.email },
         });
         if (!user) {
             res.status(400).json({ message: "Invalid or expired token." });
@@ -209,11 +212,10 @@ const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.status(200).json({ message: "Valid token." });
     }
     catch (error) {
-        const errorMessage = error instanceof Error ? error.message : "Unknown error";
-        res.status(500).json({ message: "Server error", error: errorMessage });
+        res.status(400).json({ message: "Invalid or expired token." });
     }
 });
-exports.resetToken = resetToken;
+exports.verifyResetToken = verifyResetToken;
 //Post  Reset Password
 const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { token, newPassword } = req.body;
