@@ -199,9 +199,17 @@ exports.logoutUser = logoutUser;
 // ✅ Verify Reset Token
 // ✅ GET Controller - Verify Reset Token
 const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token } = req.params; // Extract token from URL
+    const { token } = req.query; // Extract token from URL
+    if (!token) {
+        res.status(400).json({ message: "Token is missing." });
+        return;
+    }
     try {
         const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
+        if (!decoded || typeof decoded !== "object" || !decoded.email) {
+            res.status(400).json({ message: "Invalid or expired token." });
+            return;
+        }
         // Check if user exists
         const user = yield prisma.user.findUnique({
             where: { email: decoded.email },

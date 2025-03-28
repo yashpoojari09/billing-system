@@ -210,11 +210,19 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
 // ✅ GET Controller - Verify Reset Token
 // ✅ Verify Reset Token
 // ✅ GET Controller - Verify Reset Token
-export const resetToken = async (req: Request, res: Response): Promise<void> => {
-  const { token } = req.params; // Extract token from URL
+export const resetToken = async (req: Request, res: Response)=> {
+  const { token } = req.query; // Extract token from URL
+  if (!token) {
+     res.status(400).json({ message: "Token is missing." });
+     return;
+  }  
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
+    const decoded = jwt.verify(token as string, JWT_SECRET) as jwt.JwtPayload;
+    if (!decoded || typeof decoded !== "object" || !decoded.email) {
+      res.status(400).json({ message: "Invalid or expired token." });
+      return;
+    }
 
     // Check if user exists
     const user = await prisma.user.findUnique({
@@ -226,7 +234,7 @@ export const resetToken = async (req: Request, res: Response): Promise<void> => 
       return;
     }
 
-    res.status(200).json({ message: "Valid token." });
+    res.status(200).json({ message:"Valid token."});
   } catch (error) {
     res.status(400).json({ message: "Invalid or expired token." });
   }
