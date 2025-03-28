@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.forgotPassword = exports.resetPassword = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
+exports.forgotPassword = exports.resetPassword = exports.resetToken = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
@@ -195,7 +195,26 @@ exports.logoutUser = logoutUser;
 //     html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
 //   });
 // };
-// Reset Password
+// ✅ GET Controller - Verify Reset Token
+const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { token } = req.params;
+    try {
+        const user = yield prisma.user.findFirst({
+            where: { resetToken: token },
+        });
+        if (!user) {
+            res.status(400).json({ message: "Invalid or expired token." });
+            return;
+        }
+        res.status(200).json({ message: "Valid token." });
+    }
+    catch (error) {
+        const errorMessage = error instanceof Error ? error.message : "Unknown error";
+        res.status(500).json({ message: "Server error", error: errorMessage });
+    }
+});
+exports.resetToken = resetToken;
+//Post  Reset Password
 const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { token, newPassword } = req.body;
     if (!token || !newPassword) {

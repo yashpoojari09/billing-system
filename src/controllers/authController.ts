@@ -207,7 +207,28 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
 //   });
 // };
 
-// Reset Password
+// ✅ GET Controller - Verify Reset Token
+export const resetToken = async (req: Request, res: Response):Promise<void> => {
+  const { token } = req.params;
+
+  try {
+    const user = await prisma.user.findFirst({
+      where: { resetToken: token },
+    });
+
+    if (!user) {
+       res.status(400).json({ message: "Invalid or expired token." });
+       return;
+    }
+
+    res.status(200).json({ message: "Valid token." });
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    res.status(500).json({ message: "Server error", error: errorMessage });
+  }
+};
+
+//Post  Reset Password
 export const resetPassword = async (req: Request, res: Response):Promise<void>=> {
   const { token, newPassword } = req.body;
 
