@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.forgotPassword = exports.resetPassword = exports.resetToken = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
+exports.resetPassword = exports.resetToken = exports.forgotPassword = exports.logoutUser = exports.refreshAccessToken = exports.updateUser = exports.loginUser = exports.registerUser = void 0;
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
@@ -151,72 +151,6 @@ const logoutUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     }
 });
 exports.logoutUser = logoutUser;
-// get Reset Token
-const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token } = req.query;
-    if (!token || typeof token !== "string") {
-        res.status(400).json({ message: "Token is missing or invalid." });
-        return;
-    }
-    try {
-        const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
-        if (!decoded || typeof decoded !== "object" || !decoded.email) {
-            res.status(400).json({ message: "Invalid or expired token." });
-            return;
-        }
-        const user = yield prisma.user.findUnique({
-            where: { email: decoded.email },
-        });
-        if (!user || !user.resetToken || !user.resetTokenExpiry) {
-            res.status(400).json({ message: "Invalid or expired token." });
-            return;
-        }
-        // Compare hashed token
-        const isMatch = yield bcrypt_1.default.compare(token, user.resetToken);
-        if (!isMatch || new Date() > user.resetTokenExpiry) {
-            res.status(400).json({ message: "Invalid or expired token." });
-            return;
-        }
-        res.status(200).json({ message: "Valid token." });
-        return;
-    }
-    catch (error) {
-        console.error("JWT Verification Error:", error);
-        res.status(400).json({ message: "Invalid or expired token." });
-        return;
-    }
-});
-exports.resetToken = resetToken;
-// ✅ POST Controller - Reset Password
-const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token, newPassword } = req.body;
-    if (!token || !newPassword) {
-        res.status(400).json({ error: "Token and new password are required." });
-        return;
-    }
-    try {
-        // Verify the token
-        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
-        // Find user by email
-        const user = yield prisma.user.findUnique({ where: { email: decoded.email } });
-        if (!user || user.resetToken !== token) {
-            res.status(400).json({ error: "Invalid or expired token." });
-            return;
-        }
-        // Hash new password
-        const hashedPassword = yield bcrypt_1.default.hash(newPassword, 10);
-        // Update password and clear reset token
-        yield prisma.user.update({
-            where: { email: user.email },
-            data: { password: hashedPassword, resetToken: null }, // Clear resetToken
-        });
-        res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
-    }
-    catch (error) {
-        res.status(500).json({ error: "Something went wrong. Try again." });
-    }
-});
-exports.resetPassword = resetPassword;
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const transporter = nodemailer_1.default.createTransport({
@@ -262,4 +196,75 @@ const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.forgotPassword = forgotPassword;
+// get Reset Token
+const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { token } = req.query;
+    if (!token || typeof token !== "string") {
+        res.status(400).json({ message: "Token is missing or invalid." });
+        return;
+    }
+    try {
+        const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
+        if (!decoded || typeof decoded !== "object" || !decoded.email) {
+            res.status(400).json({ message: "Invalid or expired token." });
+            return;
+        }
+        const user = yield prisma.user.findUnique({
+            where: { email: decoded.email },
+        });
+        if (!user || !user.resetToken || !user.resetTokenExpiry) {
+            res.status(400).json({ message: "Invalid or expired token." });
+            return;
+        }
+        // Compare hashed token
+        const isMatch = yield bcrypt_1.default.compare(token, user.resetToken);
+        if (!isMatch || new Date() > user.resetTokenExpiry) {
+            res.status(400).json({ message: "Invalid or expired token." });
+            return;
+        }
+        res.status(200).json({ message: "Valid token." });
+        return;
+    }
+    catch (error) {
+        console.error("JWT Verification Error:", error);
+        res.status(400).json({ message: "Invalid or expired token." });
+        return;
+    }
+});
+exports.resetToken = resetToken;
+// ✅ POST Controller - Reset Password
+const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { token, newPassword, confirmPassword } = req.body;
+    if (!token || !newPassword || !confirmPassword) {
+        res.status(400).json({ error: "Token and new password are required." });
+        return;
+    }
+    // Check if newPassword and confirmPassword match
+    if (newPassword !== confirmPassword) {
+        res.status(400).json({ error: "New password and confirm password do not match." });
+        return;
+    }
+    try {
+        // Verify the token
+        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
+        // Find user by email
+        const user = yield prisma.user.findUnique({ where: { email: decoded.email } });
+        if (!user || user.resetToken !== token) {
+            res.status(400).json({ error: "Invalid or expired token." });
+            return;
+        }
+        // Hash new password
+        const hashedPassword = yield bcrypt_1.default.hash(newPassword, 10);
+        // Update password and clear reset token
+        yield prisma.user.update({
+            where: { email: user.email },
+            data: { password: hashedPassword, resetToken: null }, // Clear resetToken
+        });
+        res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
+    }
+    catch (error) {
+        res.status(500).json({ error: "Something went wrong. Try again." });
+    }
+});
+exports.resetPassword = resetPassword;
 //# sourceMappingURL=authController.js.map

@@ -155,85 +155,6 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
   }
 };
 
-// get Reset Token
-export const resetToken = async (req: Request, res: Response): Promise<void> => {
-  const { token } = req.query;
-
-  if (!token || typeof token !== "string") {
-     res.status(400).json({ message: "Token is missing or invalid." });
-     return;
-  }
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as jwt.JwtPayload;
-
-    if (!decoded || typeof decoded !== "object" || !decoded.email) {
-       res.status(400).json({ message: "Invalid or expired token." });
-       return;
-    }
-
-    const user = await prisma.user.findUnique({
-      where: { email: decoded.email },
-    });
-
-    if (!user || !user.resetToken || !user.resetTokenExpiry) {
-       res.status(400).json({ message: "Invalid or expired token." });
-       return;
-    }
-
-    // Compare hashed token
-    const isMatch = await bcrypt.compare(token, user.resetToken);
-
-    if (!isMatch || new Date() > user.resetTokenExpiry) {
-       res.status(400).json({ message: "Invalid or expired token." });
-       return;
-    }
-
-     res.status(200).json({ message: "Valid token." });
-     return;
-  } catch (error) {
-    console.error("JWT Verification Error:", error);
-     res.status(400).json({ message: "Invalid or expired token." });
-     return;
-  }
-};
-
-
-// ✅ POST Controller - Reset Password
-export const resetPassword = async (req: Request, res: Response): Promise<void> => {
-  const { token, newPassword } = req.body;
-
-  if (!token || !newPassword) {
-    res.status(400).json({ error: "Token and new password are required." });
-    return;
-  }
-
-  try {
-    // Verify the token
-    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
-
-    // Find user by email
-    const user = await prisma.user.findUnique({ where: { email: decoded.email } });
-
-    if (!user || user.resetToken !== token) {
-      res.status(400).json({ error: "Invalid or expired token." });
-      return;
-    }
-
-    // Hash new password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    // Update password and clear reset token
-    await prisma.user.update({
-      where: { email: user.email },
-      data: { password: hashedPassword, resetToken: null }, // Clear resetToken
-    });
-
-    res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
-  } catch (error) {
-    res.status(500).json({ error: "Something went wrong. Try again." });
-  }
-};
 
 import dotenv from "dotenv";
 
@@ -290,5 +211,92 @@ export const forgotPassword = async (req: Request, res: Response): Promise<any> 
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Something went wrong." });
+  }
+};
+
+// get Reset Token
+export const resetToken = async (req: Request, res: Response): Promise<void> => {
+  const { token } = req.query;
+
+  if (!token || typeof token !== "string") {
+     res.status(400).json({ message: "Token is missing or invalid." });
+     return;
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as jwt.JwtPayload;
+
+    if (!decoded || typeof decoded !== "object" || !decoded.email) {
+       res.status(400).json({ message: "Invalid or expired token." });
+       return;
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { email: decoded.email },
+    });
+
+    if (!user || !user.resetToken || !user.resetTokenExpiry) {
+       res.status(400).json({ message: "Invalid or expired token." });
+       return;
+    }
+
+    // Compare hashed token
+    const isMatch = await bcrypt.compare(token, user.resetToken);
+
+    if (!isMatch || new Date() > user.resetTokenExpiry) {
+       res.status(400).json({ message: "Invalid or expired token." });
+       return;
+    }
+
+     res.status(200).json({ message: "Valid token." });
+     return;
+  } catch (error) {
+    console.error("JWT Verification Error:", error);
+     res.status(400).json({ message: "Invalid or expired token." });
+     return;
+  }
+};
+
+
+
+
+// ✅ POST Controller - Reset Password
+export const resetPassword = async (req: Request, res: Response): Promise<void> => {
+  const { token, newPassword, confirmPassword } = req.body;
+
+  if (!token || !newPassword || !confirmPassword) {
+    res.status(400).json({ error: "Token and new password are required." });
+    return;
+  }
+  // Check if newPassword and confirmPassword match
+  if (newPassword !== confirmPassword) {
+    res.status(400).json({ error: "New password and confirm password do not match." });
+    return;
+  }
+
+  try {
+    // Verify the token
+    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
+
+    // Find user by email
+    const user = await prisma.user.findUnique({ where: { email: decoded.email } });
+
+    if (!user || user.resetToken !== token) {
+      res.status(400).json({ error: "Invalid or expired token." });
+      return;
+    }
+
+    // Hash new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update password and clear reset token
+    await prisma.user.update({
+      where: { email: user.email },
+      data: { password: hashedPassword, resetToken: null }, // Clear resetToken
+    });
+
+    res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong. Try again." });
   }
 };
