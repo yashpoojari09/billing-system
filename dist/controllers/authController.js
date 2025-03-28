@@ -233,28 +233,28 @@ const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 });
 exports.resetToken = resetToken;
 // ✅ POST Controller - Reset Password
-const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log("Incoming request body:", req.body); // ✅ Log the request body
-    const { token, newPassword, confirmPassword } = req.body;
-    if (!token || !newPassword || !confirmPassword) {
-        res.status(400).json({ error: "Token and new password are required." });
-        return;
-    }
+const resetPassword = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const { token, newPassword, confirmPassword } = req.body;
+        if (!token || !newPassword || !confirmPassword) {
+            return next(new error_1.AppError("Token and new password are required.", 400));
+        }
         // Verify the token
         const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
         // Find user by email
         const user = yield prisma.user.findUnique({
             where: { email: decoded.email },
         });
-        if (!user || user.resetToken !== token) {
-            res.status(400).json({ error: "Invalid or expired token." });
-            return;
+        if (!user) {
+            return next(new error_1.AppError("User not found.", 404));
+        }
+        // Check if the reset token matches
+        if (token !== user.resetToken) {
+            return next(new error_1.AppError("Invalid or expired token. Please request a new reset link.", 400));
         }
         // Check if newPassword and confirmPassword match
         if (newPassword !== confirmPassword) {
-            res.status(400).json({ error: "New password and confirm password do not match." });
-            return;
+            return next(new error_1.AppError("New password and confirm password do not match.", 400));
         }
         // Hash new password
         const hashedPassword = yield bcrypt_1.default.hash(newPassword, 10);
@@ -266,7 +266,7 @@ const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
     }
     catch (error) {
-        res.status(500).json({ error: "Something went wrong. Try again." });
+        next(error);
     }
 });
 exports.resetPassword = resetPassword;
