@@ -11,7 +11,7 @@ router.post("/login", loginUser);
 router.post("/refresh", refreshAccessToken);
 router.post("/logout", logoutUser);
 router.post("/forgot-password", forgotPassword)
-router.get("/reset-password/:token", resetToken)
+router.get("/reset-password/", resetToken)
 router.post("/reset-password", resetPassword);
 // Protected Routes
 router.put("/:id", authenticateJWT , authorizeRoles([Role.SUPERADMIN]), updateUser);

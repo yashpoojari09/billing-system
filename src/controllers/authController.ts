@@ -211,7 +211,7 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
 // ✅ Verify Reset Token
 // ✅ GET Controller - Verify Reset Token
 export const resetToken = async (req: Request, res: Response):Promise<void>=> {
-  const { token } = req.params; // Extract token from URL
+  const { token } = req.query; // Extract token from URL
   if (!token) {
      res.status(400).json({ message: "Token is missing." });
      return;

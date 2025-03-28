@@ -199,7 +199,7 @@ exports.logoutUser = logoutUser;
 // ✅ Verify Reset Token
 // ✅ GET Controller - Verify Reset Token
 const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token } = req.params; // Extract token from URL
+    const { token } = req.query; // Extract token from URL
     if (!token) {
         res.status(400).json({ message: "Token is missing." });
         return;
