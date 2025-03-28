@@ -253,10 +253,10 @@ const resetPassword = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         if (!user) {
             return next(new error_1.AppError("User not found.", 404));
         }
-        // ✅ Fix: Check if the reset token matches
-        if (token !== user.resetToken) {
-            return next(new error_1.AppError("Invalid or expired token. Please request a new reset link.", 400));
-        }
+        // // ✅ Fix: Check if the reset token matches
+        // if (token !== user.resetToken) {
+        //   return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
+        // }
         // ✅ Fix: Check if passwords match
         if (newPassword !== confirmPassword) {
             return next(new error_1.AppError("New password and confirm password do not match.", 400));

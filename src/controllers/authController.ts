@@ -284,10 +284,10 @@ export const resetPassword = async (req: Request, res: Response, next: NextFunct
       return next(new AppError("User not found.", 404));
     }
 
-    // ✅ Fix: Check if the reset token matches
-    if (token !== user.resetToken) {
-      return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
-    }
+    // // ✅ Fix: Check if the reset token matches
+    // if (token !== user.resetToken) {
+    //   return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
+    // }
 
     // ✅ Fix: Check if passwords match
     if (newPassword !== confirmPassword) {
