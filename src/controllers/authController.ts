@@ -55,7 +55,7 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
 
     // 🔹 Find user by email
     const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) return next(new AppError("Invalid credentials", 401));
+    if (!user) return next(new AppError("Invalid Email Id", 401));
 
     // 🔹 Compare password
     const isMatch = await bcrypt.compare(password, user.password);
@@ -233,19 +233,19 @@ export const resetToken = async (req: Request, res: Response): Promise<void> => 
 
 //Post  Reset Password
 export const resetPassword = async (req: Request, res: Response):Promise<void>=> {
-  const { token, newPassword } = req.body;
+  const { token:resetToken, newPassword } = req.body;
 
-  if (!token || !newPassword) {
+  if (!resetToken || !newPassword) {
      res.status(400).json({ error: "Token and new password are required" });
      return;
   }
 
   try {
     // Verify the token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+    const decoded = jwt.verify(resetToken, process.env.JWT_SECRET!) as { userId: string };
     const user = await prisma.user.findUnique({ where: { id: decoded.userId } });
 
-    if (!user || user.resetToken !== token) {
+    if (!user || user.resetToken !== resetToken) {
        res.status(400).json({ error: "Invalid or expired token" });
        return;
     }
@@ -256,7 +256,7 @@ export const resetPassword = async (req: Request, res: Response):Promise<void>=>
     // Update password and clear reset token
     await prisma.user.update({
       where: { id: user.id },
-      data: { password: hashedPassword, resetToken: null },
+      data: { password: hashedPassword,resetToken },
     });
 
     res.json({ message: "Password reset successful. You can now log in." });

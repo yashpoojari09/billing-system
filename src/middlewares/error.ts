@@ -4,7 +4,7 @@ import logger from "../utils/logger"; // Import Logger
 // Custom Error Class
 class AppError extends Error {
   statusCode: number;
-  constructor(message: string, statusCode: number) {
+  constructor(message:string, statusCode:number) {
     super(message);
     this.statusCode = statusCode;
     Error.captureStackTrace(this, this.constructor);

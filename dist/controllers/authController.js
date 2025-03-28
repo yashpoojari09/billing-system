@@ -60,7 +60,7 @@ const loginUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function
         // 🔹 Find user by email
         const user = yield prisma.user.findUnique({ where: { email } });
         if (!user)
-            return next(new error_1.AppError("Invalid credentials", 401));
+            return next(new error_1.AppError("Invalid Email Id", 401));
         // 🔹 Compare password
         const isMatch = yield bcrypt_1.default.compare(password, user.password);
         if (!isMatch)
@@ -218,16 +218,16 @@ const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.resetToken = resetToken;
 //Post  Reset Password
 const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token, newPassword } = req.body;
-    if (!token || !newPassword) {
+    const { token: resetToken, newPassword } = req.body;
+    if (!resetToken || !newPassword) {
         res.status(400).json({ error: "Token and new password are required" });
         return;
     }
     try {
         // Verify the token
-        const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
+        const decoded = jsonwebtoken_1.default.verify(resetToken, process.env.JWT_SECRET);
         const user = yield prisma.user.findUnique({ where: { id: decoded.userId } });
-        if (!user || user.resetToken !== token) {
+        if (!user || user.resetToken !== resetToken) {
             res.status(400).json({ error: "Invalid or expired token" });
             return;
         }
@@ -236,7 +236,7 @@ const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         // Update password and clear reset token
         yield prisma.user.update({
             where: { id: user.id },
-            data: { password: hashedPassword, resetToken: null },
+            data: { password: hashedPassword, resetToken },
         });
         res.json({ message: "Password reset successful. You can now log in." });
     }
