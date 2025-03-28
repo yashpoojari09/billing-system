@@ -260,17 +260,15 @@ export const resetToken = async (req: Request, res: Response): Promise<void> => 
 
 
 
-// ✅ POST Controller - Reset Password
-export const resetPassword = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+/// ✅ POST Controller - Reset Password
+export const resetPassword = async (req: Request, res: Response, next: NextFunction):Promise<any> => {
   try {
     const { token, newPassword, confirmPassword } = req.body;
 
-    // ✅ Fix: Ensure token is extracted
     if (!token || !newPassword || !confirmPassword) {
       return next(new AppError("Token and new password are required.", 400));
     }
 
-    // ✅ Fix: Verify JWT token
     let decoded;
     try {
       decoded = jwt.verify(token, JWT_SECRET) as { email: string };
@@ -278,38 +276,40 @@ export const resetPassword = async (req: Request, res: Response, next: NextFunct
       return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
     }
 
-    // ✅ Fix: Find user by email
     const user = await prisma.user.findUnique({ where: { email: decoded.email } });
     if (!user) {
       return next(new AppError("User not found.", 404));
     }
 
-    // // ✅ Fix: Check if the reset token matches
-    // if (token !== user.resetToken) {
-    //   return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
-    // }
+    console.log("User details:", user);
+    const isTokenValid = user.resetToken && await bcrypt.compare(token, user.resetToken);
+if (!user.resetToken || !isTokenValid) {
+  return next(new AppError("Invalid or expired token. Please request a new reset link.", 400));
+}
 
-    // ✅ Fix: Check if passwords match
+ // ✅ Fix: Check if the token is expired
+ if (user.resetTokenExpiry && new Date(user.resetTokenExpiry) < new Date()) {
+  return next(new AppError("Reset token has expired. Please request a new one.", 400));
+}
     if (newPassword !== confirmPassword) {
       return next(new AppError("New password and confirm password do not match.", 400));
     }
 
-    // ✅ Fix: Validate password length & complexity (adjust as needed)
     if (newPassword.length < 8) {
       return next(new AppError("Password must be at least 8 characters long.", 400));
     }
 
-    // ✅ Fix: Hash new password
     const hashedPassword = await bcrypt.hash(newPassword, 10);
 
-    // ✅ Fix: Update password & remove resetToken
     await prisma.user.update({
       where: { email: decoded.email },
-      data: { password: hashedPassword, resetToken: null }, // Clear resetToken
+      data: { password: hashedPassword, resetToken: null },
     });
 
-    res.status(200).json({ success: true, message: "Password reset successful. Redirecting to login..." });
+    // ✅ **Fix: Add return to stop execution after success**
+    return res.status(200).json({ success: true, message: "Password reset successful. Redirecting to login..." });
+
   } catch (error) {
-    next(error);
+    return next(error);
   }
 };
