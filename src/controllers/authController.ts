@@ -209,7 +209,7 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
 
 // ✅ GET Controller - Verify Reset Token
 // ✅ Verify Reset Token
-export const verifyResetToken = async (req: Request, res: Response): Promise<void> => {
+export const resetToken = async (req: Request, res: Response): Promise<void> => {
   const { token } = req.params; // Extract token from URL
 
   try {
