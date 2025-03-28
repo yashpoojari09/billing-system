@@ -236,34 +236,43 @@ exports.resetToken = resetToken;
 const resetPassword = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { token, newPassword, confirmPassword } = req.body;
+        // ✅ Fix: Ensure token is extracted
         if (!token || !newPassword || !confirmPassword) {
             return next(new error_1.AppError("Token and new password are required.", 400));
         }
-        // Verify the token
-        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
-        // Find user by email
-        const user = yield prisma.user.findUnique({
-            where: { email: decoded.email },
-        });
+        // ✅ Fix: Verify JWT token
+        let decoded;
+        try {
+            decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
+        }
+        catch (error) {
+            return next(new error_1.AppError("Invalid or expired token. Please request a new reset link.", 400));
+        }
+        // ✅ Fix: Find user by email
+        const user = yield prisma.user.findUnique({ where: { email: decoded.email } });
         if (!user) {
             return next(new error_1.AppError("User not found.", 404));
         }
-        // Check if the reset token matches
+        // ✅ Fix: Check if the reset token matches
         if (token !== user.resetToken) {
             return next(new error_1.AppError("Invalid or expired token. Please request a new reset link.", 400));
         }
-        // Check if newPassword and confirmPassword match
+        // ✅ Fix: Check if passwords match
         if (newPassword !== confirmPassword) {
             return next(new error_1.AppError("New password and confirm password do not match.", 400));
         }
-        // Hash new password
+        // ✅ Fix: Validate password length & complexity (adjust as needed)
+        if (newPassword.length < 8) {
+            return next(new error_1.AppError("Password must be at least 8 characters long.", 400));
+        }
+        // ✅ Fix: Hash new password
         const hashedPassword = yield bcrypt_1.default.hash(newPassword, 10);
-        // Update password and clear reset token
+        // ✅ Fix: Update password & remove resetToken
         yield prisma.user.update({
             where: { email: decoded.email },
             data: { password: hashedPassword, resetToken: null }, // Clear resetToken
         });
-        res.status(200).json({ message: "Password reset successful. Redirecting to login..." });
+        res.status(200).json({ success: true, message: "Password reset successful. Redirecting to login..." });
     }
     catch (error) {
         next(error);
