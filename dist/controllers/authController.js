@@ -219,17 +219,17 @@ const resetToken = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
 exports.resetToken = resetToken;
 // ✅ POST Controller - Reset Password
 const resetPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { token: resetToken, newPassword } = req.body;
-    if (!resetToken || !newPassword) {
+    const { token, newPassword } = req.body;
+    if (!token || !newPassword) {
         res.status(400).json({ error: "Token and new password are required." });
         return;
     }
     try {
         // Verify the token
-        const decoded = jsonwebtoken_1.default.verify(resetToken, JWT_SECRET);
+        const decoded = jsonwebtoken_1.default.verify(token, JWT_SECRET);
         // Find user by email
         const user = yield prisma.user.findUnique({ where: { email: decoded.email } });
-        if (!user || user.resetToken !== resetToken) {
+        if (!user || user.resetToken !== token) {
             res.status(400).json({ error: "Invalid or expired token." });
             return;
         }

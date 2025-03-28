@@ -234,21 +234,21 @@ export const resetToken = async (req: Request, res: Response): Promise<void> => 
 
 // ✅ POST Controller - Reset Password
 export const resetPassword = async (req: Request, res: Response): Promise<void> => {
-  const { token: resetToken, newPassword } = req.body;
+  const { token, newPassword } = req.body;
 
-  if (!resetToken || !newPassword) {
+  if (!token || !newPassword) {
     res.status(400).json({ error: "Token and new password are required." });
     return;
   }
 
   try {
     // Verify the token
-    const decoded = jwt.verify(resetToken, JWT_SECRET) as { email: string };
+    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
 
     // Find user by email
     const user = await prisma.user.findUnique({ where: { email: decoded.email } });
 
-    if (!user || user.resetToken !== resetToken) {
+    if (!user || user.resetToken !== token) {
       res.status(400).json({ error: "Invalid or expired token." });
       return;
     }
