@@ -23,21 +23,14 @@ app.use(
   cors({
     origin: "http://localhost:3000", // ✅ Replace '*' with frontend URL
     credentials: true, // ✅ Allow credentials (cookies)
-    methods: "GET,POST,PUT,DELETE", // ✅ Allow necessary methods
-    allowedHeaders: "Content-Type,Authorization", // ✅ Allow headers
+    methods: ["GET","POST","PUT","DELETE"], // ✅ Allow necessary methods
+    allowedHeaders: ["Content-Type", "Authorization"]// ✅ Allow headers
   })
 );
 
-// ✅ Ensure cookies and credentials are handled correctly
-app.use((_req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
 
 // Middleware
 app.use(express.json());
-app.use(cors());
 app.use(passport.initialize());
 app.use(cookieParser()); // ✅ Enables cookie parsing
 
