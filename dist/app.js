@@ -15,12 +15,14 @@ const error_1 = require("./middlewares/error");
 // import inventoryRoutes from "./routes/inventory";
 // import taxationRoutes from "./routes/taxation";
 const logger_1 = __importDefault(require("./utils/logger"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use(passport_1.default.initialize());
+app.use((0, cookie_parser_1.default)()); // ✅ Enables cookie parsing
 // Global Error Handler
 app.use(error_1.errorHandler);
 // Routes

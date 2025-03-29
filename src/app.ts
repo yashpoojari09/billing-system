@@ -10,7 +10,7 @@ import { errorHandler } from "./middlewares/error";
 // import inventoryRoutes from "./routes/inventory";
 // import taxationRoutes from "./routes/taxation";
 import logger from "./utils/logger"
-
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 
@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(passport.initialize());
-
+app.use(cookieParser()); // ✅ Enables cookie parsing
 // Global Error Handler
 app.use(errorHandler);
 

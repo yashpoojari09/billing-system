@@ -5,6 +5,7 @@ import { PrismaClient } from "@prisma/client";
 import { AppError } from "../middlewares/error";
 import nodemailer from "nodemailer"
 
+
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key"; // Use env variable
 const REFRESH_SECRET = process.env.REFRESH_SECRET || "your_refresh_secret";
@@ -61,20 +62,24 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
 
     // 🔹 Generate tokens
     const { accessToken, refreshToken } = generateTokens(user.id);
+ // 🔹 Delete old refresh tokens for this user
+ await prisma.refreshToken.deleteMany({ where: { userId: user.id } });
 
-   // 🔹 Store refresh token in DB
-   console.log("Generated Refresh Token:", refreshToken);
+ // 🔹 Store new refresh token in DB
+ await prisma.refreshToken.create({ data: { userId: user.id, token: refreshToken } });
 
-   const createdToken = await prisma.refreshToken.create({
-     data: { userId: user.id, token: refreshToken },
-   });
+ // 🔹 Set refresh token in an HTTP-only cookie
+ res.cookie("refreshToken", refreshToken, {
+   httpOnly: true,
+   secure: true, 
+   sameSite: "strict",
+   path: "/auth/refresh",
+ });
 
-   console.log("Stored Refresh Token in DB:", createdToken);
-
-    res.json({ message: "Login successful", accessToken, refreshToken, user });
-  } catch (error) {
-    next(error);
-  }
+ res.json({ message: "Login successful", accessToken, user });
+} catch (error) {
+ next(error);
+}
 };
 
 // ✅ UPDATE USER (Only Admin & Superadmin)
@@ -111,7 +116,7 @@ export const updateUser = async (req: Request, res: Response, next: NextFunction
 // Refresh Token
 export const refreshAccessToken = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const { refreshToken } = req.body;
+    const { refreshToken } = req.cookies;
     if (!refreshToken) return next(new AppError("Refresh token required", 401));
 
     // 🔹 Check if refresh token exists in DB
@@ -119,26 +124,39 @@ export const refreshAccessToken = async (req: Request, res: Response, next: Next
       where: { token: refreshToken },
     });
 
-    if (!storedToken) return next(new AppError("Invalid refresh token", 403));
-
-    // 🔹 Verify token
-    const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET!) as { id: string };
-    if (!decoded) return next(new AppError("Invalid token", 403));
-
-    // 🔹 Generate new access token
-    const { accessToken, refreshToken: newRefreshToken } = generateTokens(decoded.id);
-
-    // 🔹 Update refresh token in DB (optional, for better security)
-    await prisma.refreshToken.update({
-      where: { token: refreshToken },
-      data: { token: newRefreshToken },
-    });
-
-    res.json({ accessToken, refreshToken: newRefreshToken });
-  } catch (error) {
-    next(error);
-  }
-};
+    if (!storedToken) {
+      res.clearCookie("refreshToken", { path: "/auth/refresh" });
+      return next(new AppError("Invalid refresh token", 403));
+    }
+       // 🔹 Verify token
+       let decoded;
+       try {
+         decoded = jwt.verify(refreshToken, REFRESH_SECRET) as { id: string };
+       } catch (err) {
+         res.clearCookie("refreshToken", { path: "/auth/refresh" });
+         return next(new AppError("Invalid or expired refresh token", 403));
+       }
+   
+       // 🔹 Generate new tokens
+       const { accessToken, refreshToken: newRefreshToken } = generateTokens(decoded.id);
+   
+       // 🔹 Remove old refresh token and store the new one
+       await prisma.refreshToken.deleteMany({ where: { token: refreshToken } });
+       await prisma.refreshToken.create({ data: { userId: decoded.id, token: newRefreshToken } });
+   
+       // 🔹 Set new refresh token in HTTP-only cookie
+       res.cookie("refreshToken", newRefreshToken, {
+         httpOnly: true,
+         secure: true, // Only send over HTTPS
+         sameSite: "strict",
+         path: "/auth/refresh",
+       });
+   
+       res.json({ accessToken });
+     } catch (error) {
+       next(error);
+     }
+   };
 
 // ✅ LOGOUT USER (Revoke Refresh Token)
 export const logoutUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -146,9 +164,9 @@ export const logoutUser = async (req: Request, res: Response, next: NextFunction
     const { refreshToken} = req.body;
     if (!refreshToken) return next(new AppError("Refresh token is required", 400));
 
-    // 🔹 Delete refresh token from DB
     await prisma.refreshToken.deleteMany({ where: { token: refreshToken } });
 
+    res.clearCookie("refreshToken", { path: "/auth/refresh" });
     res.json({ message: "Logged out successfully" });
   } catch (error) {
     next(error);

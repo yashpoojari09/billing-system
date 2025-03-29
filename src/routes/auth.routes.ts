@@ -3,8 +3,12 @@ import { registerUser, loginUser, refreshAccessToken, logoutUser, updateUser, fo
 import { authenticateJWT } from "../middlewares/auth";
 import { authorizeRoles } from "../middlewares/rbac";
 import { Role } from "@prisma/client";
+import cookieParser from "cookie-parser";
+
 
 const router = express.Router();
+router.use(cookieParser());
+
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);

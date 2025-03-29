@@ -64,13 +64,18 @@ const loginUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function
             return next(new error_1.AppError("Invalid credentials", 401));
         // 🔹 Generate tokens
         const { accessToken, refreshToken } = generateTokens(user.id);
-        // 🔹 Store refresh token in DB
-        console.log("Generated Refresh Token:", refreshToken);
-        const createdToken = yield prisma.refreshToken.create({
-            data: { userId: user.id, token: refreshToken },
+        // 🔹 Delete old refresh tokens for this user
+        yield prisma.refreshToken.deleteMany({ where: { userId: user.id } });
+        // 🔹 Store new refresh token in DB
+        yield prisma.refreshToken.create({ data: { userId: user.id, token: refreshToken } });
+        // 🔹 Set refresh token in an HTTP-only cookie
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: "strict",
+            path: "/auth/refresh",
         });
-        console.log("Stored Refresh Token in DB:", createdToken);
-        res.json({ message: "Login successful", accessToken, refreshToken, user });
+        res.json({ message: "Login successful", accessToken, user });
     }
     catch (error) {
         next(error);
@@ -109,27 +114,39 @@ exports.updateUser = updateUser;
 // Refresh Token
 const refreshAccessToken = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { refreshToken } = req.body;
+        const { refreshToken } = req.cookies;
         if (!refreshToken)
             return next(new error_1.AppError("Refresh token required", 401));
         // 🔹 Check if refresh token exists in DB
         const storedToken = yield prisma.refreshToken.findUnique({
             where: { token: refreshToken },
         });
-        if (!storedToken)
+        if (!storedToken) {
+            res.clearCookie("refreshToken", { path: "/auth/refresh" });
             return next(new error_1.AppError("Invalid refresh token", 403));
+        }
         // 🔹 Verify token
-        const decoded = jsonwebtoken_1.default.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
-        if (!decoded)
-            return next(new error_1.AppError("Invalid token", 403));
-        // 🔹 Generate new access token
+        let decoded;
+        try {
+            decoded = jsonwebtoken_1.default.verify(refreshToken, REFRESH_SECRET);
+        }
+        catch (err) {
+            res.clearCookie("refreshToken", { path: "/auth/refresh" });
+            return next(new error_1.AppError("Invalid or expired refresh token", 403));
+        }
+        // 🔹 Generate new tokens
         const { accessToken, refreshToken: newRefreshToken } = generateTokens(decoded.id);
-        // 🔹 Update refresh token in DB (optional, for better security)
-        yield prisma.refreshToken.update({
-            where: { token: refreshToken },
-            data: { token: newRefreshToken },
+        // 🔹 Remove old refresh token and store the new one
+        yield prisma.refreshToken.deleteMany({ where: { token: refreshToken } });
+        yield prisma.refreshToken.create({ data: { userId: decoded.id, token: newRefreshToken } });
+        // 🔹 Set new refresh token in HTTP-only cookie
+        res.cookie("refreshToken", newRefreshToken, {
+            httpOnly: true,
+            secure: true, // Only send over HTTPS
+            sameSite: "strict",
+            path: "/auth/refresh",
         });
-        res.json({ accessToken, refreshToken: newRefreshToken });
+        res.json({ accessToken });
     }
     catch (error) {
         next(error);
@@ -142,8 +159,8 @@ const logoutUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         const { refreshToken } = req.body;
         if (!refreshToken)
             return next(new error_1.AppError("Refresh token is required", 400));
-        // 🔹 Delete refresh token from DB
         yield prisma.refreshToken.deleteMany({ where: { token: refreshToken } });
+        res.clearCookie("refreshToken", { path: "/auth/refresh" });
         res.json({ message: "Logged out successfully" });
     }
     catch (error) {
