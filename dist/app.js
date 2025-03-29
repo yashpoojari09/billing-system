@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
+// Removed duplicate import of cors
 const dotenv_1 = __importDefault(require("dotenv"));
 const passport_1 = __importDefault(require("passport"));
 const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
@@ -16,6 +16,7 @@ const error_1 = require("./middlewares/error");
 // import taxationRoutes from "./routes/taxation";
 const logger_1 = __importDefault(require("./utils/logger"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Middleware
@@ -23,6 +24,12 @@ app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use(passport_1.default.initialize());
 app.use((0, cookie_parser_1.default)()); // ✅ Enables cookie parsing
+app.use((0, cors_1.default)({
+    origin: "http://localhost:3000", // Allow frontend domain
+    credentials: true, // Allow cookies and authorization headers
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+}));
 // Global Error Handler
 app.use(error_1.errorHandler);
 // Routes

@@ -72,7 +72,7 @@ const loginUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
             secure: true,
-            sameSite: "strict",
+            sameSite: "lax", // Prevents CSRF
             path: "/auth/refresh",
         });
         res.json({ message: "Login successful", accessToken, user });

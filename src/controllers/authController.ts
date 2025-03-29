@@ -72,7 +72,7 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
  res.cookie("refreshToken", refreshToken, {
    httpOnly: true,
    secure: true, 
-   sameSite: "strict",
+   sameSite: "lax", // Prevents CSRF
    path: "/auth/refresh",
  });
 

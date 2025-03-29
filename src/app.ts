@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "cors";
+// Removed duplicate import of cors
 import dotenv from "dotenv";
 import passport from "passport";
 import authRoutes from "./routes/auth.routes";
@@ -11,6 +11,8 @@ import { errorHandler } from "./middlewares/error";
 // import taxationRoutes from "./routes/taxation";
 import logger from "./utils/logger"
 import cookieParser from "cookie-parser";
+import cors from "cors";
+
 
 dotenv.config();
 
@@ -21,6 +23,16 @@ app.use(express.json());
 app.use(cors());
 app.use(passport.initialize());
 app.use(cookieParser()); // ✅ Enables cookie parsing
+
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Allow frontend domain
+    credentials: true, // Allow cookies and authorization headers
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
+
 // Global Error Handler
 app.use(errorHandler);
 
