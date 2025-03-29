@@ -19,17 +19,23 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+app.use((0, cors_1.default)({
+    origin: "http://localhost:3000", // ✅ Replace '*' with frontend URL
+    credentials: true, // ✅ Allow credentials (cookies)
+    methods: "GET,POST,PUT,DELETE", // ✅ Allow necessary methods
+    allowedHeaders: "Content-Type,Authorization", // ✅ Allow headers
+}));
+// ✅ Ensure cookies and credentials are handled correctly
+app.use((_req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+});
 // Middleware
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.use(passport_1.default.initialize());
 app.use((0, cookie_parser_1.default)()); // ✅ Enables cookie parsing
-app.use((0, cors_1.default)({
-    origin: "http://localhost:3000", // Allow frontend domain
-    credentials: true, // Allow cookies and authorization headers
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-}));
 // Global Error Handler
 app.use(error_1.errorHandler);
 // Routes
