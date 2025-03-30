@@ -23,7 +23,7 @@ app.use(
   cors({
     origin: "https://billing-system-frontend-three.vercel.app", // ✅ Replace '*' with frontend URL
     credentials: true, // ✅ Allow credentials (cookies)
-    methods: ["GET","POST","PUT","DELETE"], // ✅ Allow necessary methods
+    methods: ["GET","POST","PUT","DELETE"], // ✅ Allow necessary method
     allowedHeaders: ["Content-Type", "Authorization"]// ✅ Allow headers
   })
 );
