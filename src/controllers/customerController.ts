@@ -100,3 +100,45 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
       );
     }
   };
+
+  // UPDATE customer Item (Admin & Superadmin)
+  export const updateCustomer = async (req: Request, res: Response, next:NextFunction) => {
+    try {
+      if (!req.user) {
+        return next(new AppError("Unauthorized - User not allowed", 401));
+    }
+    // Validate Tenant using middleware
+    const tenant = (req as any).tenant;
+    if (!tenant) {
+        return next(new AppError("Tenant validation failed", 400));
+    }
+  
+    const { customerId } = req.params; // Get Cutomer ID from params
+    const { name, email} = req.body; // Fields to update
+  
+    // Check if customer item exists and belongs to the correct tenant
+    const existingCustomer= await prisma.customer.findUnique({
+        where: { id: customerId },
+    });
+  
+    if (!existingCustomer) {
+        return next(new AppError("customer item not found", 404));
+    }
+  
+    if (existingCustomer.tenantId !== tenant.id) {
+        return next(new AppError("Forbidden - customer item does not belong to this tenant", 403));
+    }
+  
+     // Update customer item
+     const updatedCustomer = await prisma.customer.update({
+      where: { id: customerId },
+      data: { name, email },
+  });
+  
+      res.json(updatedCustomer);
+    } catch (error) {
+      next(error
+      );
+    }
+  };
+  

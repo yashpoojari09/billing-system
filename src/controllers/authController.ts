@@ -76,11 +76,15 @@ export const loginUser = async (req: Request, res: Response, next: NextFunction)
    path: "/auth/refresh",
  });
 
- res.json({ message: "Login successful", accessToken, user });
+
+// Remove misplaced response handling code
+res.json({ message: "Login successful", accessToken, user });
 } catch (error) {
- next(error);
+ console.error("Login error:", error);
 }
 };
+
+
 
 // ✅ UPDATE USER (Only Admin & Superadmin)
 export const updateUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
