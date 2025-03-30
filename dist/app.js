@@ -20,7 +20,7 @@ const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: "https://billing-system-frontend-three.vercel.app/", // ✅ Replace '*' with frontend URL
+    origin: "https://billing-system-frontend-three.vercel.app", // ✅ Replace '*' with frontend URL
     credentials: true, // ✅ Allow credentials (cookies)
     methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Allow necessary methods
     allowedHeaders: ["Content-Type", "Authorization"] // ✅ Allow headers
