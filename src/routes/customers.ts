@@ -2,7 +2,7 @@ import express from "express";
 import { authenticateJWT } from "../middlewares/auth";
 import { authorizeRoles } from "../middlewares/rbac";
 import { Role } from "@prisma/client";
-import { createCustomer, getCustomers, deleteCustomer } from "../controllers/customerController";
+import { createCustomer, getCustomers, deleteCustomer, updateCustomer } from "../controllers/customerController";
 import { validateTenant } from "../middlewares/auth";
 
 const router = express.Router({ mergeParams: true });
@@ -15,5 +15,13 @@ router.get("/", authenticateJWT, authorizeRoles([Role.ADMIN, Role.MANAGER, Role.
 
 // Only Superadmin can delete customers
 router.delete("/:customerId", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN]),validateTenant, deleteCustomer);
+
+router.put(
+  "/:customerId",
+  authenticateJWT,
+  authorizeRoles([Role.ADMIN, Role.SUPERADMIN]),
+  validateTenant,
+  updateCustomer
+);
 
 export default router;
