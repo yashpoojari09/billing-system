@@ -75,10 +75,11 @@ const loginUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function
             sameSite: "lax", // Prevents CSRF
             path: "/auth/refresh",
         });
+        // Remove misplaced response handling code
         res.json({ message: "Login successful", accessToken, user });
     }
     catch (error) {
-        next(error);
+        console.error("Login error:", error);
     }
 });
 exports.loginUser = loginUser;

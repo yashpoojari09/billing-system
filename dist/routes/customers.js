@@ -16,5 +16,7 @@ router.post("/", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Ro
 router.get("/", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.MANAGER, client_1.Role.SUPERADMIN]), auth_2.validateTenant, customerController_1.getCustomers);
 // Only Superadmin can delete customers
 router.delete("/:customerId", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN]), auth_2.validateTenant, customerController_1.deleteCustomer);
+router.get("/:customerId", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN]), auth_2.validateTenant, customerController_1.getCustomerById);
+router.put("/:customerId", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN]), auth_2.validateTenant, customerController_1.updateCustomer);
 exports.default = router;
 //# sourceMappingURL=customers.js.map

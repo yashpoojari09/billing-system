@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteCustomer = exports.getCustomers = exports.createCustomer = void 0;
+exports.updateCustomer = exports.getCustomerById = exports.deleteCustomer = exports.getCustomers = exports.createCustomer = void 0;
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
 const prisma = new client_1.PrismaClient();
@@ -90,4 +90,65 @@ const deleteCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
     }
 });
 exports.deleteCustomer = deleteCustomer;
+// GET Customer by ID (Only Admin & Manager)
+const getCustomerById = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        if (!req.user) {
+            return next(new error_1.AppError("Unauthorized", 401));
+        }
+        // Validate Tenant using middleware
+        const tenant = req.tenant;
+        if (!tenant) {
+            return next(new error_1.AppError("Tenant validation failed", 400));
+        }
+        const { customerId } = req.params; // Get Customer ID from params
+        // Check if customer exists and belongs to the correct tenant
+        const customer = yield prisma.customer.findFirst({
+            where: { id: customerId, tenantId: tenant.id },
+        });
+        if (!customer) {
+            return next(new error_1.AppError("Customer not found under this tenant", 404));
+        }
+        res.json(customer);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.getCustomerById = getCustomerById;
+// UPDATE customer Item (Admin & Superadmin)
+const updateCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        if (!req.user) {
+            return next(new error_1.AppError("Unauthorized - User not allowed", 401));
+        }
+        // Validate Tenant using middleware
+        const tenant = req.tenant;
+        if (!tenant) {
+            return next(new error_1.AppError("Tenant validation failed", 400));
+        }
+        const { customerId } = req.params; // Get Cutomer ID from params
+        const { name, email } = req.body; // Fields to update
+        // Check if customer item exists and belongs to the correct tenant
+        const existingCustomer = yield prisma.customer.findUnique({
+            where: { id: customerId },
+        });
+        if (!existingCustomer) {
+            return next(new error_1.AppError("customer item not found", 404));
+        }
+        if (existingCustomer.tenantId !== tenant.id) {
+            return next(new error_1.AppError("Forbidden - customer item does not belong to this tenant", 403));
+        }
+        // Update customer item
+        const updatedCustomer = yield prisma.customer.update({
+            where: { id: customerId },
+            data: { name, email },
+        });
+        res.json(updatedCustomer);
+    }
+    catch (error) {
+        next(error);
+    }
+});
+exports.updateCustomer = updateCustomer;
 //# sourceMappingURL=customerController.js.map
