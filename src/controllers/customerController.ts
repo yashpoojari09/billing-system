@@ -142,3 +142,33 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
     }
   };
   
+
+  // GET Customer by ID (Only Admin & Manager)
+  export const getCustomerById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      if (!req.user) {
+        return next(new AppError("Unauthorized", 401));
+      }
+
+      // Validate Tenant using middleware
+      const tenant = (req as any).tenant;
+      if (!tenant) {
+        return next(new AppError("Tenant validation failed", 400));
+      }
+
+      const { customerId } = req.params; // Get Customer ID from params
+
+      // Check if customer exists and belongs to the correct tenant
+      const customer = await prisma.customer.findFirst({
+        where: { id: customerId, tenantId: tenant.id },
+      });
+
+      if (!customer) {
+        return next(new AppError("Customer not found under this tenant", 404));
+      }
+
+      res.json(customer);
+    } catch (error) {
+      next(error);
+    }
+  };
