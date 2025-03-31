@@ -16,6 +16,14 @@ router.get("/", authenticateJWT, authorizeRoles([Role.ADMIN, Role.MANAGER, Role.
 // Only Superadmin can delete customers
 router.delete("/:customerId", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN]),validateTenant, deleteCustomer);
 
+router.get(
+    "/:customerId",
+    authenticateJWT,
+    authorizeRoles([Role.ADMIN, Role.SUPERADMIN]),
+    validateTenant,
+    updateCustomer
+  );
+
 router.put(
   "/:customerId",
   authenticateJWT,

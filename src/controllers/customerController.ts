@@ -113,7 +113,7 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
         return next(new AppError("Tenant validation failed", 400));
     }
   
-    const { customerId } = req.params; // Get Cutomer ID from params
+    const { customerId } = req.body; // Get Cutomer ID from params
     const { name, email} = req.body; // Fields to update
   
     // Check if customer item exists and belongs to the correct tenant
