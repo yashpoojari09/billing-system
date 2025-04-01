@@ -154,6 +154,7 @@ export const refreshAccessToken = async (req: Request, res: Response, next: Next
          secure: true, // Only send over HTTPS
          sameSite: "strict",
          path: "/auth/refresh",
+         maxAge: 24 * 60 * 60 * 1000,
        });
    
        res.json({ accessToken });
