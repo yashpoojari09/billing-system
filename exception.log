@@ -1,0 +1,358 @@
+2025-04-02T14:19:20.872Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m32[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m32[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m55[0m:[93m9[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m55[0m     if (product.stock < quantity) {
+[7m  [0m [91m        ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m56[0m:[93m61[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m56[0m       res.status(400).json({ error: `Not enough stock for ${product.name}` });
+[7m  [0m [91m                                                            ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m64[0m:[93m37[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m64[0m     const productTotal = quantity * product.price;
+[7m  [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m72[0m:[93m21[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m72[0m         customerId: customer.id,
+[7m  [0m [91m                    ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m75[0m         price: product.price,
+[7m  [0m [91m               ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m84[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m84[0m       data: { stock: product.stock - quantity },
+[7m  [0m [91m                     ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m32[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m32[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m55[0m:[93m9[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m55[0m     if (product.stock < quantity) {
+[7m  [0m [91m        ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m56[0m:[93m61[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m56[0m       res.status(400).json({ error: `Not enough stock for ${product.name}` });
+[7m  [0m [91m                                                            ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m64[0m:[93m37[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m64[0m     const productTotal = quantity * product.price;
+[7m  [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m72[0m:[93m21[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m72[0m         customerId: customer.id,
+[7m  [0m [91m                    ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m75[0m         price: product.price,
+[7m  [0m [91m               ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m84[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'product' is possibly 'null'.
+
+[7m84[0m       data: { stock: product.stock - quantity },
+[7m  [0m [91m                     ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-02T14:51:52.726Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m32[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m32[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m72[0m:[93m21[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m72[0m         customerId: customer.id,
+[7m  [0m [91m                    ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m32[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m32[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m72[0m:[93m21[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m72[0m         customerId: customer.id,
+[7m  [0m [91m                    ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-02T15:30:51.067Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m33[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m33[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m33[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m33[0m       const customer = await prisma.customer.create({
+[7m  [0m [91m            ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:11:14.558Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS6133: [0m'createCustomerInvoice' is declared but its value is never read.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, createCustomerInvoice } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS6133: [0m'createCustomerInvoice' is declared but its value is never read.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, createCustomerInvoice } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:11:26.155Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m131[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:customerId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m131[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:customerId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                  ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:11:34.183Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m119[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m119[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                      ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:11:46.082Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m129[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:tenantId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m129[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:tenantId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:12:20.074Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createCustomerInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createCustomerInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createCustomerInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createCustomerInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:12:29.193Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS6133: [0m'createInvoice' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m129[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:tenantId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS6133: [0m'createInvoice' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m37[0m:[93m129[0m - [91merror[0m[90m TS2304: [0mCannot find name 'createCustomerInvoice'.
+
+[7m37[0m router.post("/:tenantId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createCustomerInvoice);
+[7m  [0m [91m                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:12:38.980Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:12:53.811Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:13:08.626Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-03T11:13:17.922Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m82[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'createInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                 ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

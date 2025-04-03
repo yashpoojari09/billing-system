@@ -13,7 +13,7 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
     if (!req.user) {
       return next (new AppError("Unauthorized - User not available", 401));
    }
-   const { name, email } = req.body;
+   const { name, email} = req.body;
 
     // ✅ Get tenant data from the request (set by validateTenant middleware)
     const {id:tenantId}= (req as any).tenant;

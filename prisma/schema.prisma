@@ -36,6 +36,7 @@ model Tenant {
   customers  Customer[]
   inventory  Inventory[]
   taxation   Taxation[] 
+  invoice    Invoice[] // Link Tenant to invoice
   createdAt     DateTime @default(now())  // Creation Timestamp
   updatedAt     DateTime @updatedAt @default(now()) // Auto-updated on changes
 }
@@ -44,17 +45,22 @@ model Customer {
   id        String  @id @default(uuid())
   name      String
   email     String  
+  phone     String  @default("Not Provided") // <-- Set default value
   tenantId  String
   tenant    Tenant  @relation(fields: [tenantId], references: [id])
+  invoice   Invoice[]
 }
 
 model Inventory {
   id        String  @id @default(uuid())
   name      String
-  price     Float
+  price     Float   
   stock     Int
   tenantId  String
   tenant    Tenant  @relation(fields: [tenantId], references: [id])
+  invoice   InvoiceItem[] 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt   @default(now())// Track stock updates
 }
 
 model Taxation {
@@ -63,6 +69,34 @@ model Taxation {
   region    String
   tenantId  String
   tenant    Tenant  @relation(fields: [tenantId], references: [id])
+}
+
+model Invoice {
+  id          String    @id @default(uuid())
+  customerId  String
+  customer    Customer  @relation(fields: [customerId], references: [id])
+  tenantId    String
+  tenant      Tenant       @relation(fields: [tenantId], references: [id])
+  totalPrice  Float
+  totalTax    Float
+  createdAt   DateTime @default(now())  
+  updatedAt   DateTime @default(now())
+  items       InvoiceItem[] // Multiple products per bill
+
+}
+
+
+model InvoiceItem {
+  id          String    @id @default(uuid())
+  invoiceId   String
+  invoice     Invoice   @relation(fields: [invoiceId], references: [id])
+  productId   String
+  product     Inventory @relation(fields: [productId], references: [id])
+  quantity    Int
+  price       Float
+  totalPrice  Float
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt @default(now())  // Track changes to purchased products
 }
 
 enum Role {

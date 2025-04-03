@@ -24,6 +24,7 @@ router.get(
     getCustomerById
   );
 
+
 router.put(
   "/:customerId",
   authenticateJWT,
