@@ -171,6 +171,25 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
       );
     }
   };
-  
 
+  
+  export const emailHandler = async (req: Request, res: Response):Promise<any> =>{
+    if (req.method !== "GET") return res.status(405).json({ error: "Method Not Allowed" });
+  
+    try {
+      const { email } = req.query;
+      if (!email) return res.status(400).json({ error: "Email is required" });
+  
+      const customer = await prisma.customer.findFirst({
+        where: { email: String(email) },
+      });
+  
+      if (!customer) return res.status(404).json({ error: "Customer not found" });
+  
+      return res.json(customer);
+    } catch (error) {
+      console.error("Error fetching customer:", error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
   

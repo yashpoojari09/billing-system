@@ -2,7 +2,7 @@ import express from "express";
 import { authenticateJWT } from "../middlewares/auth";
 import { authorizeRoles } from "../middlewares/rbac";
 import { Role } from "@prisma/client";
-import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById } from "../controllers/customerController";
+import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, emailHandler } from "../controllers/customerController";
 import { validateTenant } from "../middlewares/auth";
 
 const router = express.Router({ mergeParams: true });
@@ -32,5 +32,8 @@ router.put(
   validateTenant,
   updateCustomer
 );
+
+router.get("/email", authenticateJWT, authorizeRoles([Role.ADMIN, Role.MANAGER, Role.SUPERADMIN]),validateTenant, emailHandler);
+
 
 export default router;
