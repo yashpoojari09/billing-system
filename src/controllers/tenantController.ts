@@ -193,3 +193,76 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+
+///Invoice Preview
+export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+  try {
+    const { name, email, phone, products } = req.body;
+
+    if (!name || !email || !phone || !products || products.length === 0) {
+      return res.status(400).json({ error: "All fields are required, including products." });
+    }
+
+    // Get tenant data from the request (set by validateTenant middleware)
+    const { id: tenantId } = (req as any).tenant;
+
+    // We'll simulate invoice calculation here (without updating inventory)
+    let totalPrice = 0;
+    let totalTax = 0;
+    let invoiceItems = [];
+
+    for (const product of products) {
+      const { productId, quantity } = product;
+
+      // Fetch product from inventory
+      const inventoryItem = await prisma.inventory.findUnique({
+        where: { id: productId },
+      });
+
+      if (!inventoryItem) {
+        return res.status(404).json({ error: `Product with ID ${productId} not found.` });
+      }
+
+      if (inventoryItem.stock < quantity) {
+        return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
+      }
+
+      // Calculate product total price and tax
+      const productTotalPrice = inventoryItem.price * quantity;
+      const taxInfo = await prisma.taxation.findFirst({ where: { tenantId } });
+      const taxRate = taxInfo ? taxInfo.taxRate : 0;
+      const productTax = (taxRate / 100) * productTotalPrice;
+
+      totalPrice += productTotalPrice;
+      totalTax += productTax;
+
+      invoiceItems.push({
+        productId,
+        productName: inventoryItem.name,
+        quantity,
+        price: inventoryItem.price,
+        totalPrice: productTotalPrice,
+      });
+    }
+
+    // Generate a preview invoice number (for display only)
+    const invoiceNumber = `PREVIEW-${Date.now()}`;
+
+    // Build preview invoice object
+    const invoicePreview = {
+      invoiceNumber,
+      createdAt: new Date(), // current date/time
+      customer: { name, email, phone },
+      items: invoiceItems,
+      totalPrice,
+      totalTax,
+      grandTotal: totalPrice + totalTax,
+    };
+
+    return res.status(200).json({ invoicePreview });
+  } catch (error) {
+    console.error("Error previewing invoice:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
