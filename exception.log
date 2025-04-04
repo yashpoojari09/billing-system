@@ -1830,3 +1830,101 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T09:41:34.592Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m107[0m:[93m10[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m107[0m     if (!customer) {
+[7m   [0m [91m         ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m108[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m108[0m       customer = await prisma.customer.create({
+[7m   [0m [91m      ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m169[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m107[0m:[93m10[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m107[0m     if (!customer) {
+[7m   [0m [91m         ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m108[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m108[0m       customer = await prisma.customer.create({
+[7m   [0m [91m      ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m169[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T09:41:47.296Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m107[0m:[93m10[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m107[0m     if (!customer) {
+[7m   [0m [91m         ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m108[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m108[0m       customer = await prisma.customer.create({
+[7m   [0m [91m      ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m169[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m107[0m:[93m10[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m107[0m     if (!customer) {
+[7m   [0m [91m         ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m108[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m108[0m       customer = await prisma.customer.create({
+[7m   [0m [91m      ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m169[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T09:41:59.942Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m158[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m158[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m158[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m158[0m         customerId: customer.id,
+[7m   [0m [91m                    ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
