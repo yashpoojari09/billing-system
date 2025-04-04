@@ -39,31 +39,55 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
  }
 };
 
-// READ Customers under Tenant (Only Admin & Manager)
-export const getCustomers = async (req: Request, res: Response, next: NextFunction ): Promise<void> => {
-    if (!req.user) {
-        return next(new AppError("Unauthorized", 401));
-       
-    }
-  
-    try {
-    
+export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  if (!req.user) {
+      return next(new AppError("Unauthorized", 401));
+  }
 
-    // ✅ Get tenant data from the request (set by validateTenant middleware)
-    const {id:tenantId}= (req as any).tenant;
-    
+  try {
+      // ✅ Get tenant data from the request (set by validateTenant middleware)
+      const { id: tenantId } = (req as any).tenant;
+      const { email } = req.query;
+
+      // ✅ If email is provided, search for a specific customer
+      if (email && typeof email === "string" && email.trim()) {
+          console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+
+          const customer = await prisma.customer.findFirst({
+              where: {
+                  email: email.trim().toLowerCase(),
+                  tenantId: tenantId, // Ensure the customer belongs to this tenant
+              },
+              select: {
+                  id: true,
+                  name: true,
+                  email: true,
+                  phone: true,
+              },
+          });
+
+          // ❌ If no customer found, return 404
+          if (!customer) {
+              return next(new AppError("Customer not found under this tenant", 404));
+          }
+
+           res.status(200).json(customer);
+           return;
+      }
+
+      // ✅ If no email is provided, return all customers
+      console.log("📋 Fetching all customers under tenant:", tenantId);
+
       const customers = await prisma.customer.findMany({
-        where: { tenantId },
+          where: { tenantId },
       });
-  
-      res.json(customers);
-      return;
-    } catch (error) {
-      next(error
-      );
-    }
-  };
-  
+
+      res.status(200).json(customers);
+  } catch (error) {
+      console.error("❌ Error in getCustomers:", error);
+      next(error);
+  }
+};
 
   // DELETE Customer Under Tenant (Only Superadmin)
   export const deleteCustomer = async (req: Request, res: Response, next: NextFunction) => {
@@ -173,48 +197,4 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
       );
     }
   };
-
-
-  export const emailHandler = async (req: Request, res: Response): Promise<void> => {
-    try {
-        const { id: tenantId } = (req as any).tenant; // Extract tenant from middleware
-        const { email } = req.query;
-
-        if (typeof email !== "string" || !email.trim()) {
-            res.status(400).json({ message: "A valid email query parameter is required." });
-            return;
-        }
-
-        console.log("🔹 Searching for customer:");
-        console.log("➡️ Tenant ID:", tenantId);
-        console.log("➡️ Email:", email.trim().toLowerCase());
-
-        const customers = await prisma.customer.findMany({
-            where: {
-                tenantId,
-                email: {
-                    equals: email.trim().toLowerCase(),
-                    mode: "insensitive",
-                },
-            },
-            select: {
-                id: true,
-                name: true,
-                email: true,
-                phone: true,
-            },
-        });
-
-        if (customers.length === 0) {
-            console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
-            res.status(404).json({ error: "Customer not found under this tenant." });
-            return;
-        }
-
-        console.log("✅ Customer found:", customers);
-        res.status(200).json(customers);
-    } catch (error: any) {
-        console.error("🚨 Error fetching customer:", error.message);
-        res.status(500).json({ error: "Internal Server Error." });
-    }
-};
+  

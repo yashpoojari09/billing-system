@@ -1340,3 +1340,493 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:02:44.424Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m192[0m         const customer = await prisma.customer.findFirst({
+[7m   [0m [91m              ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m205[0m         if (customers.length === 0) {
+[7m   [0m [91m            ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m42[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m211[0m         console.log("✅ Customer found:", customers);
+[7m   [0m [91m                                         ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m212[0m         res.status(200).json(customers);
+[7m   [0m [91m                             ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m - [91merror[0m[90m TS6133: [0m'customer' is declared but its value is never read.
+
+[7m192[0m         const customer = await prisma.customer.findFirst({
+[7m   [0m [91m              ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m205[0m         if (customers.length === 0) {
+[7m   [0m [91m            ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m42[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m211[0m         console.log("✅ Customer found:", customers);
+[7m   [0m [91m                                         ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m212[0m         res.status(200).json(customers);
+[7m   [0m [91m                             ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:02:54.843Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m                     ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m42[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m211[0m         console.log("✅ Customer found:", customers);
+[7m   [0m [91m                                         ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m212[0m         res.status(200).json(customers);
+[7m   [0m [91m                             ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m                     ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m42[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m211[0m         console.log("✅ Customer found:", customers);
+[7m   [0m [91m                                         ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'customer'?
+
+[7m212[0m         res.status(200).json(customers);
+[7m   [0m [91m                             ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m15[0m
+    [7m192[0m         const customer = await prisma.customer.findFirst({
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'customer' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:03:13.842Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m                     ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS18047: [0m'customer' is possibly 'null'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m            ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m205[0m:[93m22[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m205[0m         if (customer.length === 0) {
+[7m   [0m [91m                     ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:03:54.418Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m215[0m         console.log("✅ Customer found:", customer);
+[7m   [0m [91m                                         ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m216[0m         res.status(200).json(customer);
+[7m   [0m [91m                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m219[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m219[0m         res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m215[0m         console.log("✅ Customer found:", customer);
+[7m   [0m [91m        ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m217[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m217[0m     } catch (error: any) {
+[7m   [0m [91m      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m221[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m221[0m };
+[7m   [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m215[0m         console.log("✅ Customer found:", customer);
+[7m   [0m [91m                                         ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m30[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m216[0m         res.status(200).json(customer);
+[7m   [0m [91m                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m219[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m219[0m         res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m215[0m         console.log("✅ Customer found:", customer);
+[7m   [0m [91m        ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m217[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m217[0m     } catch (error: any) {
+[7m   [0m [91m      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m221[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m221[0m };
+[7m   [0m [91m~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:04:14.755Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m8[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m213[0m       }
+[7m   [0m [91m       [0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m8[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m213[0m       }
+[7m   [0m [91m       [0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:04:29.516Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m214[0m             console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
+[7m   [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m85[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m214[0m             console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
+[7m   [0m [91m                                                                                    ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m214[0m             console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
+[7m   [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m85[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m214[0m             console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
+[7m   [0m [91m                                                                                    ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:04:37.924Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m12[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m214[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m85[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+    [7m   [0m [96m                                                                                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m12[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m214[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m85[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+    [7m   [0m [96m                                                                                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:04:57.329Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m214[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m85[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+    [7m   [0m [96m                                                                                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m214[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m85[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+    [7m   [0m [96m                                                                                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:05:25.502Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m214[0m     res.status(200).json(customer);
+[7m   [0m [91m                         ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m218[0m         res.status(500).json({ error: "Internal server error." })
+[7m   [0m [91m        ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m216[0m     } catch (error) {
+[7m   [0m [91m      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m66[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m218[0m         res.status(500).json({ error: "Internal server error." })
+[7m   [0m [91m                                                                 [0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m21[0m
+    [7m216[0m     } catch (error) {
+    [7m   [0m [96m                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m214[0m     res.status(200).json(customer);
+[7m   [0m [91m                         ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m218[0m         res.status(500).json({ error: "Internal server error." })
+[7m   [0m [91m        ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m216[0m     } catch (error) {
+[7m   [0m [91m      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m66[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m218[0m         res.status(500).json({ error: "Internal server error." })
+[7m   [0m [91m                                                                 [0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m21[0m
+    [7m216[0m     } catch (error) {
+    [7m   [0m [96m                    ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:30:46.869Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/customerController"' has no exported member 'emailHandler'.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, emailHandler } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/customerController"' has no exported member 'emailHandler'.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, emailHandler } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:30:53.362Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/customerController"' has no exported member 'emailHandler'.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, emailHandler } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/customerController"' has no exported member 'emailHandler'.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, emailHandler } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T08:39:26.169Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2724: [0m'"../controllers/customerController"' has no exported member named 'getCustomerByEmail'. Did you mean 'getCustomerById'?
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, getCustomerByEmail } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m131[0m:[93m16[0m
+    [7m131[0m   export const getCustomerById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    [7m   [0m [96m               ~~~~~~~~~~~~~~~[0m
+    'getCustomerById' is declared here.
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS6133: [0m'getCustomerByEmail' is declared but its value is never read.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, getCustomerByEmail } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS2724: [0m'"../controllers/customerController"' has no exported member named 'getCustomerByEmail'. Did you mean 'getCustomerById'?
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, getCustomerByEmail } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m131[0m:[93m16[0m
+    [7m131[0m   export const getCustomerById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    [7m   [0m [96m               ~~~~~~~~~~~~~~~[0m
+    'getCustomerById' is declared here.
+[96msrc/routes/customers.ts[0m:[93m5[0m:[93m89[0m - [91merror[0m[90m TS6133: [0m'getCustomerByEmail' is declared but its value is never read.
+
+[7m5[0m import { createCustomer, getCustomers, deleteCustomer, updateCustomer, getCustomerById, getCustomerByEmail } from "../controllers/customerController";
+[7m [0m [91m                                                                                        ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
