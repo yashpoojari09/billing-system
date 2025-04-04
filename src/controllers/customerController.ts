@@ -14,14 +14,15 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
       return next (new AppError("Unauthorized - User not available", 401));
    }
    const { name, email, phone} = req.body;
+   if (!name || !email || !phone) {
+    return next(new AppError("Name and email are required", 400));
+  }
+
 
     // ✅ Get tenant data from the request (set by validateTenant middleware)
     const {id:tenantId}= (req as any).tenant;
 
-    if (!name || !email || phone) {
-      return next(new AppError("Name and email are required", 400));
-    }
-
+   
     // ✅ Create customer linked to the tenant
     const customer = await prisma.customer.create({
       data: {
