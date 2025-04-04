@@ -145,7 +145,7 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
     }
   
     const { customerId } = req.params; // Get Cutomer ID from params
-    const { name, email} = req.body; // Fields to update
+    const { name, email, phone} = req.body; // Fields to update
   
     // Check if customer item exists and belongs to the correct tenant
     const existingCustomer= await prisma.customer.findUnique({
@@ -163,7 +163,7 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
      // Update customer item
      const updatedCustomer = await prisma.customer.update({
       where: { id: customerId },
-      data: { name, email },
+      data: { name, email, phone },
   });
   
       res.json(updatedCustomer);
