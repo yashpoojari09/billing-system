@@ -174,35 +174,47 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
     }
   };
 
-  
-  export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+
+  export const emailHandler = async (req: Request, res: Response): Promise<void> => {
     try {
-      const tenant = (req as any).tenant;
-      if (!tenant) {
-          return next(new AppError("Tenant validation failed", 400));
-      }
-      // Ensure email is provided in query parameters
-      const email = req.query.email as string;
-      if (!email) {
-        return res.status(400).json({ error: "Email is required" });
-      }
-  
-      // Search for customer by email
-      const customer = await prisma.customer.findFirst({
-        where: { email: email.trim() },
-      });
-      console.log("Customer found:", customer); // Debugging Step 
-  
-      // If no customer found, return 404
-      if (!customer) {
-        return res.status(404).json({ error: "Customer not found" });
-      }
-  
-      // Return customer data
-      return res.status(200).json(customer);
+        const { id: tenantId } = (req as any).tenant; // Extract tenant from middleware
+        const { email } = req.query;
+
+        if (typeof email !== "string" || !email.trim()) {
+            res.status(400).json({ message: "A valid email query parameter is required." });
+            return;
+        }
+
+        console.log("🔹 Searching for customer:");
+        console.log("➡️ Tenant ID:", tenantId);
+        console.log("➡️ Email:", email.trim().toLowerCase());
+
+        const customers = await prisma.customer.findMany({
+            where: {
+                tenantId,
+                email: {
+                    equals: email.trim().toLowerCase(),
+                    mode: "insensitive",
+                },
+            },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                phone: true,
+            },
+        });
+
+        if (customers.length === 0) {
+            console.error(`❌ Customer not found for email: ${email} under tenant: ${tenantId}`);
+            res.status(404).json({ error: "Customer not found under this tenant." });
+            return;
+        }
+
+        console.log("✅ Customer found:", customers);
+        res.status(200).json(customers);
     } catch (error: any) {
-      console.error("Error fetching customer:", error.message);
-      return res.status(500).json({ error: "Internal Server Error" });
+        console.error("🚨 Error fetching customer:", error.message);
+        res.status(500).json({ error: "Internal Server Error." });
     }
-  };
-  
+};

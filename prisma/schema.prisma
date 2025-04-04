@@ -8,95 +8,93 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  name     String
-  email    String  @unique
-  password String
-  role     Role
-  tenantId String?
-  tenant   Tenant? @relation(fields: [tenantId], references: [id])
-  refreshTokens RefreshToken[] //to establish the relation between refreshTokens
-  resetToken  String?  // Optional field to store the reset token
-  resetTokenExpiry DateTime? // Optional field to store token expiration time
+  id               String         @id @default(uuid())
+  email            String         @unique
+  password         String
+  name             String
+  tenantId         String?
+  role             Role
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  refreshTokens    RefreshToken[]
+  tenant           Tenant?        @relation(fields: [tenantId], references: [id])
 }
+
 model RefreshToken {
   id        String   @id @default(uuid())
   userId    String
   token     String   @unique
   createdAt DateTime @default(now())
-
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Tenant {
-  id         String   @id @default(uuid())
-  name       String   @unique
-  category   String   @default("General")  // Add default value
-  users      User[]
-  customers  Customer[]
-  inventory  Inventory[]
-  taxation   Taxation[] 
-  invoice    Invoice[] // Link Tenant to invoice
-  createdAt     DateTime @default(now())  // Creation Timestamp
-  updatedAt     DateTime @updatedAt @default(now()) // Auto-updated on changes
+  id        String      @id @default(uuid())
+  name      String      @unique
+  category  String      @default("General")
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @default(now()) @updatedAt
+  customers Customer[]
+  inventory Inventory[]
+  invoice   Invoice[]
+  taxation  Taxation[]
+  users     User[]
 }
 
 model Customer {
-  id        String  @id @default(uuid())
-  name      String
-  email     String  
-  phone     String  @default("Not Provided") // <-- Set default value
-  tenantId  String
-  tenant    Tenant  @relation(fields: [tenantId], references: [id])
-  invoice   Invoice[]
+  id       String    @id @default(uuid())
+  name     String
+  email    String    @unique
+  tenantId String
+  phone    String?
+  tenant   Tenant    @relation(fields: [tenantId], references: [id])
+  invoice  Invoice[]
 }
 
 model Inventory {
-  id        String  @id @default(uuid())
+  id        String        @id @default(uuid())
   name      String
-  price     Float   
+  price     Float
   stock     Int
   tenantId  String
-  tenant    Tenant  @relation(fields: [tenantId], references: [id])
-  invoice   InvoiceItem[] 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt   @default(now())// Track stock updates
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @default(now()) @updatedAt
+  tenant    Tenant        @relation(fields: [tenantId], references: [id])
+  invoice   InvoiceItem[]
 }
 
 model Taxation {
-  id        String  @id @default(uuid())
-  taxRate   Float
-  region    String
-  tenantId  String
-  tenant    Tenant  @relation(fields: [tenantId], references: [id])
+  id       String @id @default(uuid())
+  taxRate  Float
+  region   String
+  tenantId String
+  tenant   Tenant @relation(fields: [tenantId], references: [id])
 }
 
 model Invoice {
-  id          String    @id @default(uuid())
-  customerId  String
-  customer    Customer  @relation(fields: [customerId], references: [id])
-  tenantId    String
-  tenant      Tenant       @relation(fields: [tenantId], references: [id])
-  totalPrice  Float
-  totalTax    Float
-  createdAt   DateTime @default(now())  
-  updatedAt   DateTime @default(now())
-  items       InvoiceItem[] // Multiple products per bill
-
+  id         String        @id @default(uuid())
+  customerId String
+  tenantId   String
+  totalPrice Float
+  totalTax   Float
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @default(now())
+  customer   Customer      @relation(fields: [customerId], references: [id])
+  tenant     Tenant        @relation(fields: [tenantId], references: [id])
+  items      InvoiceItem[]
 }
 
-
 model InvoiceItem {
-  id          String    @id @default(uuid())
-  invoiceId   String
-  invoice     Invoice   @relation(fields: [invoiceId], references: [id])
-  productId   String
-  product     Inventory @relation(fields: [productId], references: [id])
-  quantity    Int
-  price       Float
-  totalPrice  Float
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt @default(now())  // Track changes to purchased products
+  id         String    @id @default(uuid())
+  invoiceId  String
+  productId  String
+  quantity   Int
+  price      Float
+  totalPrice Float
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @default(now()) @updatedAt
+  invoice    Invoice   @relation(fields: [invoiceId], references: [id])
+  product    Inventory @relation(fields: [productId], references: [id])
 }
 
 enum Role {

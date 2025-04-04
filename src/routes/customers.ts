@@ -33,7 +33,7 @@ router.put(
   updateCustomer
 );
 
-router.get("/search", authenticateJWT, authorizeRoles([Role.ADMIN, Role.MANAGER, Role.SUPERADMIN]),validateTenant, emailHandler);
+router.get("/", authenticateJWT, authorizeRoles([Role.ADMIN, Role.MANAGER, Role.SUPERADMIN]),validateTenant, emailHandler);
 
 
 export default router;

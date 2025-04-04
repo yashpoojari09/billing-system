@@ -378,3 +378,965 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T05:51:14.113Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenantId'. Did you mean 'tenant'?
+
+[7m192[0m         where: { tenantId,
+[7m   [0m [91m                 ~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m180[0m:[93m13[0m
+    [7m180[0m       const tenant = (req as any).tenant;
+    [7m   [0m [96m            ~~~~~~[0m
+    'tenant' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenantId'. Did you mean 'tenant'?
+
+[7m192[0m         where: { tenantId,
+[7m   [0m [91m                 ~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m180[0m:[93m13[0m
+    [7m180[0m       const tenant = (req as any).tenant;
+    [7m   [0m [96m            ~~~~~~[0m
+    'tenant' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T05:51:40.683Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m181[0m:[93m12[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenant'. Did you mean 'tenantId'?
+
+[7m181[0m       if (!tenant) {
+[7m   [0m [91m           ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m180[0m:[93m15[0m
+    [7m180[0m       const { tenantId } = req.params;
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'tenantId' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m181[0m:[93m12[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenant'. Did you mean 'tenantId'?
+
+[7m181[0m       if (!tenant) {
+[7m   [0m [91m           ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m180[0m:[93m15[0m
+    [7m180[0m       const { tenantId } = req.params;
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'tenantId' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T05:58:48.839Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Customer"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Customer"> | undefined'.
+
+[7m191[0m             email: email,
+[7m   [0m [91m            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Customer"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Customer"> | undefined'.
+
+[7m191[0m             email: email,
+[7m   [0m [91m            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:00:53.859Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'trim' does not exist on type 'string | ParsedQs | (string | ParsedQs)[]'.
+  Property 'trim' does not exist on type '(string | ParsedQs)[]'.
+
+[7m191[0m             email: email.trim();
+[7m   [0m [91m                         ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m32[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m191[0m             email: email.trim();
+[7m   [0m [91m                               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'trim' does not exist on type 'string | ParsedQs | (string | ParsedQs)[]'.
+  Property 'trim' does not exist on type '(string | ParsedQs)[]'.
+
+[7m191[0m             email: email.trim();
+[7m   [0m [91m                         ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m191[0m:[93m32[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m191[0m             email: email.trim();
+[7m   [0m [91m                               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:01:07.426Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m67[0m - [91merror[0m[90m TS6133: [0m'next' is declared but its value is never read.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+[7m   [0m [91m                                                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m103[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
+    [7m   [0m [96m                                                                                                      ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:01:48.345Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m207[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m207[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m208[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:05:48.856Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m209[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m209[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:06:21.152Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m209[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   };
+[7m   [0m [91m   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m209[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m84[0m
+    [7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:06:41.540Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   }
+[7m   [0m [91m   [0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   }
+[7m   [0m [91m   [0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:07:09.582Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   }}
+[7m   [0m [91m   ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m4[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m208[0m   }}
+[7m   [0m [91m   ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:10:30.298Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'mode' does not exist in type 'CustomerWhereInput'.
+
+[7m192[0m           mode: 'insensitive',
+[7m   [0m [91m          ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'mode' does not exist in type 'CustomerWhereInput'.
+
+[7m192[0m           mode: 'insensitive',
+[7m   [0m [91m          ~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:10:50.909Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m193[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'mode' does not exist in type 'CustomerWhereInput'.
+
+[7m193[0m           mode: 'insensitive',
+[7m   [0m [91m          ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m193[0m:[93m11[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'mode' does not exist in type 'CustomerWhereInput'.
+
+[7m193[0m           mode: 'insensitive',
+[7m   [0m [91m          ~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T06:11:23.515Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m189[0m:[93m30[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m189[0m       const customer = await prisma.customer.findFirst({
+[7m   [0m [91m                             ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m199[0m:[93m13[0m
+    [7m199[0m       const prisma = new PrismaClient({
+    [7m   [0m [96m            ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m189[0m:[93m30[0m - [91merror[0m[90m TS2454: [0mVariable 'prisma' is used before being assigned.
+
+[7m189[0m       const customer = await prisma.customer.findFirst({
+[7m   [0m [91m                             ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m189[0m:[93m30[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m189[0m       const customer = await prisma.customer.findFirst({
+[7m   [0m [91m                             ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m199[0m:[93m13[0m
+    [7m199[0m       const prisma = new PrismaClient({
+    [7m   [0m [96m            ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m189[0m:[93m30[0m - [91merror[0m[90m TS2454: [0mVariable 'prisma' is used before being assigned.
+
+[7m189[0m       const customer = await prisma.customer.findFirst({
+[7m   [0m [91m                             ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:06:39.089Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m185[0m:[93m31[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m185[0m     console.log("Tenant ID:", tenantId);
+[7m   [0m [91m                              ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m185[0m:[93m31[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m185[0m     console.log("Tenant ID:", tenantId);
+[7m   [0m [91m                              ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:08:21.770Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m193[0m:[93m25[0m - [91merror[0m[90m TS18048: [0m'email' is possibly 'undefined'.
+
+[7m193[0m                 equals: email.toString().trim(),
+[7m   [0m [91m                        ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m193[0m:[93m25[0m - [91merror[0m[90m TS18048: [0m'email' is possibly 'undefined'.
+
+[7m193[0m                 equals: email.toString().trim(),
+[7m   [0m [91m                        ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:10:24.995Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m178[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m186[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m186[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m210[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m213[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m216[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m178[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m186[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m186[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m210[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m213[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m216[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:10:44.641Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'PrismaClient'.
+
+[7m2[0m import { PrismaClient } from "@prisma/client";
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m176[0m:[93m12[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'PrismaClient'.
+
+[7m176[0m   import { PrismaClient } from "@prisma/client";
+[7m   [0m [91m           ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m179[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m179[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m187[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m187[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m214[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m217[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m217[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m2[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'PrismaClient'.
+
+[7m2[0m import { PrismaClient } from "@prisma/client";
+[7m [0m [91m         ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m176[0m:[93m12[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'PrismaClient'.
+
+[7m176[0m   import { PrismaClient } from "@prisma/client";
+[7m   [0m [91m           ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m179[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m179[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m187[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m187[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m214[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m217[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m217[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:11:23.094Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m176[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m176[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m184[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m184[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m208[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m214[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m176[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m176[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m184[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m184[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m208[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m208[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m214[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:11:32.800Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m177[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m177[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m185[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m185[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m209[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m212[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m6[0m:[93m7[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m6[0m const prisma = new PrismaClient();
+[7m [0m [91m      ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m177[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'prisma'.
+
+[7m177[0m   const prisma = new PrismaClient({ log: ["query", "info", "warn", "error"] });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m185[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m185[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m209[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m212[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:11:52.325Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m196[0m:[93m29[0m - [91merror[0m[90m TS18048: [0m'email' is possibly 'undefined'.
+
+[7m196[0m                     equals: email.trim(),
+[7m   [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m196[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'trim' does not exist on type 'string | ParsedQs | (string | ParsedQs)[]'.
+  Property 'trim' does not exist on type '(string | ParsedQs)[]'.
+
+[7m196[0m                     equals: email.trim(),
+[7m   [0m [91m                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m209[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m212[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m196[0m:[93m29[0m - [91merror[0m[90m TS18048: [0m'email' is possibly 'undefined'.
+
+[7m196[0m                     equals: email.trim(),
+[7m   [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m196[0m:[93m35[0m - [91merror[0m[90m TS2339: [0mProperty 'trim' does not exist on type 'string | ParsedQs | (string | ParsedQs)[]'.
+  Property 'trim' does not exist on type '(string | ParsedQs)[]'.
+
+[7m196[0m                     equals: email.trim(),
+[7m   [0m [91m                                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m209[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m209[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m212[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m212[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:12:10.823Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m210[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m213[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m216[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m210[0m             return res.status(404).json({ error: "Customer not found." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m213[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m213[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m216[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m216[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:15:21.034Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m184[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m184[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m             return res.status(404).json({ error: "Customer not found under this tenant." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m218[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m184[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m184[0m         return res.status(400).json({ message: "A valid email query parameter is required." });
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m211[0m:[93m13[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m211[0m             return res.status(404).json({ error: "Customer not found under this tenant." });
+[7m   [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m215[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m215[0m         return res.status(200).json(customer);
+[7m   [0m [91m        ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS2322: [0mType 'Response<any, Record<string, any>>' is not assignable to type 'void'.
+
+[7m218[0m         return res.status(500).json({ error: "Internal Server Error." });
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T07:30:27.778Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'emailHandler'.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+[7m   [0m [91m               ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m221[0m:[93m14[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'emailHandler'.
+
+[7m221[0m export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+[7m   [0m [91m             ~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m178[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'emailHandler'.
+
+[7m178[0m   export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+[7m   [0m [91m               ~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m221[0m:[93m14[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'emailHandler'.
+
+[7m221[0m export const emailHandler = async (req: Request, res: Response): Promise<void> => {
+[7m   [0m [91m             ~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
