@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
+exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
 const prisma = new client_1.PrismaClient();
@@ -89,4 +89,94 @@ const deleteTenant = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
 });
 exports.deleteTenant = deleteTenant;
 // Tenant
+/**
+ * @route POST /api/customers/invoice
+ * @desc Create a invoice for a customer with multiple products
+ */
+const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { name, email, phone, products } = req.body;
+        if (!name || !email || !phone || !products || products.length === 0) {
+            return res.status(400).json({ error: "All fields are required, including products." });
+        }
+        // ✅ Get tenant data from the request (set by validateTenant middleware)
+        const { id: tenantId } = req.tenant;
+        // Check if the customer exists, else create a new customer
+        let customer = yield prisma.customer.findFirst({
+            where: { email, tenantId },
+        });
+        if (!customer) {
+            customer = yield prisma.customer.create({
+                data: {
+                    name,
+                    email,
+                    phone,
+                    tenantId,
+                },
+            });
+        }
+        let totalPrice = 0;
+        let totalTax = 0;
+        let invoiceItems = [];
+        for (const product of products) {
+            const { productId, quantity } = product;
+            // Check if product exists in inventory
+            const inventoryItem = yield prisma.inventory.findUnique({
+                where: { id: productId },
+            });
+            if (!inventoryItem) {
+                return res.status(404).json({ error: `Product with ID ${productId} not found.` });
+            }
+            if (inventoryItem.stock < quantity) {
+                return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
+            }
+            // Calculate product total price and tax
+            const productTotalPrice = inventoryItem.price * quantity;
+            // Fetch applicable tax rate for this tenant
+            const taxInfo = yield prisma.taxation.findFirst({
+                where: { tenantId },
+            });
+            const taxRate = taxInfo ? taxInfo.taxRate : 0;
+            const productTax = (taxRate / 100) * productTotalPrice;
+            totalPrice += productTotalPrice;
+            totalTax += productTax;
+            // Add invoice item
+            invoiceItems.push({
+                productId,
+                quantity,
+                price: inventoryItem.price,
+                totalPrice: productTotalPrice,
+            });
+            // Update inventory stock
+            yield prisma.inventory.update({
+                where: { id: productId },
+                data: { stock: { decrement: quantity }, updatedAt: new Date() },
+            });
+        }
+        // Create invoice record
+        const newInvoice = yield prisma.invoice.create({
+            data: {
+                customerId: customer.id,
+                tenantId,
+                totalPrice,
+                totalTax,
+                items: {
+                    create: invoiceItems,
+                },
+            },
+            include: {
+                items: true,
+            },
+        });
+        return res.status(201).json({
+            message: "invoice created successfully!",
+            invoice: newInvoice,
+        });
+    }
+    catch (error) {
+        console.error("Error creating invoice:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+exports.createInvoice = createInvoice;
 //# sourceMappingURL=tenantController.js.map

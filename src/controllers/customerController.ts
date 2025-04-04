@@ -38,6 +38,7 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
    next(error);
  }
 };
+
 export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   if (!req.user) {
       return next(new AppError("Unauthorized", 401));

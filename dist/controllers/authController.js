@@ -145,7 +145,8 @@ const refreshAccessToken = (req, res, next) => __awaiter(void 0, void 0, void 0,
             httpOnly: true,
             secure: true, // Only send over HTTPS
             sameSite: "strict",
-            path: "/auth/refresh",
+            path: "/",
+            maxAge: 24 * 60 * 60 * 1000,
         });
         res.json({ accessToken });
     }

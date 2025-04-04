@@ -19,17 +19,18 @@ const createCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
         if (!req.user) {
             return next(new error_1.AppError("Unauthorized - User not available", 401));
         }
-        const { name, email } = req.body;
-        // ✅ Get tenant data from the request (set by validateTenant middleware)
-        const { id: tenantId } = req.tenant;
-        if (!name || !email) {
+        const { name, email, phone } = req.body;
+        if (!name || !email || !phone) {
             return next(new error_1.AppError("Name and email are required", 400));
         }
+        // ✅ Get tenant data from the request (set by validateTenant middleware)
+        const { id: tenantId } = req.tenant;
         // ✅ Create customer linked to the tenant
         const customer = yield prisma.customer.create({
             data: {
                 name,
                 email,
+                phone,
                 tenantId,
             },
         });
@@ -40,21 +41,51 @@ const createCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
     }
 });
 exports.createCustomer = createCustomer;
-// READ Customers under Tenant (Only Admin & Manager)
 const getCustomers = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     if (!req.user) {
         return next(new error_1.AppError("Unauthorized", 401));
     }
     try {
-        // ✅ Get tenant data from the request (set by validateTenant middleware)
         const { id: tenantId } = req.tenant;
+        const { search } = req.query;
+        if (search && typeof search === "string" && search.trim()) {
+            console.log("🔍 Searching for customers by:", search.trim().toLowerCase());
+            const customers = yield prisma.customer.findMany({
+                where: {
+                    tenantId,
+                    OR: [
+                        { name: { contains: search.trim(), mode: "insensitive" } },
+                        { email: { contains: search.trim(), mode: "insensitive" } },
+                        { phone: { contains: search.trim(), mode: "insensitive" } },
+                    ],
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                    phone: true,
+                },
+            });
+            if (!customers.length) {
+                return next(new error_1.AppError("No customers found with this search term", 404));
+            }
+            res.status(200).json(customers);
+            return;
+        }
+        console.log("📋 Fetching all customers under tenant:", tenantId);
         const customers = yield prisma.customer.findMany({
             where: { tenantId },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                phone: true,
+            },
         });
-        res.json(customers);
-        return;
+        res.status(200).json(customers);
     }
     catch (error) {
+        console.error("❌ Error in getCustomers:", error);
         next(error);
     }
 });
@@ -128,7 +159,7 @@ const updateCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
             return next(new error_1.AppError("Tenant validation failed", 400));
         }
         const { customerId } = req.params; // Get Cutomer ID from params
-        const { name, email } = req.body; // Fields to update
+        const { name, email, phone } = req.body; // Fields to update
         // Check if customer item exists and belongs to the correct tenant
         const existingCustomer = yield prisma.customer.findUnique({
             where: { id: customerId },
@@ -142,7 +173,7 @@ const updateCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
         // Update customer item
         const updatedCustomer = yield prisma.customer.update({
             where: { id: customerId },
-            data: { name, email },
+            data: { name, email, phone },
         });
         res.json(updatedCustomer);
     }
