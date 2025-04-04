@@ -173,23 +173,29 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
   };
 
   
-  export const emailHandler = async (req: Request, res: Response):Promise<any> =>{
-    if (req.method !== "GET") return res.status(405).json({ error: "Method Not Allowed" });
-  
+  export const emailHandler = async (req: Request, res: Response): Promise<any> => {
     try {
-      const { email } = req.query;
-      if (!email) return res.status(400).json({ error: "Email is required" });
+      // Ensure email is provided in query parameters
+      const email = req.query.email as string;
+      if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+      }
   
+      // Search for customer by email
       const customer = await prisma.customer.findFirst({
-        where: { email: String(email) },
+        where: { email: email.trim() },
       });
   
-      if (!customer) return res.status(404).json({ error: "Customer not found" });
+      // If no customer found, return 404
+      if (!customer) {
+        return res.status(404).json({ error: "Customer not found" });
+      }
   
-      return res.json(customer);
-    } catch (error) {
-      console.error("Error fetching customer:", error);
+      // Return customer data
+      return res.status(200).json(customer);
+    } catch (error: any) {
+      console.error("Error fetching customer:", error.message);
       return res.status(500).json({ error: "Internal Server Error" });
     }
-  }
+  };
   
