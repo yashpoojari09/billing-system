@@ -19,11 +19,25 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+const allowedOrigins = [
+    'https://billing-system-frontend-three.vercel.app',
+    'http://localhost:3000'
+];
 app.use((0, cors_1.default)({
-    origin: "*", // ✅ Replace '*' with frontend URL
-    credentials: true, // ✅ Allow credentials (cookies)
-    methods: ["GET", "POST", "PUT", "DELETE"], // ✅ Allow necessary methods
-    allowedHeaders: ["Content-Type", "Authorization"] // ✅ Allow headers
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin)
+            return callback(null, true);
+        if (allowedOrigins.indexOf(origin) !== -1) {
+            return callback(null, true);
+        }
+        else {
+            return callback(new Error('Not allowed by CORS'), false);
+        }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 // Middleware
 app.use(express_1.default.json());
