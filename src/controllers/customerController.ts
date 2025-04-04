@@ -13,12 +13,12 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
     if (!req.user) {
       return next (new AppError("Unauthorized - User not available", 401));
    }
-   const { name, email} = req.body;
+   const { name, email, phone} = req.body;
 
     // ✅ Get tenant data from the request (set by validateTenant middleware)
     const {id:tenantId}= (req as any).tenant;
 
-    if (!name || !email) {
+    if (!name || !email || phone) {
       return next(new AppError("Name and email are required", 400));
     }
 
@@ -27,6 +27,7 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
       data: {
         name,
         email,
+        phone,
         tenantId,
       },
     });
@@ -173,8 +174,12 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
   };
 
   
-  export const emailHandler = async (req: Request, res: Response): Promise<any> => {
+  export const emailHandler = async (req: Request, res: Response, next:NextFunction): Promise<any> => {
     try {
+      const tenant = (req as any).tenant;
+      if (!tenant) {
+          return next(new AppError("Tenant validation failed", 400));
+      }
       // Ensure email is provided in query parameters
       const email = req.query.email as string;
       if (!email) {
@@ -185,6 +190,7 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
       const customer = await prisma.customer.findFirst({
         where: { email: email.trim() },
       });
+      console.log("Customer found:", customer); // Debugging Step 
   
       // If no customer found, return 404
       if (!customer) {
