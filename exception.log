@@ -1928,3 +1928,191 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:18:19.841Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m50[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'search' is declared but its value is never read.
+
+[7m50[0m       const { search } = req.query;
+[7m  [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m                          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m49[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m                                                ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m54[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m54[0m           console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+[7m  [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m50[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'search' is declared but its value is never read.
+
+[7m50[0m       const { search } = req.query;
+[7m  [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m                          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m49[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (email && typeof email === "string" && email.trim()) {
+[7m  [0m [91m                                                ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m54[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m54[0m           console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+[7m  [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:18:47.233Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m51[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (search && typeof search === "string" && email.trim()) {
+[7m  [0m [91m                                                  ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m54[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m54[0m           console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+[7m  [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m53[0m:[93m51[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m53[0m       if (search && typeof search === "string" && email.trim()) {
+[7m  [0m [91m                                                  ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m54[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m54[0m           console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+[7m  [0m [91m                                                             ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:19:03.005Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:19:23.059Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:19:33.890Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-04T10:20:02.786Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'email'.
+
+[7m58[0m                   email: email.trim().toLowerCase(),
+[7m  [0m [91m                         ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

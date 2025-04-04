@@ -38,25 +38,26 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
    next(error);
  }
 };
-
 export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   if (!req.user) {
       return next(new AppError("Unauthorized", 401));
   }
 
   try {
-      // ✅ Get tenant data from the request (set by validateTenant middleware)
       const { id: tenantId } = (req as any).tenant;
-      const { email } = req.query;
+      const { search } = req.query;
 
-      // ✅ If email is provided, search for a specific customer
-      if (email && typeof email === "string" && email.trim()) {
-          console.log("🔍 Searching for customer by email:", email.trim().toLowerCase());
+      if (search && typeof search === "string" && search.trim()) {
+          console.log("🔍 Searching for customers by:", search.trim().toLowerCase());
 
-          const customer = await prisma.customer.findFirst({
+          const customers = await prisma.customer.findMany({
               where: {
-                  email: email.trim().toLowerCase(),
-                  tenantId: tenantId, // Ensure the customer belongs to this tenant
+                  tenantId,
+                  OR: [
+                      { name: { contains: search.trim(), mode: "insensitive" } },
+                      { email: { contains: search.trim(), mode: "insensitive" } },
+                      { phone: { contains: search.trim(), mode: "insensitive" } },
+                  ],
               },
               select: {
                   id: true,
@@ -66,20 +67,24 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
               },
           });
 
-          // ❌ If no customer found, return 404
-          if (!customer) {
-              return next(new AppError("Customer not found under this tenant", 404));
+          if (!customers.length) {
+              return next(new AppError("No customers found with this search term", 404));
           }
 
-           res.status(200).json(customer);
-           return;
+          res.status(200).json(customers);
+          return;
       }
 
-      // ✅ If no email is provided, return all customers
       console.log("📋 Fetching all customers under tenant:", tenantId);
 
       const customers = await prisma.customer.findMany({
           where: { tenantId },
+          select: {
+              id: true,
+              name: true,
+              email: true,
+              phone: true,
+          },
       });
 
       res.status(200).json(customers);
@@ -88,6 +93,7 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
       next(error);
   }
 };
+
 
   // DELETE Customer Under Tenant (Only Superadmin)
   export const deleteCustomer = async (req: Request, res: Response, next: NextFunction) => {
