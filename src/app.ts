@@ -18,13 +18,25 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+  'https://billing-system-frontend-three.vercel.app',
+  'http://localhost:3000'
+];
 
 app.use(
   cors({
-    origin: "*", // ✅ Replace '*' with frontend URL
-    credentials: true, // ✅ Allow credentials (cookies)
-    methods: ["GET","POST","PUT","DELETE"], // ✅ Allow necessary methods
-    allowedHeaders: ["Content-Type", "Authorization"]// ✅ Allow headers
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        return callback(null, true);
+      } else {
+        return callback(new Error('Not allowed by CORS'), false);
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
 
