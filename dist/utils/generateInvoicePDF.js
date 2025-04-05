@@ -1,59 +1,71 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateInvoicePDF = void 0;
-const puppeteer_1 = __importDefault(require("puppeteer"));
-const path_1 = __importDefault(require("path"));
-const generateInvoicePDF = (invoice) => __awaiter(void 0, void 0, void 0, function* () {
-    const fileName = `receipt-${invoice.receiptNumber}.pdf`;
-    const filePath = path_1.default.resolve(__dirname, `../public/receipts/${fileName}`);
-    const createdAt = invoice.createdAt
-        ? new Date(invoice.createdAt)
-        : new Date();
-    const formattedDate = createdAt.toLocaleString("en-US", {
-        dateStyle: "medium",
-        timeStyle: "short",
+const pdfkit_1 = __importDefault(require("pdfkit"));
+const generateInvoicePDF = (invoice) => {
+    return new Promise((resolve) => {
+        const doc = new pdfkit_1.default({ margin: 50 });
+        const buffers = [];
+        doc.on('data', buffers.push.bind(buffers));
+        doc.on('end', () => {
+            resolve(Buffer.concat(buffers));
+        });
+        // Title
+        doc.fontSize(22).text(`Invoice Receipt`, { align: 'center' });
+        doc.moveDown();
+        // Invoice Metadata
+        doc.fontSize(12).text(`Receipt No: ${invoice.receiptNumber}`);
+        doc.text(`Date: ${new Date(invoice.createdAt).toLocaleString()}`);
+        doc.moveDown();
+        // Customer Info
+        doc.fontSize(14).text(`Customer Details:`);
+        doc.fontSize(12).text(`Name: ${invoice.customer.name}`);
+        doc.text(`Email: ${invoice.customer.email}`);
+        doc.text(`Phone: ${invoice.customer.phone}`);
+        doc.moveDown();
+        // Table Header
+        const tableTop = doc.y;
+        const columnWidths = [40, 200, 60, 100, 100];
+        const startX = doc.x;
+        doc.fontSize(13).text(`No.`, startX, tableTop);
+        doc.text(`Product`, startX + columnWidths[0], tableTop);
+        doc.text(`Qty`, startX + columnWidths[0] + columnWidths[1], tableTop);
+        doc.text(`Price`, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], tableTop);
+        doc.text(`Total`, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], tableTop);
+        // Draw header underline
+        doc.moveTo(startX, tableTop + 15)
+            .lineTo(startX + columnWidths.reduce((a, b) => a + b), tableTop + 15)
+            .stroke();
+        // Table rows
+        let rowY = tableTop + 20;
+        doc.fontSize(12);
+        invoice.items.forEach((item, index) => {
+            var _a;
+            const productName = ((_a = item.product) === null || _a === void 0 ? void 0 : _a.name) || 'Unnamed Product';
+            const price = `₹${item.price.toLocaleString('en-IN')}`;
+            const total = `₹${item.totalPrice.toLocaleString('en-IN')}`;
+            doc.text(`${index + 1}`, startX, rowY);
+            doc.text(productName, startX + columnWidths[0], rowY, { width: columnWidths[1] - 10 });
+            doc.text(item.quantity.toString(), startX + columnWidths[0] + columnWidths[1], rowY);
+            doc.text(price, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], rowY);
+            doc.text(total, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], rowY);
+            // Optional: draw row line
+            doc.moveTo(startX, rowY + 15)
+                .lineTo(startX + columnWidths.reduce((a, b) => a + b), rowY + 15)
+                .strokeColor('#cccccc')
+                .stroke();
+            rowY += 20;
+        });
+        // Totals
+        doc.moveDown(2);
+        doc.fontSize(13);
+        doc.text(`Total Price: ₹${invoice.totalPrice.toLocaleString('en-IN')}`, { align: 'right' });
+        doc.text(`Total Tax: ₹${invoice.totalTax.toLocaleString('en-IN')}`, { align: 'right' });
+        doc.end();
     });
-    const htmlContent = `
-    <html>
-      <head>
-        <style>
-          body { font-family: Arial; padding: 2rem; }
-        </style>
-      </head>
-      <body>
-        <h1>Invoice #${invoice.receiptNumber}</h1>
-        <p>Created: ${formattedDate}</p>
-        <p>Customer: ${invoice.customer.name} (${invoice.customer.email})</p>
-        <p>Total: $${invoice.totalPrice.toFixed(2)}</p>
-        <p>Tax: $${invoice.totalTax.toFixed(2)}</p>
-        <hr />
-        <h2>Items:</h2>
-        <ul>
-          ${invoice.items.map((item) => `
-            <li>${item.quantity} x ${item.productId} @ $${item.price.toFixed(2)}</li>
-          `).join('')}
-        </ul>
-      </body>
-    </html>
-  `;
-    const browser = yield puppeteer_1.default.launch();
-    const page = yield browser.newPage();
-    yield page.setContent(htmlContent, { waitUntil: "networkidle0" });
-    yield page.pdf({ path: filePath, format: "A4" });
-    yield browser.close();
-    return `/receipts/${fileName}`; // Public-facing path
-});
+};
 exports.generateInvoicePDF = generateInvoicePDF;
 //# sourceMappingURL=generateInvoicePDF.js.map

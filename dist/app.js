@@ -14,7 +14,7 @@ const error_1 = require("./middlewares/error");
 const logger_1 = __importDefault(require("./utils/logger"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const cors_1 = __importDefault(require("cors"));
-const path_1 = __importDefault(require("path"));
+// import path from "path";
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const allowedOrigins = [
@@ -41,7 +41,6 @@ app.use(passport_1.default.initialize());
 app.use((0, cookie_parser_1.default)());
 app.use("/api/auth", auth_routes_1.default);
 app.use("/api/tenants", tenants_1.default);
-app.use('/receipts', express_1.default.static(path_1.default.join(__dirname, 'public/receipts')));
 app.get("/", (_req, res) => {
     res.send({ message: "Multi-Tenant Billing API is running" });
 });
