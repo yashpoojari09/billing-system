@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { AppError } from "../middlewares/error";
-import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+// import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
 
 
 const prisma = new PrismaClient();
@@ -187,30 +187,55 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       },
     });
 
-
-    // Step 2: Fetch invoice with customer details for PDF
-    const invoiceWithCustomer = await prisma.invoice.findUnique({
-      where: { id: newInvoice.id },
-      include: {
-        customer: true,
-        items: true,
-      },
-    });
-
-    // Step 3: Generate PDF
-    const pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
-
     return res.status(201).json({
       message: "invoice created successfully!",
       invoice: newInvoice,
       invoiceId: newInvoice.id,
       receiptNumber: newInvoice.receiptNumber,
-      receiptUrl: pdfUrl,
+      receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
     });
 
   } catch (error) {
     console.error("Error creating invoice:", error);
     return res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+
+export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { tenantId, receiptNumber } = req.params;
+
+    const invoice = await prisma.invoice.findFirst({
+      where: { tenantId, receiptNumber },
+      include: {
+        items:{
+          include: {
+            product: true, // 👈 include product relation
+          },
+        },
+        customer: true,
+      },
+    });
+    console.log("🔎 Comparing with tenantId:", tenantId, "and receiptNumber:", receiptNumber);
+
+    if (!invoice) {
+       res.status(404).send('Invoice not found.');
+       return;
+    }
+
+    const pdfBuffer = await generateInvoicePDF(invoice);
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `inline; filename="${receiptNumber}.pdf"`,
+    });
+
+    res.send(pdfBuffer);
+  } catch (err) {
+    console.error('Error generating PDF:', err);
+    res.status(500).send('Error generating PDF');
   }
 };
 

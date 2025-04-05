@@ -2314,3 +2314,2249 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T08:10:59.238Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:12:25.199Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:13:07.191Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:13:37.124Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:16:00.101Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:17:07.069Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:19:59.684Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:20:17.634Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:35:27.128Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:36:15.492Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:37:16.481Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:38:05.051Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:40:09.174Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:42:47.569Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:52:09.024Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:52:41.222Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:52:59.442Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:57:22.666Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:58:20.711Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T08:58:50.655Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:00:25.462Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:07:30.018Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:08:46.855Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:17:03.076Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:18:49.841Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:19:56.638Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:20:08.213Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:21:39.176Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:24:44.952Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:27:45.896Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/dist/controllers/tenantController.js
+- /home/yash/Documents/billing-system/dist/routes/tenants.js
+- /home/yash/Documents/billing-system/dist/app.js
+- /home/yash/Documents/billing-system/dist/server.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1405:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/dist/controllers/tenantController.js:15:30)
+    at Module._compile (node:internal/modules/cjs/loader:1734:14)
+2025-04-05T09:30:10.278Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:30:49.358Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m36[0m - [91merror[0m[90m TS2306: [0mFile '/home/yash/Documents/billing-system/src/utils/generateInvoicePDF.ts' is not a module.
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m36[0m - [91merror[0m[90m TS2306: [0mFile '/home/yash/Documents/billing-system/src/utils/generateInvoicePDF.ts' is not a module.
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:31:08.519Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m203[0m:[93m18[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m203[0m   pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m203[0m:[93m18[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m203[0m   pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:31:22.246Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m213[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'pdfUrl'.
+
+[7m213[0m       receiptUrl: pdfUrl,
+[7m   [0m [91m                  ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m213[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'pdfUrl'.
+
+[7m213[0m       receiptUrl: pdfUrl,
+[7m   [0m [91m                  ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:33:04.272Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:44:47.678Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:45:00.540Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:45:24.761Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m201[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'pdfUrl' is declared but its value is never read.
+
+[7m201[0m     let pdfUrl = "";
+[7m   [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m201[0m:[93m9[0m - [91merror[0m[90m TS6133: [0m'pdfUrl' is declared but its value is never read.
+
+[7m201[0m     let pdfUrl = "";
+[7m   [0m [91m        ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:46:17.325Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m201[0m:[93m5[0m - [91merror[0m[90m TS6133: [0m'pdfUrl' is declared but its value is never read.
+
+[7m201[0m let pdfUrl = "";
+[7m   [0m [91m    ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m201[0m:[93m5[0m - [91merror[0m[90m TS6133: [0m'pdfUrl' is declared but its value is never read.
+
+[7m201[0m let pdfUrl = "";
+[7m   [0m [91m    ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:46:53.031Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:46:59.223Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:48:13.676Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:49:20.011Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:50:24.675Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:51:54.911Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:53:06.039Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T09:53:40.708Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoicePDF'. Did you mean 'generateInvoicePDFBuffer'?
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m3[0m:[93m14[0m
+    [7m3[0m export const generateInvoicePDFBuffer = async (invoice: any) => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoicePDFBuffer' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoicePDF'. Did you mean 'generateInvoicePDFBuffer'?
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m3[0m:[93m14[0m
+    [7m3[0m export const generateInvoicePDFBuffer = async (invoice: any) => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoicePDFBuffer' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:55:04.194Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoiceByReceiptNumber'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoiceByReceiptNumber);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoiceByReceiptNumber'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoiceByReceiptNumber);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:59:33.468Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoiceByReceiptNumber'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoiceByReceiptNumber);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoiceByReceiptNumber'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoiceByReceiptNumber);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T09:59:56.327Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoicePDF'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoicePDF'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:00:29.486Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:01:15.327Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>) => Promise<...>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/express-serve-static-core/index.d.ts[0m:[93m168[0m:[93m5[0m
+    [7m168[0m     (path: PathParams, subApplication: Application): T;
+    [7m   [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The last overload is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>) => Promise<...>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/express-serve-static-core/index.d.ts[0m:[93m168[0m:[93m5[0m
+    [7m168[0m     (path: PathParams, subApplication: Application): T;
+    [7m   [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The last overload is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:02:24.338Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>) => Promise<...>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/express-serve-static-core/index.d.ts[0m:[93m168[0m:[93m5[0m
+    [7m168[0m     (path: PathParams, subApplication: Application): T;
+    [7m   [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The last overload is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2769: [0mNo overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>' is not assignable to parameter of type 'Application<Record<string, any>>'.
+      Type '(req: Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>) => Promise<...>' is missing the following properties from type 'Application<Record<string, any>>': init, defaultConfiguration, engine, set, and 63 more.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/express-serve-static-core/index.d.ts[0m:[93m168[0m:[93m5[0m
+    [7m168[0m     (path: PathParams, subApplication: Application): T;
+    [7m   [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    The last overload is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:03:01.415Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m203[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+
+[7m203[0m   pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
+[7m   [0m [91m  ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m203[0m:[93m3[0m - [91merror[0m[90m TS2322: [0mType 'Buffer<ArrayBufferLike>' is not assignable to type 'string'.
+
+[7m203[0m   pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
+[7m   [0m [91m  ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:06:14.179Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m206[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'pdfUrl'.
+
+[7m206[0m       receiptUrl: pdfUrl || `/receipt/${newInvoice.receiptNumber}`, // fallback
+[7m   [0m [91m                  ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m206[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'pdfUrl'.
+
+[7m206[0m       receiptUrl: pdfUrl || `/receipt/${newInvoice.receiptNumber}`, // fallback
+[7m   [0m [91m                  ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:06:28.433Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'invoiceWithCustomer' is declared but its value is never read.
+
+[7m192[0m     const invoiceWithCustomer = await prisma.invoice.findUnique({
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:08:00.619Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:09:23.780Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:09:51.545Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:10:17.526Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:10:28.702Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:15:28.256Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoicePDF'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoicePDF'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:15:50.970Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoicePDF'. Did you mean 'generateInvoiceHTML'?
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m1[0m:[93m14[0m
+    [7m1[0m export const generateInvoiceHTML = (invoice: any): string => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoiceHTML' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoicePDF'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoicePDF'. Did you mean 'generateInvoiceHTML'?
+
+[7m4[0m import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m1[0m:[93m14[0m
+    [7m1[0m export const generateInvoiceHTML = (invoice: any): string => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoiceHTML' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoicePDF'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:16:23.807Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoiceP' is declared but its value is never read.
+
+[7m4[0m import { generateInvoiceP } from "src/utils/generateInvoicePDF";
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoiceP'. Did you mean 'generateInvoiceHTML'?
+
+[7m4[0m import { generateInvoiceP } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m1[0m:[93m14[0m
+    [7m1[0m export const generateInvoiceHTML = (invoice: any): string => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoiceHTML' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoiceP'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'generateInvoiceP'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoiceP' is declared but its value is never read.
+
+[7m4[0m import { generateInvoiceP } from "src/utils/generateInvoicePDF";
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m4[0m:[93m10[0m - [91merror[0m[90m TS2724: [0m'"src/utils/generateInvoicePDF"' has no exported member named 'generateInvoiceP'. Did you mean 'generateInvoiceHTML'?
+
+[7m4[0m import { generateInvoiceP } from "src/utils/generateInvoicePDF";
+[7m [0m [91m         ~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoicePDF.ts[0m:[93m1[0m:[93m14[0m
+    [7m1[0m export const generateInvoiceHTML = (invoice: any): string => {
+    [7m [0m [96m             ~~~~~~~~~~~~~~~~~~~[0m
+    'generateInvoiceHTML' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m197[0m:[93m18[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceHTML'. Did you mean 'generateInvoiceP'?
+
+[7m197[0m     const html = generateInvoiceHTML(invoiceWithCustomer);
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'generateInvoiceP'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:16:34.573Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'getInvoicePDF'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m200[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'puppeteer'.
+
+[7m200[0m     const browser = await puppeteer.launch({ headless: true });
+[7m   [0m [91m                          ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'getInvoicePDF'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:16:54.179Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'getInvoicePDF'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m234[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoicePDF'. Did you mean 'getInvoicePDF'?
+
+[7m234[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:17:35.349Z [ERROR]: uncaughtException: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+Error: Cannot find module 'src/utils/generateInvoicePDF'
+Require stack:
+- /home/yash/Documents/billing-system/src/controllers/tenantController.ts
+- /home/yash/Documents/billing-system/src/routes/tenants.ts
+- /home/yash/Documents/billing-system/src/app.ts
+- /home/yash/Documents/billing-system/src/server.ts
+    at Function.<anonymous> (node:internal/modules/cjs/loader:1405:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (/home/yash/Documents/billing-system/node_modules/@cspotcode/source-map-support/source-map-support.js:811:30)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1061:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1066:22)
+    at Function._load (node:internal/modules/cjs/loader:1215:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1491:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/yash/Documents/billing-system/src/controllers/tenantController.ts:4:1)
+2025-04-05T10:19:18.133Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m207[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m207[0m       <h1>Invoice #${invoiceWithCustomer.receiptNumber}</h1>
+[7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m208[0m       <p>Customer: ${invoiceWithCustomer.customer.name} (${invoiceWithCustomer.customer.email})</p>
+[7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m60[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m208[0m       <p>Customer: ${invoiceWithCustomer.customer.name} (${invoiceWithCustomer.customer.email})</p>
+[7m   [0m [91m                                                           ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m209[0m:[93m20[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m209[0m       <p>Total: $${invoiceWithCustomer.totalPrice.toFixed(2)}</p>
+[7m   [0m [91m                   ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m210[0m:[93m18[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m210[0m       <p>Tax: $${invoiceWithCustomer.totalTax.toFixed(2)}</p>
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m213[0m:[93m11[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m213[0m         ${invoiceWithCustomer.items.map(item => `
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m55[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m228[0m   "Content-Disposition": `inline; filename="invoice-${invoiceWithCustomer.receiptNumber}.pdf"`,
+[7m   [0m [91m                                                      ~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m207[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m207[0m       <h1>Invoice #${invoiceWithCustomer.receiptNumber}</h1>
+[7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m22[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m208[0m       <p>Customer: ${invoiceWithCustomer.customer.name} (${invoiceWithCustomer.customer.email})</p>
+[7m   [0m [91m                     ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m60[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m208[0m       <p>Customer: ${invoiceWithCustomer.customer.name} (${invoiceWithCustomer.customer.email})</p>
+[7m   [0m [91m                                                           ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m209[0m:[93m20[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m209[0m       <p>Total: $${invoiceWithCustomer.totalPrice.toFixed(2)}</p>
+[7m   [0m [91m                   ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m210[0m:[93m18[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m210[0m       <p>Tax: $${invoiceWithCustomer.totalTax.toFixed(2)}</p>
+[7m   [0m [91m                 ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m213[0m:[93m11[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m213[0m         ${invoiceWithCustomer.items.map(item => `
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m55[0m - [91merror[0m[90m TS18047: [0m'invoiceWithCustomer' is possibly 'null'.
+
+[7m228[0m   "Content-Disposition": `inline; filename="invoice-${invoiceWithCustomer.receiptNumber}.pdf"`,
+[7m   [0m [91m                                                      ~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:19:56.521Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:20:11.695Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS6133: [0m'getInvoicePDF' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'getInvoicePDF'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS6133: [0m'getInvoicePDF' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, getInvoicePDF } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:43:09.804Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m38[0m - [91merror[0m[90m TS6133: [0m'req' is declared but its value is never read.
+
+[7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m                                     ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m52[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m                                                   ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m14[0m - [91merror[0m[90m TS6133: [0m'previewInvoice' is declared but its value is never read.
+
+[7m208[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m             ~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m277[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m277[0m };
+[7m   [0m [91m  [0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m84[0m
+    [7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m38[0m - [91merror[0m[90m TS6133: [0m'req' is declared but its value is never read.
+
+[7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m                                     ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m52[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m                                                   ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m14[0m - [91merror[0m[90m TS6133: [0m'previewInvoice' is declared but its value is never read.
+
+[7m208[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+[7m   [0m [91m             ~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m277[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m277[0m };
+[7m   [0m [91m  [0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m205[0m:[93m84[0m
+    [7m205[0m export const previewInvoice = async (req: Request, res: Response): Promise<any> => {
+    [7m   [0m [96m                                                                                   ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:43:25.682Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m97[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'previewInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                ~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m97[0m - [91merror[0m[90m TS2305: [0mModule '"../controllers/tenantController"' has no exported member 'previewInvoice'.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                ~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:43:43.382Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m233[0m:[93m2[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m233[0m });
+[7m   [0m [91m ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m233[0m:[93m2[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m233[0m });
+[7m   [0m [91m ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:43:50.381Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m233[0m:[93m2[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m233[0m });
+[7m   [0m [91m ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m233[0m:[93m2[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m233[0m });
+[7m   [0m [91m ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:44:54.553Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m221[0m:[93m23[0m - [91merror[0m[90m TS2304: [0mCannot find name 'generateInvoicePDF'.
+
+[7m221[0m     const pdfBuffer = generateInvoicePDF(invoice);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:45:56.106Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoicePDF'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getInvoicePDF'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", getInvoicePDF);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:46:14.042Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'recieptRoutes'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", recieptRoutes);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'recieptRoutes'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", recieptRoutes);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T10:46:34.626Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'recieptRoutes'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", recieptRoutes);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m40[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'recieptRoutes'.
+
+[7m40[0m router.get("/receipt/:receiptNumber", recieptRoutes);
+[7m  [0m [91m                                      ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T11:20:56.002Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const { tenantId, receiptNumber } = req.params;
+[7m   [0m [91m            ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const { tenantId, receiptNumber } = req.params;
+[7m   [0m [91m            ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T11:21:27.921Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m15[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'tenantId'.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m              ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'tenantId'.
+
+[7m210[0m     const { tenantId, receiptNumber } = req.params;
+[7m   [0m [91m            ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m15[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'tenantId'.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m              ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'tenantId'.
+
+[7m210[0m     const { tenantId, receiptNumber } = req.params;
+[7m   [0m [91m            ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T11:21:34.628Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m208[0m     const {id:tenantId}= (req as any).tenant;
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T11:55:59.321Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS6133: [0m'recieptRoutes' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, recieptRoutes } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m6[0m:[93m113[0m - [91merror[0m[90m TS6133: [0m'recieptRoutes' is declared but its value is never read.
+
+[7m6[0m import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, recieptRoutes } from "../controllers/tenantController";
+[7m [0m [91m                                                                                                                ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T12:09:46.813Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'true' does not exist in type 'InvoiceInclude<DefaultArgs>'.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                  ~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m224[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m224[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m23[0m - [91merror[0m[90m TS1005: [0m':' expected.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                      ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'customer'.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'true' does not exist in type 'InvoiceInclude<DefaultArgs>'.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                  ~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m224[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m224[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m23[0m - [91merror[0m[90m TS1005: [0m':' expected.
+
+[7m214[0m         customer: true,
+[7m   [0m [91m                      ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T12:10:09.372Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m217[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'customer' does not exist in type 'Invoice$itemsArgs<DefaultArgs>'.
+
+[7m217[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m227[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m219[0m:[93m6[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m219[0m     });
+[7m   [0m [91m     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m217[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'customer' does not exist in type 'Invoice$itemsArgs<DefaultArgs>'.
+
+[7m217[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m227[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m219[0m:[93m6[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m219[0m     });
+[7m   [0m [91m     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T12:10:17.470Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m218[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m218[0m         customer: true,
+[7m   [0m [91m        ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T12:11:25.121Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m2[0m:[93m42[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Product'.
+
+[7m2[0m import { Invoice, InvoiceItem, Customer, Product } from '@prisma/client';
+[7m [0m [91m                                         ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m2[0m:[93m42[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Product'.
+
+[7m2[0m import { Invoice, InvoiceItem, Customer, Product } from '@prisma/client';
+[7m [0m [91m                                         ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T12:13:25.338Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m2[0m:[93m42[0m - [91merror[0m[90m TS6133: [0m'Inventory' is declared but its value is never read.
+
+[7m2[0m import { Invoice, InvoiceItem, Customer, Inventory } from '@prisma/client';
+[7m [0m [91m                                         ~~~~~~~~~[0m
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m5[0m:[93m12[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Product'.
+
+[7m5[0m   product: Product;
+[7m [0m [91m           ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m2[0m:[93m42[0m - [91merror[0m[90m TS6133: [0m'Inventory' is declared but its value is never read.
+
+[7m2[0m import { Invoice, InvoiceItem, Customer, Inventory } from '@prisma/client';
+[7m [0m [91m                                         ~~~~~~~~~[0m
+[96msrc/utils/generateInvoicePDF.ts[0m:[93m5[0m:[93m12[0m - [91merror[0m[90m TS2304: [0mCannot find name 'Product'.
+
+[7m5[0m   product: Product;
+[7m [0m [91m           ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
