@@ -39,6 +39,7 @@
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "pg": "^8.14.1",
+    "puppeteer": "^24.6.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {

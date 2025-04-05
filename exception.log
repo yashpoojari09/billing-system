@@ -2116,3 +2116,201 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T06:28:25.248Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'receiptNumber' is declared but its value is never read.
+
+[7m169[0m     const receiptNumber = `INV-${Date.now()}`; // or use something like `RCPT-${uuidv4()}`
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m169[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'receiptNumber' is declared but its value is never read.
+
+[7m169[0m     const receiptNumber = `INV-${Date.now()}`; // or use something like `RCPT-${uuidv4()}`
+[7m   [0m [91m          ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T06:29:18.707Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T06:30:45.369Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T06:41:13.263Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T06:41:34.168Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m178[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'receiptNumber' does not exist in type 'Without<InvoiceCreateInput, InvoiceUncheckedCreateInput> & InvoiceUncheckedCreateInput'.
+
+[7m178[0m         receiptNumber,
+[7m   [0m [91m        ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m9349[0m:[93m5[0m
+    [7m9349[0m     data: XOR<InvoiceCreateInput, InvoiceUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: InvoiceSelect<DefaultArgs> | null | undefined; omit?: InvoiceOmit<DefaultArgs> | null | undefined; include?: InvoiceInclude<...> | ... 1 more ... | undefined; data: (Without<...> & InvoiceUncheckedCreateInput) | (Without<...> & InvoiceCreateInput); }'
+[96msrc/controllers/tenantController.ts[0m:[93m192[0m:[93m33[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m192[0m       receiptNumber: newInvoice.receiptNumber,
+[7m   [0m [91m                                ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m193[0m:[93m42[0m - [91merror[0m[90m TS2339: [0mProperty 'receiptNumber' does not exist on type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; }'.
+
+[7m193[0m       receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
+[7m   [0m [91m                                         ~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { AppError } from "../middlewares/error";
+import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
 
 
 const prisma = new PrismaClient();
@@ -166,6 +167,8 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
         data: { stock: { decrement: quantity }, updatedAt: new Date() },
       });
     }
+    const receiptNumber = `INV-${Date.now()}`; // or use something like `RCPT-${uuidv4()}`
+
 
     // Create invoice record
     const newInvoice = await prisma.invoice.create({
@@ -174,6 +177,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
         tenantId,
         totalPrice,
         totalTax,
+        receiptNumber,
         items: {
           create: invoiceItems,
         },
@@ -183,9 +187,25 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       },
     });
 
+
+    // Step 2: Fetch invoice with customer details for PDF
+    const invoiceWithCustomer = await prisma.invoice.findUnique({
+      where: { id: newInvoice.id },
+      include: {
+        customer: true,
+        items: true,
+      },
+    });
+
+    // Step 3: Generate PDF
+    const pdfUrl = await generateInvoicePDF(invoiceWithCustomer);
+
     return res.status(201).json({
       message: "invoice created successfully!",
       invoice: newInvoice,
+      invoiceId: newInvoice.id,
+      receiptNumber: newInvoice.receiptNumber,
+      receiptUrl: pdfUrl,
     });
 
   } catch (error) {

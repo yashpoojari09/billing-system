@@ -30,5 +30,6 @@ router.use("/:tenantId/inventory", auth_2.validateTenant, inventory_1.default);
 // ✅ Nested route for customers under a tenant
 router.use("/:tenantId/taxation", auth_2.validateTenant, taxation_1.default);
 router.post("/:tenantId/invoice", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.createInvoice);
+router.post("/:tenantId/invoice/preview", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.previewInvoice);
 exports.default = router;
 //# sourceMappingURL=tenants.js.map

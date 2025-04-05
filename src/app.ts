@@ -12,6 +12,7 @@ import { errorHandler } from "./middlewares/error";
 import logger from "./utils/logger"
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 
 dotenv.config();
@@ -45,6 +46,8 @@ app.use(
 app.use(express.json());
 app.use(passport.initialize());
 app.use(cookieParser()); // ✅ Enables cookie parsing
+app.use('/receipts', express.static(path.join(__dirname, 'public/receipts')));
+
 
 
 // Global Error Handler

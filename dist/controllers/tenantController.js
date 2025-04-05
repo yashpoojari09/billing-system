@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
+exports.previewInvoice = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
 const prisma = new client_1.PrismaClient();
@@ -153,6 +153,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
                 data: { stock: { decrement: quantity }, updatedAt: new Date() },
             });
         }
+        const receiptNumber = `INV-${Date.now()}`; // or use something like `RCPT-${uuidv4()}`
         // Create invoice record
         const newInvoice = yield prisma.invoice.create({
             data: {
@@ -160,6 +161,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
                 tenantId,
                 totalPrice,
                 totalTax,
+                receiptNumber,
                 items: {
                     create: invoiceItems,
                 },
@@ -171,6 +173,9 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         return res.status(201).json({
             message: "invoice created successfully!",
             invoice: newInvoice,
+            invoiceId: newInvoice.id,
+            receiptNumber: newInvoice.receiptNumber,
+            receiptUrl: `/receipt/${newInvoice.receiptNumber}`,
         });
     }
     catch (error) {
@@ -179,4 +184,64 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.createInvoice = createInvoice;
+///Invoice Preview
+const previewInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { name, email, phone, products } = req.body;
+        if (!name || !email || !phone || !products || products.length === 0) {
+            return res.status(400).json({ error: "All fields are required, including products." });
+        }
+        // Get tenant data from the request (set by validateTenant middleware)
+        const { id: tenantId } = req.tenant;
+        // We'll simulate invoice calculation here (without updating inventory)
+        let totalPrice = 0;
+        let totalTax = 0;
+        let invoiceItems = [];
+        for (const product of products) {
+            const { productId, quantity } = product;
+            // Fetch product from inventory
+            const inventoryItem = yield prisma.inventory.findUnique({
+                where: { id: productId },
+            });
+            if (!inventoryItem) {
+                return res.status(404).json({ error: `Product with ID ${productId} not found.` });
+            }
+            if (inventoryItem.stock < quantity) {
+                return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
+            }
+            // Calculate product total price and tax
+            const productTotalPrice = inventoryItem.price * quantity;
+            const taxInfo = yield prisma.taxation.findFirst({ where: { tenantId } });
+            const taxRate = taxInfo ? taxInfo.taxRate : 0;
+            const productTax = (taxRate / 100) * productTotalPrice;
+            totalPrice += productTotalPrice;
+            totalTax += productTax;
+            invoiceItems.push({
+                productId,
+                productName: inventoryItem.name,
+                quantity,
+                price: inventoryItem.price,
+                totalPrice: productTotalPrice,
+            });
+        }
+        // Generate a preview invoice number (for display only)
+        const invoiceNumber = `PREVIEW-${Date.now()}`;
+        // Build preview invoice object
+        const invoicePreview = {
+            invoiceNumber,
+            createdAt: new Date(), // current date/time
+            customer: { name, email, phone },
+            items: invoiceItems,
+            totalPrice,
+            totalTax,
+            grandTotal: totalPrice + totalTax,
+        };
+        return res.status(200).json({ invoicePreview });
+    }
+    catch (error) {
+        console.error("Error previewing invoice:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+exports.previewInvoice = previewInvoice;
 //# sourceMappingURL=tenantController.js.map
