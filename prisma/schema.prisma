@@ -39,7 +39,7 @@ model Tenant {
   invoice   Invoice[]
   taxation  Taxation[]
   users     User[]
-  settings TenantSettings?
+  settings  TenantSettings?
 
 }
 
