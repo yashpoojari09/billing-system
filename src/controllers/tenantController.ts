@@ -148,7 +148,9 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       const price = inventoryItem.price;
       const baseTotal = price * quantity;
       const taxAmount = baseTotal * taxRate;
-      const totalPrice = baseTotal + taxAmount;
+      const itemTotalPrice = baseTotal + taxAmount;
+      totalPrice += itemTotalPrice;
+
     
       totalBase += baseTotal;
       totalTax += taxAmount;
@@ -157,7 +159,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
         productId,
         quantity,
         price,
-        totalPrice,
+        totalPrice: itemTotalPrice,
         taxRate,
         taxAmount,
       });
