@@ -124,6 +124,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             // Check if product exists in inventory
             const inventoryItem = yield prisma.inventory.findUnique({
                 where: { id: productId },
+                include: { tax: true },
             });
             if (!inventoryItem) {
                 return res.status(404).json({ error: `Product with ID ${productId} not found.` });
@@ -147,6 +148,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
                 quantity,
                 price: inventoryItem.price,
                 totalPrice: productTotalPrice,
+                tax: productTax,
             });
             // Update inventory stock
             yield prisma.inventory.update({
@@ -236,6 +238,8 @@ const previewInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function*
             // Fetch product from inventory
             const inventoryItem = yield prisma.inventory.findUnique({
                 where: { id: productId },
+                // Removed 'tax' as it does not exist in the Inventory model
+                include: {},
             });
             if (!inventoryItem) {
                 return res.status(404).json({ error: `Product with ID ${productId} not found.` });

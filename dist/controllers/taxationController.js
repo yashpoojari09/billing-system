@@ -31,7 +31,7 @@ const createTaxRule = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         if (!tenantId) {
             return next(new error_1.AppError("Tenant ID is required", 400));
         }
-        const tax = yield prisma.taxation.create({ data: { taxRate, region, tenantId } });
+        const tax = yield prisma.taxation.create({ data: { taxRate: taxRate / 100, region, tenantId } });
         res.status(201).json(tax);
     }
     catch (error) {

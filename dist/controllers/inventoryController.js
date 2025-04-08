@@ -25,7 +25,16 @@ const createInventoryItem = (req, res, next) => __awaiter(void 0, void 0, void 0
         if (!tenantId) {
             return next(new error_1.AppError("Tenant validation failed", 400));
         }
-        const { name, stock, price } = req.body; // Fields for new inventory item
+        const { name, stock, price, taxId } = req.body; // Fields for new inventory item
+        // Optional but recommended: validate taxId belongs to the same tenant
+        if (taxId) {
+            const tax = yield prisma.taxation.findUnique({
+                where: { id: taxId },
+            });
+            if (!tax || tax.tenantId !== tenantId) {
+                return next(new error_1.AppError("Invalid tax ID or tax does not belong to tenant", 400));
+            }
+        }
         // Create inventory item linked to the tenant
         const newItem = yield prisma.inventory.create({
             data: {
@@ -33,6 +42,7 @@ const createInventoryItem = (req, res, next) => __awaiter(void 0, void 0, void 0
                 stock,
                 price,
                 tenantId: tenantId, // Ensure it's linked to the correct tenant
+                taxId,
             },
         });
         res.status(201).json(newItem);
@@ -57,6 +67,9 @@ const getInventory = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
         // Fetch inventory only for the specific tenant
         const items = yield prisma.inventory.findMany({
             where: { tenantId: tenant.id },
+            include: {
+                tax: true, // includes taxRate and region
+            },
         });
         res.json(items);
     }
@@ -81,6 +94,7 @@ const updateInventoryItem = (req, res, next) => __awaiter(void 0, void 0, void 0
         // Check if inventory item exists and belongs to the correct tenant
         const existingItem = yield prisma.inventory.findUnique({
             where: { id: inventoryId },
+            include: { tax: true }, // Include tax information
         });
         if (!existingItem) {
             return next(new error_1.AppError("Inventory item not found", 404));
