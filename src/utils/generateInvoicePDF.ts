@@ -84,8 +84,13 @@ export const generateInvoicePDF = (invoice: InvoiceWithDetails): Promise<Buffer>
     // Totals
     doc.moveDown(2);
     doc.fontSize(13);
-    doc.text(`Total Tax: ₹${invoice.totalTax.toLocaleString('en-IN')}`, { align: 'right' });
-    doc.text(`Total Price (with tax): ₹${invoice.totalPrice.toLocaleString('en-IN')}`, { align: 'right' });
+
+    // Adjust column widths for totals
+    const totalColumnWidth = columnWidths.reduce((a, b) => a + b, 0) - 50; // Reduce some width for better alignment
+
+    doc.text(`Total Tax: ₹${invoice.totalTax.toLocaleString('en-IN')}`, startX, rowY + 20, { width: totalColumnWidth, align: 'right' });
+    doc.text(`Total Price (with tax): ₹${invoice.totalPrice.toLocaleString('en-IN')}`, startX, rowY + 40, { width: totalColumnWidth, align: 'right' });
+
     doc.end();
   });
 };
