@@ -95,6 +95,7 @@ exports.deleteTenant = deleteTenant;
  * @desc Create a invoice for a customer with multiple products
  */
 const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     try {
         const { name, email, phone, products } = req.body;
         if (!name || !email || !phone || !products || products.length === 0) {
@@ -102,6 +103,10 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         }
         // ✅ Get tenant data from the request (set by validateTenant middleware)
         const { id: tenantId } = req.tenant;
+        if (!tenantId) {
+            console.error("❌ tenantId missing in request");
+            return res.status(400).json({ error: "Invalid tenant" });
+        }
         // Check if the customer exists, else create a new customer
         let customer = yield prisma.customer.findFirst({
             where: { email, tenantId },
@@ -116,8 +121,9 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
                 },
             });
         }
-        let totalPrice = 0;
+        let totalBase = 0;
         let totalTax = 0;
+        let totalPrice = 0;
         let invoiceItems = [];
         for (const product of products) {
             const { productId, quantity } = product;
@@ -129,26 +135,29 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             if (!inventoryItem) {
                 return res.status(404).json({ error: `Product with ID ${productId} not found.` });
             }
+            console.log("✅ Found tax:", inventoryItem.tax);
             if (inventoryItem.stock < quantity) {
                 return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
             }
-            // Calculate product total price and tax
-            const productTotalPrice = inventoryItem.price * quantity;
-            // Fetch applicable tax rate for this tenant
-            const taxInfo = yield prisma.taxation.findFirst({
-                where: { tenantId },
-            });
-            const taxRate = taxInfo ? taxInfo.taxRate : 0;
-            const productTax = (taxRate / 100) * productTotalPrice;
-            totalPrice += productTotalPrice;
-            totalTax += productTax;
-            // Add invoice item
+            const taxRate = ((_a = inventoryItem.tax) === null || _a === void 0 ? void 0 : _a.taxRate) || 0;
+            const price = inventoryItem.price;
+            const baseTotal = price * quantity;
+            const taxAmount = baseTotal * taxRate;
+            const itemTotalPrice = baseTotal + taxAmount;
+            totalPrice += itemTotalPrice;
+            if (inventoryItem.price == null) {
+                console.error("❌ Missing price for inventory item:", inventoryItem.id);
+                return res.status(500).json({ error: "Product has no price in inventory." });
+            }
+            totalBase += baseTotal;
+            totalTax += taxAmount;
             invoiceItems.push({
                 productId,
                 quantity,
-                price: inventoryItem.price,
-                totalPrice: productTotalPrice,
-                tax: productTax,
+                price,
+                totalPrice: itemTotalPrice,
+                taxRate,
+                taxAmount,
             });
             // Update inventory stock
             yield prisma.inventory.update({

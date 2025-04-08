@@ -104,6 +104,10 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
      // ✅ Get tenant data from the request (set by validateTenant middleware)
      const {id:tenantId}= (req as any).tenant;
 
+     if (!tenantId) {
+      console.error("❌ tenantId missing in request");
+      return res.status(400).json({ error: "Invalid tenant" });
+    }
     // Check if the customer exists, else create a new customer
     let customer = await prisma.customer.findFirst({
       where: { email, tenantId },
@@ -135,11 +139,14 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
                 include: { tax: true },
 
       });
-
       if (!inventoryItem) {
         return res.status(404).json({ error: `Product with ID ${productId} not found.` });
       }
 
+      console.log("✅ Found tax:", inventoryItem.tax);
+
+
+     
       if (inventoryItem.stock < quantity) {
         return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
       }
@@ -151,6 +158,10 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       const itemTotalPrice = baseTotal + taxAmount;
       totalPrice += itemTotalPrice;
 
+      if (inventoryItem.price == null) {
+        console.error("❌ Missing price for inventory item:", inventoryItem.id);
+        return res.status(500).json({ error: "Product has no price in inventory." });
+      }
     
       totalBase += baseTotal;
       totalTax += taxAmount;
