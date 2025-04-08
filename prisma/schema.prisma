@@ -39,6 +39,8 @@ model Tenant {
   invoice   Invoice[]
   taxation  Taxation[]
   users     User[]
+  settings TenantSettings?
+
 }
 
 model Customer {
@@ -103,6 +105,23 @@ model InvoiceItem {
   invoice    Invoice   @relation(fields: [invoiceId], references: [id])
   product    Inventory @relation(fields: [productId], references: [id])
 }
+
+model TenantSettings {
+  id           String   @id @default(uuid())
+  tenantId     String   @unique
+  businessName String
+  gstin        String
+  phone        String
+  address      String
+  terms        String?
+  upiId        String?      // For QR code
+  logoUrl      String?      // If needed
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tenant       Tenant   @relation(fields: [tenantId], references: [id])
+}
+
 
 enum Role {
   SUPERADMIN

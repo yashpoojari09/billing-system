@@ -32,5 +32,7 @@ router.use("/:tenantId/taxation", auth_2.validateTenant, taxation_1.default);
 router.post("/:tenantId/invoice", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.createInvoice);
 router.get("/:tenantId/receipt/:receiptNumber", tenantController_1.recieptRoutes);
 router.post("/:tenantId/invoice/preview", auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.previewInvoice);
+router.get('/settings', auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.getTenantSettings);
+router.put('/settings', auth_1.authenticateJWT, (0, rbac_1.authorizeRoles)([client_1.Role.ADMIN, client_1.Role.SUPERADMIN, client_1.Role.MANAGER]), auth_2.validateTenant, tenantController_1.updateTenantSettings);
 exports.default = router;
 //# sourceMappingURL=tenants.js.map

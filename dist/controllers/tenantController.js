@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.previewInvoice = exports.recieptRoutes = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
+exports.updateTenantSettings = exports.getTenantSettings = exports.previewInvoice = exports.recieptRoutes = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
 // import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
@@ -291,4 +291,49 @@ const previewInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.previewInvoice = previewInvoice;
+// Tenant settings controller
+const getTenantSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id: tenantId } = req.tenant;
+        const settings = yield prisma.tenantSettings.findUnique({
+            where: { tenantId },
+        });
+        res.json(settings);
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Error fetching tenant settings' });
+    }
+});
+exports.getTenantSettings = getTenantSettings;
+const updateTenantSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { businessName, address, gstin, phone, terms, upiId } = req.body;
+    try {
+        const { id: tenantId } = req.tenant;
+        const updated = yield prisma.tenantSettings.upsert({
+            where: { tenantId },
+            create: {
+                tenantId: tenantId,
+                businessName,
+                address,
+                gstin,
+                phone,
+                terms,
+                upiId,
+            },
+            update: {
+                businessName,
+                address,
+                gstin,
+                phone,
+                terms,
+                upiId,
+            },
+        });
+        res.json(updated);
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Error updating tenant settings' });
+    }
+});
+exports.updateTenantSettings = updateTenantSettings;
 //# sourceMappingURL=tenantController.js.map

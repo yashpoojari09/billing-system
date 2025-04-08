@@ -17,7 +17,7 @@ export const generateInvoicePDF = (invoice: InvoiceWithDetails): Promise<Buffer>
 
     doc.on('data', (chunk) => buffers.push(chunk));
     doc.on('end', () => {
-      resolve(Buffer.concat(buffers));
+      resolve(Buffer.concat(buffers));  
     });
 
     // Title

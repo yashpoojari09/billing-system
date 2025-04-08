@@ -328,3 +328,51 @@ export const previewInvoice = async (req: Request, res: Response): Promise<any> 
     return res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+// Tenant settings controller
+
+
+export const getTenantSettings = async (req: Request, res: Response) => {
+  try {
+    const { id:tenantId } = (req as any).tenant
+    const settings = await prisma.tenantSettings.findUnique({
+      where: { tenantId },
+    });
+    res.json(settings);
+  } catch (error) {
+    res.status(500).json({ error: 'Error fetching tenant settings' });
+  }
+};
+
+export const updateTenantSettings = async (req: Request, res: Response) => {
+  const { businessName, address, gstin, phone, terms, upiId } = req.body;
+
+  try {
+    const { id:tenantId } = (req as any).tenant
+
+    const updated = await prisma.tenantSettings.upsert({
+      where: { tenantId},
+      create: {
+        tenantId: tenantId,
+        businessName,
+        address,
+        gstin,
+        phone,
+        terms,
+        upiId,
+      },
+      update: {
+        businessName,
+        address,
+        gstin,
+        phone,
+        terms,
+        upiId,
+      },
+    });
+
+    res.json(updated);
+  } catch (error) {
+    res.status(500).json({ error: 'Error updating tenant settings' });
+  }
+};

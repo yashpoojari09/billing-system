@@ -4796,3 +4796,639 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:18:24.669Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m1[0m:[93m24[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Request'.
+
+[7m1[0m import { NextFunction, Request, Response } from "express";
+[7m [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m1[0m:[93m33[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Response'.
+
+[7m1[0m import { NextFunction, Request, Response } from "express";
+[7m [0m [91m                                ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Request'.
+
+[7m334[0m import { Request, Response } from 'express';
+[7m   [0m [91m         ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m19[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Response'.
+
+[7m334[0m import { Request, Response } from 'express';
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m24[0m - [91merror[0m[90m TS2307: [0mCannot find module '../lib/prisma' or its corresponding type declarations.
+
+[7m335[0m import { prisma } from '../lib/prisma'; // adjust path if needed
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m340[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m340[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m355[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m355[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m1[0m:[93m24[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Request'.
+
+[7m1[0m import { NextFunction, Request, Response } from "express";
+[7m [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m1[0m:[93m33[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Response'.
+
+[7m1[0m import { NextFunction, Request, Response } from "express";
+[7m [0m [91m                                ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Request'.
+
+[7m334[0m import { Request, Response } from 'express';
+[7m   [0m [91m         ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m19[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'Response'.
+
+[7m334[0m import { Request, Response } from 'express';
+[7m   [0m [91m                  ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m24[0m - [91merror[0m[90m TS2307: [0mCannot find module '../lib/prisma' or its corresponding type declarations.
+
+[7m335[0m import { prisma } from '../lib/prisma'; // adjust path if needed
+[7m   [0m [91m                       ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m340[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m340[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m355[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m355[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:18:31.563Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m338[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m338[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m351[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m351[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m338[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m338[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m351[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m351[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:19:18.457Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m340[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m340[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m355[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m355[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m340[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m340[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m353[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m355[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m355[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:19:37.430Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m339[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m339[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m339[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m339[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:19:59.231Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m339[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenant'. Did you mean 'tenantId'?
+
+[7m339[0m       where: { tenantId: tenant.id },
+[7m   [0m [91m                         ~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m16[0m
+    [7m337[0m     const { id:tenantId } = (req as any).tenant
+    [7m   [0m [96m               ~~~~~~~~[0m
+    'tenantId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m337[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m339[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'tenant'. Did you mean 'tenantId'?
+
+[7m339[0m       where: { tenantId: tenant.id },
+[7m   [0m [91m                         ~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m16[0m
+    [7m337[0m     const { id:tenantId } = (req as any).tenant
+    [7m   [0m [96m               ~~~~~~~~[0m
+    'tenantId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:20:14.811Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:20:51.862Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m352[0m       where: { tenantId: (req as CustomRequest).tenant.id },
+[7m   [0m [91m                          ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m65[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m353[0m   const { businessName, address, gstin, phone, terms, upiId } = req.body;
+[7m   [0m [91m                                                                ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m357[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m357[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                         ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m359[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m359[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                  ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m377[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m377[0m     res.json(updated);
+[7m   [0m [91m    ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m379[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m379[0m     res.status(500).json({ error: 'Error updating tenant settings' });
+[7m   [0m [91m    ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m60[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m352[0m       where: { tenantId: (req as CustomRequest).tenant.id },
+[7m   [0m [91m                                                           ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m381[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m381[0m };
+[7m   [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m352[0m       where: { tenantId: (req as CustomRequest).tenant.id },
+[7m   [0m [91m                          ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m353[0m:[93m65[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m353[0m   const { businessName, address, gstin, phone, terms, upiId } = req.body;
+[7m   [0m [91m                                                                ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m357[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m357[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                         ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m359[0m:[93m19[0m - [91merror[0m[90m TS2304: [0mCannot find name 'req'.
+
+[7m359[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                  ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m377[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m377[0m     res.json(updated);
+[7m   [0m [91m    ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m379[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m379[0m     res.status(500).json({ error: 'Error updating tenant settings' });
+[7m   [0m [91m    ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m60[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m352[0m       where: { tenantId: (req as CustomRequest).tenant.id },
+[7m   [0m [91m                                                           ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m381[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m381[0m };
+[7m   [0m [91m~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:21:23.419Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m352[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m352[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:21:50.717Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m351[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m351[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m356[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m356[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m351[0m:[93m11[0m - [91merror[0m[90m TS6133: [0m'tenantId' is declared but its value is never read.
+
+[7m351[0m     const { id:tenantId } = (req as any).tenant
+[7m   [0m [91m          ~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m354[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m354[0m       where: { tenantId: req.tenant.id },
+[7m   [0m [91m                             ~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m356[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m356[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:21:55.750Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m356[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m356[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m356[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'tenant' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+
+[7m356[0m         tenantId: req.tenant.id,
+[7m   [0m [91m                      ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:23:07.816Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m17[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m43[0m router.get('/', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m37[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m17[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m44[0m router.put('/', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m37[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m17[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m43[0m router.get('/', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m37[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m17[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m44[0m router.put('/', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m37[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                                    ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:23:33.982Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m43[0m router.get('/settings', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                                            ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m44[0m router.put('/settings', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                                            ~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m43[0m router.get('/settings', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateTenant, getTenantSettings);
+[7m  [0m [91m                                            ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'authenticateTenant'. Did you mean 'authenticateJWT'?
+
+[7m44[0m router.put('/settings', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateTenant, updateTenantSettings);
+[7m  [0m [91m                                            ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:23:50.621Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateJWT, getTenantSettings);
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateJWT, updateTenantSettings);
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateJWT, getTenantSettings);
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m42[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateJWT, updateTenantSettings);
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:24:23.481Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m118[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateJWT,authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, getTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m118[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m43[0m:[93m118[0m - [91merror[0m[90m TS2304: [0mCannot find name 'getTenantSettings'.
+
+[7m43[0m router.get('/settings', authenticateJWT,authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, getTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~[0m
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m118[0m - [91merror[0m[90m TS2304: [0mCannot find name 'updateTenantSettings'.
+
+[7m44[0m router.put('/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T14:24:40.123Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m118[0m - [91merror[0m[90m TS2552: [0mCannot find name 'updateTenantSettings'. Did you mean 'getTenantSettings'?
+
+[7m44[0m router.put('/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/routes/tenants.ts[0m:[93m44[0m:[93m118[0m - [91merror[0m[90m TS2552: [0mCannot find name 'updateTenantSettings'. Did you mean 'getTenantSettings'?
+
+[7m44[0m router.put('/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
+[7m  [0m [91m                                                                                                                     ~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
