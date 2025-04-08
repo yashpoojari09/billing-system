@@ -67,7 +67,7 @@ const updateTaxRule = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         }
         const tax = yield prisma.taxation.updateMany({
             where: { id: taxId, tenantId }, // Ensures tax rule belongs to the correct tenant
-            data: { taxRate, region },
+            data: { taxRate: taxRate / 100, region },
         });
         if (tax.count === 0) {
             return next(new error_1.AppError("Tax rule not found or you don't have permission", 404));

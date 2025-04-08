@@ -90,7 +90,7 @@ const updateInventoryItem = (req, res, next) => __awaiter(void 0, void 0, void 0
             return next(new error_1.AppError("Tenant validation failed", 400));
         }
         const { inventoryId } = req.params; // Get inventory item ID from params
-        const { name, stock, price } = req.body; // Fields to update
+        const { name, stock, price, taxId } = req.body; // Fields to update
         // Check if inventory item exists and belongs to the correct tenant
         const existingItem = yield prisma.inventory.findUnique({
             where: { id: inventoryId },
@@ -105,7 +105,7 @@ const updateInventoryItem = (req, res, next) => __awaiter(void 0, void 0, void 0
         // Update inventory item
         const updatedItem = yield prisma.inventory.update({
             where: { id: inventoryId },
-            data: { name, stock, price },
+            data: { name, stock, price, taxId },
         });
         res.json(updatedItem);
     }
