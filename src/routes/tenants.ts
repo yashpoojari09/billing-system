@@ -40,8 +40,8 @@ router.get("/:tenantId/receipt/:receiptNumber", recieptRoutes);
 
 router.post("/:tenantId/invoice/preview", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, previewInvoice);
 
-router.get('/settings', authenticateJWT,authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, getTenantSettings);
-router.put('/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
+router.get('/:tenantId/settings', authenticateJWT,authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, getTenantSettings);
+router.put('/:tenantId/settings', authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant,updateTenantSettings);
 
 
 
