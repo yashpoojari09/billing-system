@@ -215,7 +215,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
   }
 };
 
-import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+import { generateInvoicePDF } from "../utils/generateInvoiceEditable";
 
 export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -239,7 +239,17 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
        return;
     }
 
-    const pdfBuffer = await generateInvoicePDF(invoice);
+    // 2. Fetch tenant settings
+    const settings = await prisma.tenantSettings.findUnique({
+      where: { tenantId },
+    });
+
+    if (!settings) {
+      res.status(404).send('Tenant settings not found.');
+      return;
+    }
+
+    const pdfBuffer = await generateInvoicePDF(invoice, settings);
 
     res.set({
       'Content-Type': 'application/pdf',

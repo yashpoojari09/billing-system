@@ -5432,3 +5432,235 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:06:09.013Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m218[0m import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceEd'. Did you mean 'generateInvoicePDF'?
+
+[7m242[0m     const pdfBuffer = await generateInvoiceEd(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m218[0m import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceEd'. Did you mean 'generateInvoicePDF'?
+
+[7m242[0m     const pdfBuffer = await generateInvoiceEd(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:06:22.468Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m218[0m import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceEditable'. Did you mean 'generateInvoicePDF'?
+
+[7m242[0m     const pdfBuffer = await generateInvoiceEditable(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'generateInvoicePDF' is declared but its value is never read.
+
+[7m218[0m import { generateInvoicePDF } from "../utils/generateInvoicePDF";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2552: [0mCannot find name 'generateInvoiceEditable'. Did you mean 'generateInvoicePDF'?
+
+[7m242[0m     const pdfBuffer = await generateInvoiceEditable(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:06:58.880Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:07:18.472Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:10:48.213Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m57[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                                        ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m57[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                                        ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:13:12.366Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice);
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:14:40.734Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, );
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m29[0m - [91merror[0m[90m TS2554: [0mExpected 2 arguments, but got 1.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, );
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m18[0m:[93m3[0m
+    [7m18[0m   settings: TenantSettings
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    An argument for 'settings' was not provided.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-08T15:14:53.540Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m57[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                                        ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m242[0m:[93m57[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m242[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                                        ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

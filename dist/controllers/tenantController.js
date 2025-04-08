@@ -196,7 +196,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.createInvoice = createInvoice;
-const generateInvoicePDF_1 = require("../utils/generateInvoicePDF");
+const generateInvoiceEditable_1 = require("../utils/generateInvoiceEditable");
 const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { tenantId, receiptNumber } = req.params;
@@ -216,7 +216,15 @@ const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             res.status(404).send('Invoice not found.');
             return;
         }
-        const pdfBuffer = yield (0, generateInvoicePDF_1.generateInvoicePDF)(invoice);
+        // 2. Fetch tenant settings
+        const settings = yield prisma.tenantSettings.findUnique({
+            where: { tenantId },
+        });
+        if (!settings) {
+            res.status(404).send('Tenant settings not found.');
+            return;
+        }
+        const pdfBuffer = yield (0, generateInvoiceEditable_1.generateInvoicePDF)(invoice, settings);
         res.set({
             'Content-Type': 'application/pdf',
             'Content-Disposition': `inline; filename="${receiptNumber}.pdf"`,
