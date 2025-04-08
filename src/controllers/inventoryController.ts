@@ -33,6 +33,7 @@ if (taxId) {
   }
 }
 
+
     // Create inventory item linked to the tenant
     const newItem = await prisma.inventory.create({
         data: {

@@ -120,8 +120,10 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       });
     }
 
-    let totalPrice = 0;
+    let totalBase = 0;
     let totalTax = 0;
+    let totalPrice = 0;
+
     let invoiceItems = [];
 
     for (const product of products) {
@@ -142,26 +144,22 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
         return res.status(400).json({ error: `Not enough stock for ${inventoryItem.name}.` });
       }
 
-      // Calculate product total price and tax
-      const productTotalPrice = inventoryItem.price * quantity;
-
-      // Fetch applicable tax rate for this tenant
-      const taxInfo = await prisma.taxation.findFirst({
-        where: { tenantId },
-      });
-      const taxRate = taxInfo ? taxInfo.taxRate : 0;
-      const productTax = (taxRate / 100) * productTotalPrice;
-
-      totalPrice += productTotalPrice;
-      totalTax += productTax;
-
-      // Add invoice item
+      const taxRate = inventoryItem.tax?.taxRate || 0;
+      const price = inventoryItem.price;
+      const baseTotal = price * quantity;
+      const taxAmount = baseTotal * taxRate;
+      const totalPrice = baseTotal + taxAmount;
+    
+      totalBase += baseTotal;
+      totalTax += taxAmount;
+  
       invoiceItems.push({
         productId,
         quantity,
-        price: inventoryItem.price,
-        totalPrice: productTotalPrice,
-        tax: productTax,
+        price,
+        totalPrice,
+        taxRate,
+        taxAmount,
       });
 
       // Update inventory stock
