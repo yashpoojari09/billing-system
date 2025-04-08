@@ -64,7 +64,7 @@ export const updateTaxRule = async (req: Request, res: Response, next: NextFunct
 
     const tax = await prisma.taxation.updateMany({
       where: { id: taxId, tenantId }, // Ensures tax rule belongs to the correct tenant
-      data: { taxRate, region },
+      data: { taxRate: taxRate/100, region },
     });
 
     if (tax.count === 0) {

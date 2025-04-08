@@ -94,7 +94,7 @@ export const updateInventoryItem = async (req: Request, res: Response, next:Next
   }
 
   const { inventoryId } = req.params; // Get inventory item ID from params
-  const { name, stock, price } = req.body; // Fields to update
+  const { name, stock, price, taxId } = req.body; // Fields to update
 
   // Check if inventory item exists and belongs to the correct tenant
   const existingItem = await prisma.inventory.findUnique({
@@ -114,7 +114,7 @@ export const updateInventoryItem = async (req: Request, res: Response, next:Next
    // Update inventory item
    const updatedItem = await prisma.inventory.update({
     where: { id: inventoryId },
-    data: { name, stock, price },
+    data: { name, stock, price, taxId },
 });
 
     res.json(updatedItem);
