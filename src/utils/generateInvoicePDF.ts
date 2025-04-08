@@ -84,8 +84,8 @@ export const generateInvoicePDF = (invoice: InvoiceWithDetails): Promise<Buffer>
     // Totals
     doc.moveDown(2);
     doc.fontSize(13);
-    doc.text(`Total Price: ₹${invoice.totalPrice.toLocaleString('en-IN')}`, { align: 'right' });
     doc.text(`Total Tax: ₹${invoice.totalTax.toLocaleString('en-IN')}`, { align: 'right' });
+    doc.text(`Total Price (with tax): ₹${invoice.totalPrice.toLocaleString('en-IN')}`, { align: 'right' });
     doc.end();
   });
 };
