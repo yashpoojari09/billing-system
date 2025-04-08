@@ -57,9 +57,11 @@ model Inventory {
   price     Float
   stock     Int
   tenantId  String
+  taxId     String?    // Foreign key to Taxation
   createdAt DateTime      @default(now())
   updatedAt DateTime      @default(now()) @updatedAt
   tenant    Tenant        @relation(fields: [tenantId], references: [id])
+  tax       Taxation?   @relation("InventoryTax", fields: [taxId], references: [id])
   invoice   InvoiceItem[]
 }
 
@@ -69,6 +71,8 @@ model Taxation {
   region   String
   tenantId String
   tenant   Tenant @relation(fields: [tenantId], references: [id])
+  inventories Inventory[] @relation("InventoryTax")
+
 }
 
 model Invoice {
@@ -92,6 +96,8 @@ model InvoiceItem {
   quantity   Int
   price      Float
   totalPrice Float
+  taxRate    Float?     // Store the tax rate applied
+  taxAmount  Float?    // Store the calculated tax amount
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @default(now()) @updatedAt
   invoice    Invoice   @relation(fields: [invoiceId], references: [id])

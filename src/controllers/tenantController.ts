@@ -130,6 +130,8 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       // Check if product exists in inventory
       const inventoryItem = await prisma.inventory.findUnique({
         where: { id: productId },
+                include: { tax: true },
+
       });
 
       if (!inventoryItem) {
@@ -159,6 +161,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
         quantity,
         price: inventoryItem.price,
         totalPrice: productTotalPrice,
+        tax: productTax,
       });
 
       // Update inventory stock
@@ -263,6 +266,9 @@ export const previewInvoice = async (req: Request, res: Response): Promise<any> 
       // Fetch product from inventory
       const inventoryItem = await prisma.inventory.findUnique({
         where: { id: productId },
+        // Removed 'tax' as it does not exist in the Inventory model
+        include: {},
+
       });
 
       if (!inventoryItem) {

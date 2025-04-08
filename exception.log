@@ -4560,3 +4560,217 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T15:23:09.560Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'itemTax' is declared but its value is never read.
+
+[7m147[0m       const itemTax = inventoryItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m44[0m - [91merror[0m[90m TS2552: [0mCannot find name 'itemTotalPrice'. Did you mean 'totalPrice'?
+
+[7m147[0m       const itemTax = inventoryItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                           ~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m123[0m:[93m9[0m
+    [7m123[0m     let totalPrice = 0;
+    [7m   [0m [96m        ~~~~~~~~~~[0m
+    'totalPrice' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'itemTax' is declared but its value is never read.
+
+[7m147[0m       const itemTax = inventoryItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m44[0m - [91merror[0m[90m TS2552: [0mCannot find name 'itemTotalPrice'. Did you mean 'totalPrice'?
+
+[7m147[0m       const itemTax = inventoryItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                           ~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m123[0m:[93m9[0m
+    [7m123[0m     let totalPrice = 0;
+    [7m   [0m [96m        ~~~~~~~~~~[0m
+    'totalPrice' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T15:24:01.819Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m45[0m - [91merror[0m[90m TS2552: [0mCannot find name 'itemTotalPrice'. Did you mean 'totalPrice'?
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                            ~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m123[0m:[93m9[0m
+    [7m123[0m     let totalPrice = 0;
+    [7m   [0m [96m        ~~~~~~~~~~[0m
+    'totalPrice' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m62[0m - [91merror[0m[90m TS18047: [0m'inventoryItem.tax' is possibly 'null'.
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                                             ~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m154[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m154[0m       const productTax = (taxRate / 100) * productTotalPrice;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m45[0m - [91merror[0m[90m TS2552: [0mCannot find name 'itemTotalPrice'. Did you mean 'totalPrice'?
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                            ~~~~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m123[0m:[93m9[0m
+    [7m123[0m     let totalPrice = 0;
+    [7m   [0m [96m        ~~~~~~~~~~[0m
+    'totalPrice' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m62[0m - [91merror[0m[90m TS18047: [0m'inventoryItem.tax' is possibly 'null'.
+
+[7m147[0m       const productTax = productItem.tax ? (itemTotalPrice * inventoryItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                                             ~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m154[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m154[0m       const productTax = (taxRate / 100) * productTotalPrice;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-05T15:24:52.271Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m65[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                                                ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m154[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m154[0m       const productTax = (taxRate / 100) * productTotalPrice;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m26[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m147[0m:[93m65[0m - [91merror[0m[90m TS2552: [0mCannot find name 'productItem'. Did you mean 'productId'?
+
+[7m147[0m       const productTax = productItem.tax ? (productTotalPrice * productItem.tax.taxRate) / 100 : 0;
+[7m   [0m [91m                                                                ~~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m128[0m:[93m15[0m
+    [7m128[0m       const { productId, quantity } = product;
+    [7m   [0m [96m              ~~~~~~~~~[0m
+    'productId' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m154[0m:[93m13[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'productTax'.
+
+[7m154[0m       const productTax = (taxRate / 100) * productTotalPrice;
+[7m   [0m [91m            ~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-07T07:27:25.574Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m164[0m:[93m7[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m164[0m       });
+[7m   [0m [91m      ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m164[0m:[93m7[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m164[0m       });
+[7m   [0m [91m      ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/in2025-04-07T07:27:30.418Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m164[0m:[93m7[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m164[0m       });
+[7m   [0m [91m      ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m164[0m:[93m7[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m164[0m       });
+[7m   [0m [91m      ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

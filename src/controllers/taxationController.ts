@@ -24,7 +24,7 @@ export const createTaxRule = async (req: Request, res: Response, next: NextFunct
     return next(new AppError("Tenant ID is required", 400));
   }
 
-    const tax = await prisma.taxation.create({ data: { taxRate, region, tenantId } });
+    const tax = await prisma.taxation.create({ data: { taxRate: taxRate/100, region, tenantId } });
 
     res.status(201).json(tax);
   } catch (error) {

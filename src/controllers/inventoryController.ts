@@ -20,7 +20,18 @@ export const createInventoryItem = async (req: Request, res: Response, next:Next
         return next(new AppError("Tenant validation failed", 400));
     }
 
-    const { name, stock, price } = req.body; // Fields for new inventory item
+    const { name, stock, price, taxId} = req.body; // Fields for new inventory item
+
+    // Optional but recommended: validate taxId belongs to the same tenant
+if (taxId) {
+  const tax = await prisma.taxation.findUnique({
+    where: { id: taxId },
+  });
+
+  if (!tax || tax.tenantId !== tenantId) {
+    return next(new AppError("Invalid tax ID or tax does not belong to tenant", 400));
+  }
+}
 
     // Create inventory item linked to the tenant
     const newItem = await prisma.inventory.create({
@@ -29,6 +40,7 @@ export const createInventoryItem = async (req: Request, res: Response, next:Next
             stock,
             price,
             tenantId: tenantId, // Ensure it's linked to the correct tenant
+            taxId,
         },
     });
 
@@ -57,6 +69,9 @@ export const getInventory = async (req: Request, res: Response, next:NextFunctio
      // Fetch inventory only for the specific tenant
      const items = await prisma.inventory.findMany({
          where: { tenantId: tenant.id},
+         include: {
+          tax: true, // includes taxRate and region
+        },
      });
 
 
@@ -84,6 +99,8 @@ export const updateInventoryItem = async (req: Request, res: Response, next:Next
   // Check if inventory item exists and belongs to the correct tenant
   const existingItem = await prisma.inventory.findUnique({
       where: { id: inventoryId },
+      include: { tax: true }, // Include tax information
+
   });
 
   if (!existingItem) {
