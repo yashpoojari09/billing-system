@@ -9,37 +9,38 @@ const generateInvoicePDF = (invoice) => {
     return new Promise((resolve) => {
         const doc = new pdfkit_1.default({ margin: 50 });
         const buffers = [];
-        doc.on('data', buffers.push.bind(buffers));
+        doc.on('data', (chunk) => buffers.push(chunk));
         doc.on('end', () => {
             resolve(Buffer.concat(buffers));
         });
         // Title
-        doc.fontSize(22).text(`Invoice Receipt`, { align: 'center' });
+        doc.fontSize(22).text('Invoice Receipt', { align: 'center' });
         doc.moveDown();
         // Invoice Metadata
         doc.fontSize(12).text(`Receipt No: ${invoice.receiptNumber}`);
         doc.text(`Date: ${new Date(invoice.createdAt).toLocaleString()}`);
         doc.moveDown();
         // Customer Info
-        doc.fontSize(14).text(`Customer Details:`);
+        doc.fontSize(14).text('Customer Details:');
         doc.fontSize(12).text(`Name: ${invoice.customer.name}`);
         doc.text(`Email: ${invoice.customer.email}`);
         doc.text(`Phone: ${invoice.customer.phone}`);
         doc.moveDown();
         // Table Header
         const tableTop = doc.y;
-        const columnWidths = [40, 160, 60, 80, 80, 80, 80];
+        const columnWidths = [40, 100, 40, 70, 70, 70, 70];
         const startX = doc.x;
-        doc.fontSize(13).text(`No.`, startX, tableTop);
-        doc.text(`Product`, startX + columnWidths[0], tableTop);
-        doc.text(`Qty`, startX + columnWidths[0] + columnWidths[1], tableTop);
-        doc.text(`Price`, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], tableTop);
-        doc.text(`Tax %`, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], tableTop);
-        doc.text(`Tax Amt`, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3] + columnWidths[4], tableTop);
-        doc.text(`Total`, startX + columnWidths.slice(0, 6).reduce((a, b) => a + b), tableTop);
+        doc.fontSize(13);
+        doc.text('No.', startX, tableTop, { width: columnWidths[0], align: 'center' });
+        doc.text('Product', startX + columnWidths[0], tableTop, { width: columnWidths[1], align: 'left' });
+        doc.text('Qty', startX + columnWidths[0] + columnWidths[1], tableTop, { width: columnWidths[2], align: 'center' });
+        doc.text('Price', startX + columnWidths[0] + columnWidths[1] + columnWidths[2], tableTop, { width: columnWidths[3], align: 'right' });
+        doc.text('Tax %', startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], tableTop, { width: columnWidths[4], align: 'right' });
+        doc.text('Tax Amt', startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3] + columnWidths[4], tableTop, { width: columnWidths[5], align: 'right' });
+        doc.text('Total', startX + columnWidths.slice(0, 6).reduce((a, b) => a + b, 0), tableTop, { width: columnWidths[6], align: 'right' });
         // Draw header underline
         doc.moveTo(startX, tableTop + 15)
-            .lineTo(startX + columnWidths.reduce((a, b) => a + b), tableTop + 15)
+            .lineTo(startX + columnWidths.reduce((a, b) => a + b, 0), tableTop + 15)
             .stroke();
         // Table rows
         let rowY = tableTop + 20;
@@ -51,15 +52,15 @@ const generateInvoicePDF = (invoice) => {
             const total = `₹${item.totalPrice.toLocaleString('en-IN')}`;
             const taxRate = item.taxRate != null ? `${(item.taxRate * 100).toFixed(2)}%` : '—';
             const taxAmount = item.taxAmount != null ? `₹${item.taxAmount.toLocaleString('en-IN')}` : '—';
-            doc.text(`${index + 1}`, startX, rowY);
-            doc.text(productName, startX + columnWidths[0], rowY, { width: columnWidths[1] - 10 });
-            doc.text(item.quantity.toString(), startX + columnWidths[0] + columnWidths[1], rowY);
-            doc.text(price, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], rowY);
-            doc.text(taxRate, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], rowY);
-            doc.text(taxAmount, startX + columnWidths.slice(0, 5).reduce((a, b) => a + b), rowY);
-            doc.text(total, startX + columnWidths.slice(0, 6).reduce((a, b) => a + b), rowY);
+            doc.text(`${index + 1}`, startX, rowY, { width: columnWidths[0], align: 'center' });
+            doc.text(productName, startX + columnWidths[0], rowY, { width: columnWidths[1], align: 'left' });
+            doc.text(item.quantity.toString(), startX + columnWidths[0] + columnWidths[1], rowY, { width: columnWidths[2], align: 'center' });
+            doc.text(price, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], rowY, { width: columnWidths[3], align: 'right' });
+            doc.text(taxRate, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], rowY, { width: columnWidths[4], align: 'right' });
+            doc.text(taxAmount, startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3] + columnWidths[4], rowY, { width: columnWidths[5], align: 'right' });
+            doc.text(total, startX + columnWidths.slice(0, 6).reduce((a, b) => a + b, 0), rowY, { width: columnWidths[6], align: 'right' });
             doc.moveTo(startX, rowY + 15)
-                .lineTo(startX + columnWidths.reduce((a, b) => a + b), rowY + 15)
+                .lineTo(startX + columnWidths.reduce((a, b) => a + b, 0), rowY + 15)
                 .strokeColor('#cccccc')
                 .stroke();
             rowY += 20;
