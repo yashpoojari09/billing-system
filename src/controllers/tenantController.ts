@@ -354,16 +354,24 @@ export const getTenantSettings = async (req: Request, res: Response) => {
   }
 };
 
-export const updateTenantSettings = async (req: Request, res: Response) => {
+export const updateTenantSettings = async (req: Request, res: Response):Promise<void> => {
   const { businessName, address, gstin, phone, terms, upiId } = req.body;
+  const { tenantId } = req.params;
+  console.log("🔧 Body:", req.body);
+console.log("🔧 Params:", req.params);
+
+  if (!tenantId) {
+     res.status(400).json({ error: "Missing tenantId in URL" });
+     return;
+  }
+
 
   try {
-    const { id:tenantId } = (req as any).tenant
 
     const updated = await prisma.tenantSettings.upsert({
       where: { tenantId},
       create: {
-        tenantId: tenantId,
+        tenantId,
         businessName,
         address,
         gstin,
