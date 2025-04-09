@@ -13,7 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateInvoicePDF = void 0;
-const puppeteer_1 = __importDefault(require("puppeteer"));
+const puppeteer_core_1 = __importDefault(require("puppeteer-core"));
+const chromium_1 = __importDefault(require("@sparticuz/chromium"));
 const handlebars_1 = __importDefault(require("handlebars"));
 const promises_1 = __importDefault(require("fs/promises"));
 const path_1 = __importDefault(require("path"));
@@ -42,9 +43,11 @@ const generateInvoicePDF = (invoice, settings) => __awaiter(void 0, void 0, void
             },
         };
         const compiledHtml = template(data);
-        browser = yield puppeteer_1.default.launch({
-            headless: true,
-            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        browser = yield puppeteer_core_1.default.launch({
+            args: chromium_1.default.args,
+            defaultViewport: chromium_1.default.defaultViewport,
+            executablePath: yield chromium_1.default.executablePath(),
+            headless: chromium_1.default.headless,
         });
         const page = yield browser.newPage();
         yield page.setContent(compiledHtml, { waitUntil: 'networkidle0' });
