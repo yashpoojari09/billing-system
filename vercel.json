@@ -12,12 +12,14 @@
           "src": "/(.*)",
           "dest": "dist/server.js"
       }
-  ], 
+  ],
   "env": {
     "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
   },
-  "functions": [{
+  "functions": {
     "api/generate-pdf": {
-      "timeout": 30}}
-  ]
+      "timeout": 30,
+      "memory": 1024
+    }
+  }
 }
