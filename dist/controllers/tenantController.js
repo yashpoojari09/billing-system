@@ -254,7 +254,7 @@ const listInvoices = (req, res) => __awaiter(void 0, void 0, void 0, function* (
             customerName: invoice.customer.name,
             amount: invoice.totalPrice.toFixed(2),
             date: invoice.createdAt.toISOString().split('T')[0],
-            downloadUrl: `/receipt/${invoice.receiptNumber}`, // 🔗 Add query param for frontend use
+            downloadUrl: `/receipt/${invoice.receiptNumber}?tenantId=${tenantId}`, // 🔗 Add query param for tenantId
         }));
         res.json(formatted);
     }
