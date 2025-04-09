@@ -3,7 +3,7 @@ import { authenticateJWT } from "../middlewares/auth";
 import { authorizeRoles } from "../middlewares/rbac";
 import { validateTenant } from "../middlewares/auth";
 import { Role } from "@prisma/client";
-import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, recieptRoutes, getTenantSettings, updateTenantSettings } from "../controllers/tenantController";
+import { createTenant, getAllTenants, getTenantById, updateTenant, deleteTenant, createInvoice, previewInvoice, recieptRoutes, getTenantSettings, updateTenantSettings, listInvoices } from "../controllers/tenantController";
 import customerRoutes from "./customers";
 import inventoryRoutes from "./inventory";
 import taxationRoutes from "./taxation";
@@ -35,6 +35,8 @@ router.use("/:tenantId/inventory", validateTenant, inventoryRoutes);
 router.use("/:tenantId/taxation", validateTenant, taxationRoutes);
 
 router.post("/:tenantId/invoice", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, createInvoice);
+router.get("/:tenantId/invoices", authenticateJWT, authorizeRoles([Role.ADMIN, Role.SUPERADMIN, Role.MANAGER]), validateTenant, listInvoices);
+
 
 router.get("/:tenantId/receipt/:receiptNumber", recieptRoutes);
 

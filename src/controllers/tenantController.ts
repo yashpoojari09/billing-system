@@ -262,6 +262,35 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
   }
 };
 
+// controllers/invoiceController.ts
+export const listInvoices = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { id: tenantId } = (req as any).tenant;
+
+    const invoices = await prisma.invoice.findMany({
+      where: { tenantId },
+      include: {
+        customer: true,
+      },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    const formatted = invoices.map((invoice) => ({
+      id: invoice.id,
+      receiptNumber: invoice.receiptNumber,
+      customerName: invoice.customer.name,
+      amount: invoice.totalPrice.toFixed(2),
+      date: invoice.createdAt.toISOString().split('T')[0],
+      downloadUrl: `/receipt/${invoice.receiptNumber}?tenantId=${tenantId}`, // 🔗 Add query param for frontend use
+    }));
+
+    res.json(formatted);
+  } catch (error) {
+    console.error('Error listing invoices:', error);
+    res.status(500).json({ error: 'Failed to list invoices' });
+  }
+};
+
 
 ///Invoice Preview
 export const previewInvoice = async (req: Request, res: Response): Promise<any> => {

@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateTenantSettings = exports.getTenantSettings = exports.previewInvoice = exports.recieptRoutes = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
+exports.updateTenantSettings = exports.getTenantSettings = exports.previewInvoice = exports.listInvoices = exports.recieptRoutes = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
 const client_1 = require("@prisma/client");
 const error_1 = require("../middlewares/error");
 // import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
@@ -237,6 +237,33 @@ const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.recieptRoutes = recieptRoutes;
+// controllers/invoiceController.ts
+const listInvoices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { id: tenantId } = req.tenant;
+        const invoices = yield prisma.invoice.findMany({
+            where: { tenantId },
+            include: {
+                customer: true,
+            },
+            orderBy: { createdAt: 'desc' },
+        });
+        const formatted = invoices.map((invoice) => ({
+            id: invoice.id,
+            receiptNumber: invoice.receiptNumber,
+            customerName: invoice.customer.name,
+            amount: invoice.totalPrice.toFixed(2),
+            date: invoice.createdAt.toISOString().split('T')[0],
+            downloadUrl: `/receipt/${invoice.receiptNumber}?tenantId=${tenantId}`, // 🔗 Add query param for frontend use
+        }));
+        res.json(formatted);
+    }
+    catch (error) {
+        console.error('Error listing invoices:', error);
+        res.status(500).json({ error: 'Failed to list invoices' });
+    }
+});
+exports.listInvoices = listInvoices;
 ///Invoice Preview
 const previewInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
