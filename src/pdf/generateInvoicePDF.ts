@@ -20,35 +20,61 @@ export const generateInvoicePDF = async (
   settings: TenantSettings
 ): Promise<Buffer> => {
   const templatePath = path.join(__dirname, 'invoice-template.hbs');
-  const htmlContent = await fs.readFile(templatePath, 'utf8');
-  const template = handlebars.compile(htmlContent);
+  let browser;
 
-  const data = {
-    invoice: {
-      ...invoice,
-      date: new Date(invoice.createdAt).toLocaleDateString(),
-      deliveryDate: invoice.deliveryDate
-        ? new Date(invoice.deliveryDate).toLocaleDateString()
-        : null,
-      cgst: (invoice.totalTax / 2).toFixed(2),
-      sgst: (invoice.totalTax / 2).toFixed(2),
-      amountInWords: toWords(invoice.totalPrice),
-    },
-    settings,
-  };
+  try {
+    const templateExists = await fs.access(templatePath).then(() => true).catch(() => false);
+    if (!templateExists) {
+      throw new Error('Invoice template file not found');
+    }
 
-  const compiledHtml = template(data);
+    const htmlContent = await fs.readFile(templatePath, 'utf8');
+    const template = handlebars.compile(htmlContent);
 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.setContent(compiledHtml, { waitUntil: 'networkidle0' });
+    const data = {
+      invoice: {
+        ...invoice,
+        date: new Date(invoice.createdAt).toLocaleDateString(),
+        deliveryDate: invoice.deliveryDate
+          ? new Date(invoice.deliveryDate).toLocaleDateString()
+          : null,
+        cgst: (invoice.totalTax / 2).toFixed(2),
+        sgst: (invoice.totalTax / 2).toFixed(2),
+        amountInWords: toWords(invoice.totalPrice).toUpperCase() + ' ONLY',
+      },
+      settings: {
+        businessName: settings.businessName || '',
+        address: settings.address || '',
+        gstin: settings.gstin || '',
+        phone: settings.phone || '',
+        upiId: settings.upiId || '',
+        terms: settings.terms || '',
+      },
+    };
 
-  const pdf = await page.pdf({
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '40px', bottom: '40px', left: '40px', right: '40px' },
-  });
+    const compiledHtml = template(data);
 
-  await browser.close();
-  return Buffer.from(pdf);
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+
+    const page = await browser.newPage();
+    await page.setContent(compiledHtml, { waitUntil: 'networkidle0' });
+
+    const pdf = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '40px', bottom: '40px', left: '40px', right: '40px' },
+    });
+
+    return Buffer.from(pdf);
+  } catch (err) {
+    console.error('❌ Error generating PDF:', err);
+    throw err;
+  } finally {
+    if (browser) {
+      await browser.close();
+    }
+  }
 };
