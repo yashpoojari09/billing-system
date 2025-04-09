@@ -215,7 +215,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
   }
 };
 
-import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+import { generateInvoicePDF } from "../utils/generateInvoiceEditable";
 export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
   try {
     const { tenantId, receiptNumber } = req.params;
