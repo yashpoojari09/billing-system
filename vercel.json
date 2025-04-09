@@ -12,5 +12,8 @@
           "src": "/(.*)",
           "dest": "dist/server.js"
       }
-  ]
+  ], 
+  "env": {
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
+  }
 }
