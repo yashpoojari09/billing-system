@@ -24,139 +24,94 @@ export const generateInvoicePDF = async (
     doc.on('data', (chunk) => buffers.push(chunk));
     doc.on('end', () => resolve(Buffer.concat(buffers)));
 
-    // Fonts
-    doc.font('Helvetica');
+    // Business Info
+    doc.fontSize(16).text(settings.businessName, { align: 'left' });
+    doc.fontSize(12).text(settings.address);
+    doc.text(`Phone: ${settings.phone}`);
+    doc.text(`GSTIN: ${settings.gstin}`);
+    doc.moveDown();
 
-    // Header - Business Info + QR Code
-    doc
-      .fontSize(18)
-      .fillColor('#001e38')
-      .text(settings.businessName, 50, 50);
-
-    doc
-      .fontSize(10)
-      .fillColor('black')
-      .text(settings.address, { continued: false })
-      .text(`Phone: ${settings.phone}`)
-      .text(`GSTIN: ${settings.gstin}`);
-
+    // QR Code for payment (top-right)
     if (settings.upiId) {
-      const qrData = `upi://pay?pa=${settings.upiId}&pn=${settings.businessName}&cu=INR&am=${invoice.totalPrice}`;
-      const qrCode = await QRCode.toDataURL(qrData);
-      doc.image(qrCode, doc.page.width - 120, 50, { width: 70 });
+      const upiLink = `upi://pay?pa=${settings.upiId}&pn=${settings.businessName}&cu=INR&am=${invoice.totalPrice}`;
+      const qrImage = await QRCode.toDataURL(upiLink);
+      doc.image(qrImage, doc.page.width - 120, 40, { width: 80 });
     }
 
-    doc.moveDown(2);
-
-    // Title
-    doc
-      .fontSize(20)
-      .fillColor('#001e38')
-      .text('INVOICE RECEIPT', { align: 'center' });
+    // Invoice Title
+    doc.fontSize(22).text('Invoice Receipt', { align: 'center' });
     doc.moveDown();
 
     // Invoice Metadata
-    doc
-      .fontSize(12)
-      .fillColor('black')
-      .text(`Receipt No: ${invoice.receiptNumber}`)
-      .text(`Date: ${new Date(invoice.createdAt).toLocaleDateString()}`);
-
+    doc.fontSize(12).text(`Receipt No: ${invoice.receiptNumber}`);
+    doc.text(`Date: ${new Date(invoice.createdAt).toLocaleDateString()}`);
     if (invoice.deliveryDate) {
       doc.text(`Delivery Date: ${new Date(invoice.deliveryDate).toLocaleDateString()}`);
     }
-
-    doc.moveDown(1.5);
+    doc.moveDown();
 
     // Customer Info
-    doc
-      .fontSize(13)
-      .fillColor('#001e38')
-      .text('Customer Details', { underline: true });
+    doc.fontSize(14).text('Customer Details:');
+    doc.fontSize(12).text(`Name: ${invoice.customer.name}`);
+    doc.text(`Email: ${invoice.customer.email}`);
+    doc.text(`Phone: ${invoice.customer.phone}`);
+    doc.moveDown();
 
-    doc
-      .fontSize(12)
-      .fillColor('black')
-      .text(`Name: ${invoice.customer.name}`)
-      .text(`Email: ${invoice.customer.email}`)
-      .text(`Phone: ${invoice.customer.phone}`);
-
-    doc.moveDown(1.5);
-
-    // Table Headers
+    // Table
     const tableTop = doc.y;
-    const startX = 50;
-    const colWidths = [30, 140, 40, 60, 60, 60, 70];
+    const columnWidths = [30, 100, 40, 60, 60, 60, 60];
+    const startX = doc.x;
 
-    const drawTableHeader = () => {
-      const headers = ['#', 'Product', 'Qty', 'Price', 'Tax %', 'Tax Amt', 'Total'];
-      doc.fontSize(12).font('Helvetica-Bold');
-      headers.forEach((h, i) => {
-        doc.text(h, startX + colWidths.slice(0, i).reduce((a, b) => a + b, 0), tableTop, {
-          width: colWidths[i],
-          align: 'center',
-        });
-      });
-      doc.moveTo(startX, tableTop + 15)
-        .lineTo(startX + colWidths.reduce((a, b) => a + b, 0), tableTop + 15)
-        .stroke();
-    };
+    doc.fontSize(13);
+    doc.text('No.', startX, tableTop, { width: columnWidths[0], align: 'center' });
+    doc.text('Product', startX + columnWidths[0], tableTop, { width: columnWidths[1], align: 'left' });
+    doc.text('Qty', startX + columnWidths[0] + columnWidths[1], tableTop, { width: columnWidths[2], align: 'center' });
+    doc.text('Price', startX + columnWidths[0] + columnWidths[1] + columnWidths[2], tableTop, { width: columnWidths[3], align: 'right' });
+    doc.text('Tax %', startX + columnWidths[0] + columnWidths[1] + columnWidths[2] + columnWidths[3], tableTop, { width: columnWidths[4], align: 'right' });
+    doc.text('Tax Amt', startX + columnWidths.slice(0, 5).reduce((a, b) => a + b, 0), tableTop, { width: columnWidths[5], align: 'right' });
+    doc.text('Total', startX + columnWidths.slice(0, 6).reduce((a, b) => a + b, 0), tableTop, { width: columnWidths[6], align: 'right' });
 
-    drawTableHeader();
+    doc.moveTo(startX, tableTop + 15)
+      .lineTo(startX + columnWidths.reduce((a, b) => a + b, 0), tableTop + 15)
+      .stroke();
 
-    // Table Rows
-    let y = tableTop + 25;
-    doc.font('Helvetica').fontSize(11);
+    // Items
+    let rowY = tableTop + 20;
+    doc.fontSize(12);
+    invoice.items.forEach((item, i) => {
+      const total = `₹${item.totalPrice.toLocaleString('en-IN')}`;
+      const taxRate = item.taxRate ? `${(item.taxRate * 100).toFixed(2)}%` : '—';
+      const taxAmt = item.taxAmount ? `₹${item.taxAmount.toLocaleString('en-IN')}` : '—';
+      const price = `₹${item.price.toLocaleString('en-IN')}`;
 
-    invoice.items.forEach((item, index) => {
-      const row = [
-        `${index + 1}`,
-        item.product?.name || 'Unnamed',
-        item.quantity.toString(),
-        `₹${item.price.toFixed(2)}`,
-        item.taxRate ? `${(item.taxRate * 100).toFixed(2)}%` : '—',
-        item.taxAmount ? `₹${item.taxAmount.toFixed(2)}` : '—',
-        `₹${item.totalPrice.toFixed(2)}`,
-      ];
+      doc.text(`${i + 1}`, startX, rowY, { width: columnWidths[0], align: 'center' });
+      doc.text(item.product?.name || 'Unnamed', startX + columnWidths[0], rowY, { width: columnWidths[1] });
+      doc.text(item.quantity.toString(), startX + columnWidths[0] + columnWidths[1], rowY, { width: columnWidths[2], align: 'center' });
+      doc.text(price, startX + columnWidths[0] + columnWidths[1] + columnWidths[2], rowY, { width: columnWidths[3], align: 'right' });
+      doc.text(taxRate, startX + columnWidths.slice(0, 4).reduce((a, b) => a + b, 0), rowY, { width: columnWidths[4], align: 'right' });
+      doc.text(taxAmt, startX + columnWidths.slice(0, 5).reduce((a, b) => a + b, 0), rowY, { width: columnWidths[5], align: 'right' });
+      doc.text(total, startX + columnWidths.slice(0, 6).reduce((a, b) => a + b, 0), rowY, { width: columnWidths[6], align: 'right' });
 
-      row.forEach((text, i) => {
-        doc.text(text, startX + colWidths.slice(0, i).reduce((a, b) => a + b, 0), y, {
-          width: colWidths[i],
-          align: i === 1 ? 'left' : 'center',
-        });
-      });
-
-      y += 20;
+      rowY += 20;
     });
-
-    doc.moveDown(1);
 
     // Totals
     const cgst = invoice.totalTax / 2;
     const sgst = invoice.totalTax / 2;
-    doc
-      .fontSize(12)
-      .text(`CGST: ₹${cgst.toFixed(2)}`, { align: 'right' })
-      .text(`SGST: ₹${sgst.toFixed(2)}`, { align: 'right' })
-      .text(`Total Tax: ₹${invoice.totalTax.toFixed(2)}`, { align: 'right' })
-      .text(`Grand Total: ₹${invoice.totalPrice.toFixed(2)}`, { align: 'right' });
-
     doc.moveDown();
+    doc.fontSize(13).text(`CGST: ₹${cgst.toFixed(2)}`, { align: 'right' });
+    doc.text(`SGST: ₹${sgst.toFixed(2)}`, { align: 'right' });
+    doc.text(`Total Tax: ₹${invoice.totalTax.toLocaleString('en-IN')}`, { align: 'right' });
+    doc.text(`Grand Total: ₹${invoice.totalPrice.toLocaleString('en-IN')}`, { align: 'right' });
 
     // Amount in words
-    const inWords = toWords(invoice.totalPrice);
-    doc
-      .fontSize(11)
-      .text(`Amount in Words: ${inWords} rupees only`, { align: 'left' });
+    const words = toWords(invoice.totalPrice);
+    doc.moveDown().fontSize(12).text(`Amount in Words: ${words} rupees only`, { align: 'left' });
 
-    // Terms & Conditions
+    // Terms
     if (settings.terms) {
       doc.moveDown(2);
-      doc
-        .fontSize(10)
-        .fillColor('#555555')
-        .text('Terms & Conditions:', { underline: true })
-        .text(settings.terms);
+      doc.fontSize(10).text(`Terms & Conditions:\n${settings.terms}`);
     }
 
     doc.end();

@@ -5664,3 +5664,873 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:01:55.213Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'toWords' is declared but its value is never read.
+
+[7m3[0m import { toWords } from 'number-to-words';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m132[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m132[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m118[0m:[93m30[0m
+    [7m118[0m   items.forEach((item, i) => {
+    [7m   [0m [96m                             ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m3[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'toWords' is declared but its value is never read.
+
+[7m3[0m import { toWords } from 'number-to-words';
+[7m [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m132[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m132[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m118[0m:[93m30[0m
+    [7m118[0m   items.forEach((item, i) => {
+    [7m   [0m [96m                             ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:03:13.124Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m70[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m70[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m76[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m76[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m87[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m95[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m95[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m135[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m135[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m145[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m145[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m150[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m150[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m70[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m70[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m76[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m76[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m87[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m95[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m95[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m135[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m135[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m145[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m145[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m150[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m150[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:03:46.999Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"pdfkit"' has no exported member 'PDFDocument'.
+
+[7m2[0m import type { PDFDocument as PDFDocumentType } from 'pdfkit';
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m35[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'addQRCode'. Did you mean 'QRCode'?
+
+[7m35[0m       await addQRCode(doc, settings, invoice.totalPrice);
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m39[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addInvoiceMetadata'.
+
+[7m39[0m     addInvoiceMetadata(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m42[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addCustomerInfo'.
+
+[7m42[0m     addCustomerInfo(doc, invoice.customer);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m45[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addItemsTable'.
+
+[7m45[0m     addItemsTable(doc, invoice.items);
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m26[0m - [91merror[0m[90m TS6133: [0m'doc' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                         ~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m48[0m - [91merror[0m[90m TS6133: [0m'settings' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                                               ~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addBusinessInfo' is declared but its value is never read.
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addQRCode' is declared but its value is never read.
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addInvoiceMetadata' is declared but its value is never read.
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addCustomerInfo' is declared but its value is never read.
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addItemsTable' is declared but its value is never read.
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTotals' is declared but its value is never read.
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addAmountInWords' is declared but its value is never read.
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTermsAndConditions' is declared but its value is never read.
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m155[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m155[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m77[0m
+    [7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+    [7m  [0m [96m                                                                            ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"pdfkit"' has no exported member 'PDFDocument'.
+
+[7m2[0m import type { PDFDocument as PDFDocumentType } from 'pdfkit';
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m35[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'addQRCode'. Did you mean 'QRCode'?
+
+[7m35[0m       await addQRCode(doc, settings, invoice.totalPrice);
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m39[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addInvoiceMetadata'.
+
+[7m39[0m     addInvoiceMetadata(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m42[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addCustomerInfo'.
+
+[7m42[0m     addCustomerInfo(doc, invoice.customer);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m45[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addItemsTable'.
+
+[7m45[0m     addItemsTable(doc, invoice.items);
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m26[0m - [91merror[0m[90m TS6133: [0m'doc' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                         ~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m48[0m - [91merror[0m[90m TS6133: [0m'settings' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                                               ~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addBusinessInfo' is declared but its value is never read.
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addQRCode' is declared but its value is never read.
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addInvoiceMetadata' is declared but its value is never read.
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addCustomerInfo' is declared but its value is never read.
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addItemsTable' is declared but its value is never read.
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTotals' is declared but its value is never read.
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addAmountInWords' is declared but its value is never read.
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTermsAndConditions' is declared but its value is never read.
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m155[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m155[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m77[0m
+    [7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+    [7m  [0m [96m                                                                            ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:03:53.690Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m70[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m70[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m76[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m76[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m87[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m95[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m95[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m135[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m135[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m145[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m145[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m150[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m150[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m70[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m70[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m76[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m76[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m87[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m95[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m95[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m135[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m135[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m145[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m145[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m150[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m150[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:04:09.961Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"pdfkit"' has no exported member 'PDFDocument'.
+
+[7m2[0m import type { PDFDocument as PDFDocumentType } from 'pdfkit';
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m35[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'addQRCode'. Did you mean 'QRCode'?
+
+[7m35[0m       await addQRCode(doc, settings, invoice.totalPrice);
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m39[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addInvoiceMetadata'.
+
+[7m39[0m     addInvoiceMetadata(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m42[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addCustomerInfo'.
+
+[7m42[0m     addCustomerInfo(doc, invoice.customer);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m45[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addItemsTable'.
+
+[7m45[0m     addItemsTable(doc, invoice.items);
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m26[0m - [91merror[0m[90m TS6133: [0m'doc' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                         ~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m48[0m - [91merror[0m[90m TS6133: [0m'settings' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                                               ~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addBusinessInfo' is declared but its value is never read.
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addQRCode' is declared but its value is never read.
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addInvoiceMetadata' is declared but its value is never read.
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addCustomerInfo' is declared but its value is never read.
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addItemsTable' is declared but its value is never read.
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTotals' is declared but its value is never read.
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addAmountInWords' is declared but its value is never read.
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTermsAndConditions' is declared but its value is never read.
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m155[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m155[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m77[0m
+    [7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+    [7m  [0m [96m                                                                            ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"pdfkit"' has no exported member 'PDFDocument'.
+
+[7m2[0m import type { PDFDocument as PDFDocumentType } from 'pdfkit';
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m35[0m:[93m13[0m - [91merror[0m[90m TS2552: [0mCannot find name 'addQRCode'. Did you mean 'QRCode'?
+
+[7m35[0m       await addQRCode(doc, settings, invoice.totalPrice);
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m39[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addInvoiceMetadata'.
+
+[7m39[0m     addInvoiceMetadata(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m42[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addCustomerInfo'.
+
+[7m42[0m     addCustomerInfo(doc, invoice.customer);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m45[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addItemsTable'.
+
+[7m45[0m     addItemsTable(doc, invoice.items);
+[7m  [0m [91m    ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m48[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTotals'.
+
+[7m48[0m     addTotals(doc, invoice);
+[7m  [0m [91m    ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m51[0m:[93m5[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addAmountInWords'.
+
+[7m51[0m     addAmountInWords(doc, invoice.totalPrice);
+[7m  [0m [91m    ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m55[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'addTermsAndConditions'.
+
+[7m55[0m       addTermsAndConditions(doc, settings.terms);
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m26[0m - [91merror[0m[90m TS6133: [0m'doc' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                         ~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m48[0m - [91merror[0m[90m TS6133: [0m'settings' is declared but its value is never read.
+
+[7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+[7m  [0m [91m                                               ~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addBusinessInfo' is declared but its value is never read.
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m63[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m63[0m const addBusinessInfo = (doc: PDFDocument, settings: TenantSettings) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addQRCode' is declared but its value is never read.
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m71[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m71[0m const addQRCode = async (doc: PDFDocument, settings: TenantSettings, totalPrice: number) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addInvoiceMetadata' is declared but its value is never read.
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m77[0m:[93m34[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m77[0m const addInvoiceMetadata = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m  [0m [91m                                 ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addCustomerInfo' is declared but its value is never read.
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m88[0m:[93m31[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m88[0m const addCustomerInfo = (doc: PDFDocument, customer: Customer) => {
+[7m  [0m [91m                              ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addItemsTable' is declared but its value is never read.
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m      ~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m96[0m:[93m29[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m96[0m const addItemsTable = (doc: PDFDocument, items: InvoiceItemWithProduct[]) => {
+[7m  [0m [91m                            ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTotals' is declared but its value is never read.
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m      ~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m136[0m:[93m25[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m136[0m const addTotals = (doc: PDFDocument, invoice: InvoiceWithDetails) => {
+[7m   [0m [91m                        ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addAmountInWords' is declared but its value is never read.
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m146[0m:[93m32[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m146[0m const addAmountInWords = (doc: PDFDocument, totalPrice: number) => {
+[7m   [0m [91m                               ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m7[0m - [91merror[0m[90m TS6133: [0m'addTermsAndConditions' is declared but its value is never read.
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m151[0m:[93m37[0m - [91merror[0m[90m TS2749: [0m'PDFDocument' refers to a value, but is being used as a type here. Did you mean 'typeof PDFDocument'?
+
+[7m151[0m const addTermsAndConditions = (doc: PDFDocument, terms: string) => {
+[7m   [0m [91m                                    ~~~~~~~~~~~[0m
+[96msrc/utils/generateInvoiceEditable.ts[0m:[93m155[0m:[93m1[0m - [91merror[0m[90m TS1005: [0m'}' expected.
+
+[7m155[0m 
+[7m   [0m [91m[0m
+
+  [96msrc/utils/generateInvoiceEditable.ts[0m:[93m62[0m:[93m77[0m
+    [7m62[0m const addBusinessInfo = (doc: PDFDocumentType, settings: TenantSettings) => {
+    [7m  [0m [96m                                                                            ~[0m
+    The parser expected to find a '}' to match the '{' token here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:15:04.729Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:15:45.396Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:15:57.434Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "
+[7m   [0m [91m                                   ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m37[0m - [91merror[0m[90m TS1002: [0mUnterminated string literal.
+
+[7m218[0m import { generateInvoicePDF } from "
+[7m   [0m [91m                                    [0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "
+[7m   [0m [91m                                   ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m37[0m - [91merror[0m[90m TS1002: [0mUnterminated string literal.
+
+[7m218[0m import { generateInvoicePDF } from "
+[7m   [0m [91m                                    [0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:16:07.216Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@
+[7m   [0m [91m                                   ~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m38[0m - [91merror[0m[90m TS1002: [0mUnterminated string literal.
+
+[7m218[0m import { generateInvoicePDF } from "@
+[7m   [0m [91m                                     [0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@
+[7m   [0m [91m                                   ~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m38[0m - [91merror[0m[90m TS1002: [0mUnterminated string literal.
+
+[7m218[0m import { generateInvoicePDF } from "@
+[7m   [0m [91m                                     [0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:16:18.082Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:16:23.734Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T05:16:50.483Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m218[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@/pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m218[0m import { generateInvoicePDF } from "@/pdf/generateInvoicePDF";
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
