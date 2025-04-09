@@ -111,7 +111,13 @@ export const generateInvoicePDF = async (
     // Terms
     if (settings.terms) {
       doc.moveDown(2);
-      doc.fontSize(10).text(`Terms & Conditions:\n${settings.terms}`);
+      doc.x = doc.page.margins.left; // reset to left margin
+      doc.fontSize(10).text('Terms & Conditions:', { align: 'left' });
+      doc.moveDown(0.5);
+      doc.text(settings.terms, {
+        align: 'left',
+        width: doc.page.width - doc.page.margins.left - doc.page.margins.right,
+      });
     }
 
     doc.end();
