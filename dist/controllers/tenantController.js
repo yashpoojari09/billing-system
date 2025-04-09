@@ -199,9 +199,9 @@ exports.createInvoice = createInvoice;
 const generateInvoiceEditable_1 = require("../utils/generateInvoiceEditable");
 const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { tenantId, receiptNumber } = req.params;
+        const { tenantId, receiptNumber } = Object.assign(Object.assign({}, req.params), req.query);
         const invoice = yield prisma.invoice.findFirst({
-            where: { tenantId, receiptNumber },
+            where: { tenantId: tenantId, receiptNumber: receiptNumber },
             include: {
                 items: {
                     include: {
@@ -218,7 +218,7 @@ const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         }
         // 2. Fetch tenant settings
         const settings = yield prisma.tenantSettings.findUnique({
-            where: { tenantId },
+            where: { tenantId: tenantId },
         });
         if (!settings) {
             res.status(404).send('Tenant settings not found.');

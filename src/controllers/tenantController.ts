@@ -218,10 +218,13 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
 import { generateInvoicePDF } from "../utils/generateInvoiceEditable";
 export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { tenantId, receiptNumber } = req.params;
+    const { tenantId, receiptNumber } = { 
+      ...req.params, 
+      ...req.query 
+    };
 
     const invoice = await prisma.invoice.findFirst({
-      where: { tenantId, receiptNumber },
+      where: { tenantId: tenantId as string, receiptNumber: receiptNumber as string },
       include: {
         items:{
           include: {
@@ -240,7 +243,7 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
 
     // 2. Fetch tenant settings
     const settings = await prisma.tenantSettings.findUnique({
-      where: { tenantId },
+      where: { tenantId: tenantId as string },
     });
 
     if (!settings) {

@@ -6754,3 +6754,101 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T17:56:53.181Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+
+[7m227[0m       where: { tenantId, receiptNumber },
+[7m   [0m [91m               ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m26[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+
+[7m227[0m       where: { tenantId, receiptNumber },
+[7m   [0m [91m                         ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m246[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | undefined'.
+  Type 'ParsedQs' is not assignable to type 'string'.
+
+[7m246[0m       where: { tenantId },
+[7m   [0m [91m               ~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m12929[0m:[93m5[0m
+    [7m12929[0m     tenantId?: string
+    [7m     [0m [96m    ~~~~~~~~[0m
+    The expected type comes from property 'tenantId' which is declared here on type 'TenantSettingsWhereUniqueInput'
+[96msrc/controllers/tenantController.ts[0m:[93m254[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m254[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+
+[7m227[0m       where: { tenantId, receiptNumber },
+[7m   [0m [91m               ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m26[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+  Type '(string | ParsedQs)[]' is not assignable to type 'string | StringFilter<"Invoice"> | undefined'.
+
+[7m227[0m       where: { tenantId, receiptNumber },
+[7m   [0m [91m                         ~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m246[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | undefined'.
+  Type 'ParsedQs' is not assignable to type 'string'.
+
+[7m246[0m       where: { tenantId },
+[7m   [0m [91m               ~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m12929[0m:[93m5[0m
+    [7m12929[0m     tenantId?: string
+    [7m     [0m [96m    ~~~~~~~~[0m
+    The expected type comes from property 'tenantId' which is declared here on type 'TenantSettingsWhereUniqueInput'
+[96msrc/controllers/tenantController.ts[0m:[93m254[0m:[93m48[0m - [91merror[0m[90m TS2345: [0mArgument of type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is not assignable to parameter of type 'InvoiceWithDetails'.
+  Type '{ tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }' is missing the following properties from type 'InvoiceWithDetails': items, customer
+
+[7m254[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-09T17:57:12.191Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m246[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | undefined'.
+  Type 'ParsedQs' is not assignable to type 'string'.
+
+[7m246[0m       where: { tenantId },
+[7m   [0m [91m               ~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m12929[0m:[93m5[0m
+    [7m12929[0m     tenantId?: string
+    [7m     [0m [96m    ~~~~~~~~[0m
+    The expected type comes from property 'tenantId' which is declared here on type 'TenantSettingsWhereUniqueInput'
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m246[0m:[93m16[0m - [91merror[0m[90m TS2322: [0mType 'string | ParsedQs | (string | ParsedQs)[] | undefined' is not assignable to type 'string | undefined'.
+  Type 'ParsedQs' is not assignable to type 'string'.
+
+[7m246[0m       where: { tenantId },
+[7m   [0m [91m               ~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m12929[0m:[93m5[0m
+    [7m12929[0m     tenantId?: string
+    [7m     [0m [96m    ~~~~~~~~[0m
+    The expected type comes from property 'tenantId' which is declared here on type 'TenantSettingsWhereUniqueInput'
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
