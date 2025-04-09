@@ -315,12 +315,18 @@ const getTenantSettings = (req, res) => __awaiter(void 0, void 0, void 0, functi
 exports.getTenantSettings = getTenantSettings;
 const updateTenantSettings = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { businessName, address, gstin, phone, terms, upiId } = req.body;
+    const { tenantId } = req.params;
+    console.log("🔧 Body:", req.body);
+    console.log("🔧 Params:", req.params);
+    if (!tenantId) {
+        res.status(400).json({ error: "Missing tenantId in URL" });
+        return;
+    }
     try {
-        const { id: tenantId } = req.tenant;
         const updated = yield prisma.tenantSettings.upsert({
             where: { tenantId },
             create: {
-                tenantId: tenantId,
+                tenantId,
                 businessName,
                 address,
                 gstin,
