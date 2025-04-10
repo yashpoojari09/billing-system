@@ -93,6 +93,19 @@ export const deleteTenant = async (req: Request, res: Response, next: NextFuncti
  */
 import nodemailer from 'nodemailer';
 
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+    pass: process.env.EMAIL_PASS, // Your email password or App Password
+  },
+});
+
+
 export const createInvoice = async (req: Request, res: Response): Promise<any> => {
   try {
     const { name, email, phone, products } = req.body;
@@ -215,14 +228,7 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
     // Generate PDF
     const pdfBuffer = await generateInvoicePDF(newInvoice, settings);
 
-    // Send email
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+  
 
     await transporter.sendMail({
       from: `"${settings.businessName}" <${process.env.EMAIL_USER}>`,

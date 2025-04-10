@@ -98,6 +98,15 @@ exports.deleteTenant = deleteTenant;
  * @desc Create a invoice for a customer with multiple products
  */
 const nodemailer_1 = __importDefault(require("nodemailer"));
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const transporter = nodemailer_1.default.createTransport({
+    service: "Gmail",
+    auth: {
+        user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+        pass: process.env.EMAIL_PASS, // Your email password or App Password
+    },
+});
 const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
@@ -196,14 +205,6 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         }
         // Generate PDF
         const pdfBuffer = yield (0, generateInvoicePDF_1.generateInvoicePDF)(newInvoice, settings);
-        // Send email
-        const transporter = nodemailer_1.default.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
         yield transporter.sendMail({
             from: `"${settings.businessName}" <${process.env.EMAIL_USER}>`,
             to: newInvoice.customer.email,
