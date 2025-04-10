@@ -91,6 +91,7 @@ export const deleteTenant = async (req: Request, res: Response, next: NextFuncti
  * @route POST /api/customers/invoice
  * @desc Create a invoice for a customer with multiple products
  */
+import nodemailer from 'nodemailer';
 
 export const createInvoice = async (req: Request, res: Response): Promise<any> => {
   try {
@@ -199,9 +200,47 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
       },
       include: {
         items: true,
+        customer: true,
+      },
+    });
+    const settings = await prisma.tenantSettings.findUnique({
+      where: { tenantId },
+    });
+
+    if (!settings) {
+      res.status(404).send('Tenant settings not found.');
+      return;
+    }
+
+    // Generate PDF
+    const pdfBuffer = await generateInvoicePDF(newInvoice, settings);
+
+    // Send email
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
+    await transporter.sendMail({
+      from: `"${settings.businessName}" <${process.env.EMAIL_USER}>`,
+      to: newInvoice.customer.email,
+      subject: `Invoice ${newInvoice.receiptNumber} from ${settings.businessName}`,
+      html: `
+        <p>Hi ${newInvoice.customer.name},</p>
+        <p>Thank you for your business. Please find your invoice attached.</p>
+        <p>Regards,<br>${settings.businessName}</p>
+      `,
+      attachments: [
+        {
+          filename: `${newInvoice.receiptNumber}.pdf`,
+          content: pdfBuffer,
+          contentType: 'application/pdf',
+        },
+      ],
+    });
     return res.status(201).json({
       message: "invoice created successfully!",
       invoice: newInvoice,
@@ -217,7 +256,6 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
 };
 
 import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
-import { sendMail } from "../utils/mailer";
 
 export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -257,22 +295,7 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
     const pdfBuffer = await generateInvoicePDF(invoice, settings);
 
 
-    // ✉️ Send email with PDF attached
-    await sendMail({
-      to: invoice.customer.email,
-      subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
-      html: `<p>Hi ${invoice.customer.name},</p>
-             <p>Thank you for your business. Please find your invoice attached.</p>
-             <p><strong>Invoice No:</strong> ${receiptNumber}<br>
-             <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
-      attachments: [
-        {
-          filename: `${receiptNumber}.pdf`,
-          content: pdfBuffer,
-          contentType: 'application/pdf',
-        },
-      ],
-    });
+  
 
     res.set({
       'Content-Type': 'application/pdf',

@@ -10780,3 +10780,690 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:37:45.647Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m220[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'sendMail' is declared but its value is never read.
+
+[7m220[0m import { sendMail } from "../utils/mailer";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m220[0m:[93m1[0m - [91merror[0m[90m TS6133: [0m'sendMail' is declared but its value is never read.
+
+[7m220[0m import { sendMail } from "../utils/mailer";
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:38:10.125Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m207[0m:[93m15[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m207[0m           to: invoice.customer.email,
+[7m   [0m [91m              ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m53[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m208[0m           subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                                                    ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m209[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m209[0m           html: `<p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                         ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m212[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m212[0m                  <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
+[7m   [0m [91m                                            ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m24[0m - [91merror[0m[90m TS2552: [0mCannot find name 'pdfBuffer'. Did you mean 'Buffer'?
+
+[7m216[0m               content: pdfBuffer,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+  [96mnode_modules/@types/node/buffer.d.ts[0m:[93m1851[0m:[93m13[0m
+    [7m1851[0m         var Buffer: BufferConstructor;
+    [7m    [0m [96m            ~~~~~~[0m
+    'Buffer' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m207[0m:[93m15[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m207[0m           to: invoice.customer.email,
+[7m   [0m [91m              ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m208[0m:[93m53[0m - [91merror[0m[90m TS2304: [0mCannot find name 'settings'.
+
+[7m208[0m           subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                                                    ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m209[0m:[93m26[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m209[0m           html: `<p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                         ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m212[0m:[93m45[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m212[0m                  <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
+[7m   [0m [91m                                            ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m24[0m - [91merror[0m[90m TS2552: [0mCannot find name 'pdfBuffer'. Did you mean 'Buffer'?
+
+[7m216[0m               content: pdfBuffer,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+  [96mnode_modules/@types/node/buffer.d.ts[0m:[93m1851[0m:[93m13[0m
+    [7m1851[0m         var Buffer: BufferConstructor;
+    [7m    [0m [96m            ~~~~~~[0m
+    'Buffer' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:48:03.425Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m214[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m217[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'nodemailer'. Did you mean 'NodeFilter'?
+
+[7m217[0m     const transporter = nodemailer.createTransport({
+[7m   [0m [91m                        ~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2428[0m:[93m13[0m
+    [7m2428[0m declare var NodeFilter: {
+    [7m    [0m [96m            ~~~~~~~~~~[0m
+    'NodeFilter' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m227[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m236[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m236[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m214[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m214[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m217[0m:[93m25[0m - [91merror[0m[90m TS2552: [0mCannot find name 'nodemailer'. Did you mean 'NodeFilter'?
+
+[7m217[0m     const transporter = nodemailer.createTransport({
+[7m   [0m [91m                        ~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2428[0m:[93m13[0m
+    [7m2428[0m declare var NodeFilter: {
+    [7m    [0m [96m            ~~~~~~~~~~[0m
+    'NodeFilter' is declared here.
+[96msrc/controllers/tenantController.ts[0m:[93m227[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m227[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m236[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m236[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:48:19.341Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '../utils/pdfGenerator';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '../utils/pdfGenerator' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from '../utils/pdfGenerator';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '../utils/pdfGenerator';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '../utils/pdfGenerator' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from '../utils/pdfGenerator';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:48:41.236Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '@pdf/generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from '@pdf/generateInvoicePDF';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '@pdf/generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module '@pdf/generateInvoicePDF' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from '@pdf/generateInvoicePDF';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:48:53.884Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from './generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module './generateInvoicePDF' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from './generateInvoicePDF';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from './generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m36[0m - [91merror[0m[90m TS2307: [0mCannot find module './generateInvoicePDF' or its corresponding type declarations.
+
+[7m94[0m import { generateInvoicePDF } from './generateInvoicePDF';
+[7m  [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:49:13.934Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '../pdf/generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m94[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m94[0m import { generateInvoicePDF } from '../pdf/generateInvoicePDF';
+[7m  [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m216[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m216[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m230[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m230[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m232[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m232[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m238[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m238[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m258[0m:[93m10[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'generateInvoicePDF'.
+
+[7m258[0m import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+[7m   [0m [91m         ~~~~~~~~~~~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:49:25.251Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m215[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m215[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m215[0m:[93m48[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m215[0m     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+[7m   [0m [91m                                               ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:50:03.447Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m228[0m       to: invoice.customer.email,
+[7m   [0m [91m          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:50:18.847Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m229[0m:[93m27[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m229[0m       subject: `Invoice ${invoice.receiptNumber} from ${settings.businessName}`,
+[7m   [0m [91m                          ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m231[0m         <p>Hi ${invoice.customer.name},</p>
+[7m   [0m [91m                ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2304: [0mCannot find name 'invoice'.
+
+[7m237[0m           filename: `${invoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:51:16.037Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m28[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m231[0m         <p>Hi ${newInvoice.customer.name},</p>
+[7m   [0m [91m                           ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2552: [0mCannot find name 'inewIvoice'. Did you mean 'newInvoice'?
+
+[7m237[0m           filename: `${inewIvoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m190[0m:[93m11[0m
+    [7m190[0m     const newInvoice = await prisma.invoice.create({
+    [7m   [0m [96m          ~~~~~~~~~~[0m
+    'newInvoice' is declared here.
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m28[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m231[0m         <p>Hi ${newInvoice.customer.name},</p>
+[7m   [0m [91m                           ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m237[0m:[93m24[0m - [91merror[0m[90m TS2552: [0mCannot find name 'inewIvoice'. Did you mean 'newInvoice'?
+
+[7m237[0m           filename: `${inewIvoice.receiptNumber}.pdf`,
+[7m   [0m [91m                       ~~~~~~~~~~[0m
+
+  [96msrc/controllers/tenantController.ts[0m:[93m190[0m:[93m11[0m
+    [7m190[0m     const newInvoice = await prisma.invoice.create({
+    [7m   [0m [96m          ~~~~~~~~~~[0m
+    'newInvoice' is declared here.
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-10T09:51:25.933Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m28[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m231[0m         <p>Hi ${newInvoice.customer.name},</p>
+[7m   [0m [91m                           ~~~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m228[0m:[93m22[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m228[0m       to: newInvoice.customer.email,
+[7m   [0m [91m                     ~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m231[0m:[93m28[0m - [91merror[0m[90m TS2551: [0mProperty 'customer' does not exist on type '{ items: { id: string; createdAt: Date; updatedAt: Date; productId: string; quantity: number; price: number; taxRate: number | null; totalPrice: number; taxAmount: number | null; invoiceId: string; }[]; } & { ...; }'. Did you mean 'customerId'?
+
+[7m231[0m         <p>Hi ${newInvoice.customer.name},</p>
+[7m   [0m [91m                           ~~~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

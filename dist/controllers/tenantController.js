@@ -8,6 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateTenantSettings = exports.getTenantSettings = exports.previewInvoice = exports.listInvoices = exports.recieptRoutes = exports.createInvoice = exports.deleteTenant = exports.updateTenant = exports.getTenantById = exports.getAllTenants = exports.createTenant = void 0;
 const client_1 = require("@prisma/client");
@@ -94,6 +97,7 @@ exports.deleteTenant = deleteTenant;
  * @route POST /api/customers/invoice
  * @desc Create a invoice for a customer with multiple products
  */
+const nodemailer_1 = __importDefault(require("nodemailer"));
 const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
@@ -180,7 +184,42 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             },
             include: {
                 items: true,
+                customer: true,
             },
+        });
+        const settings = yield prisma.tenantSettings.findUnique({
+            where: { tenantId },
+        });
+        if (!settings) {
+            res.status(404).send('Tenant settings not found.');
+            return;
+        }
+        // Generate PDF
+        const pdfBuffer = yield (0, generateInvoicePDF_1.generateInvoicePDF)(newInvoice, settings);
+        // Send email
+        const transporter = nodemailer_1.default.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
+        yield transporter.sendMail({
+            from: `"${settings.businessName}" <${process.env.EMAIL_USER}>`,
+            to: newInvoice.customer.email,
+            subject: `Invoice ${newInvoice.receiptNumber} from ${settings.businessName}`,
+            html: `
+        <p>Hi ${newInvoice.customer.name},</p>
+        <p>Thank you for your business. Please find your invoice attached.</p>
+        <p>Regards,<br>${settings.businessName}</p>
+      `,
+            attachments: [
+                {
+                    filename: `${newInvoice.receiptNumber}.pdf`,
+                    content: pdfBuffer,
+                    contentType: 'application/pdf',
+                },
+            ],
         });
         return res.status(201).json({
             message: "invoice created successfully!",
@@ -197,7 +236,6 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 });
 exports.createInvoice = createInvoice;
 const generateInvoicePDF_1 = require("../pdf/generateInvoicePDF");
-const mailer_1 = require("../utils/mailer");
 const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { tenantId, receiptNumber } = Object.assign(Object.assign({}, req.params), req.query);
@@ -226,22 +264,6 @@ const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return;
         }
         const pdfBuffer = yield (0, generateInvoicePDF_1.generateInvoicePDF)(invoice, settings);
-        // ✉️ Send email with PDF attached
-        yield (0, mailer_1.sendMail)({
-            to: invoice.customer.email,
-            subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
-            html: `<p>Hi ${invoice.customer.name},</p>
-             <p>Thank you for your business. Please find your invoice attached.</p>
-             <p><strong>Invoice No:</strong> ${receiptNumber}<br>
-             <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
-            attachments: [
-                {
-                    filename: `${receiptNumber}.pdf`,
-                    content: pdfBuffer,
-                    contentType: 'application/pdf',
-                },
-            ],
-        });
         res.set({
             'Content-Type': 'application/pdf',
             'Content-Disposition': `inline; filename="${receiptNumber}.pdf"`,
