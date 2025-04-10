@@ -113,12 +113,9 @@ model TenantSettings {
   gstin        String
   phone        String
   address      String
-  terms        String?
-  upiId        String?      // For QR code
-  logoUrl      String?      // If needed
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-
+  invoiceTemplate String?
   tenant       Tenant   @relation(fields: [tenantId], references: [id])
 }
 

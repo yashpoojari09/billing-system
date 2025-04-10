@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { AppError } from "../middlewares/error";
+
 // import { generateInvoicePDF } from "src/utils/generateInvoicePDF";
 
 
@@ -386,7 +387,7 @@ export const getTenantSettings = async (req: Request, res: Response) => {
 };
 
 export const updateTenantSettings = async (req: Request, res: Response):Promise<void> => {
-  const { businessName, address, gstin, phone, terms, upiId } = req.body;
+  const { businessName, address, gstin, phone, invoiceTemplate} = req.body;
   const { tenantId } = req.params;
   console.log("🔧 Body:", req.body);
 console.log("🔧 Params:", req.params);
@@ -407,16 +408,15 @@ console.log("🔧 Params:", req.params);
         address,
         gstin,
         phone,
-        terms,
-        upiId,
+        invoiceTemplate
+      
       },
       update: {
         businessName,
         address,
         gstin,
         phone,
-        terms,
-        upiId,
+        invoiceTemplate
       },
     });
 
