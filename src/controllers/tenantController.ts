@@ -217,6 +217,8 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
 };
 
 import { generateInvoicePDF } from "../pdf/generateInvoicePDF";
+import { sendMail } from "../utils/mailer";
+
 export const recieptRoutes = async (req: Request, res: Response): Promise<void> => {
   try {
     const { tenantId, receiptNumber } = { 
@@ -253,6 +255,24 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
     }
 
     const pdfBuffer = await generateInvoicePDF(invoice, settings);
+
+
+    // ✉️ Send email with PDF attached
+    await sendMail({
+      to: invoice.customer.email,
+      subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
+      html: `<p>Hi ${invoice.customer.name},</p>
+             <p>Thank you for your business. Please find your invoice attached.</p>
+             <p><strong>Invoice No:</strong> ${receiptNumber}<br>
+             <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
+      attachments: [
+        {
+          filename: `${receiptNumber}.pdf`,
+          content: pdfBuffer,
+          contentType: 'application/pdf',
+        },
+      ],
+    });
 
     res.set({
       'Content-Type': 'application/pdf',

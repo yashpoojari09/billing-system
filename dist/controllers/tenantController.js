@@ -197,6 +197,7 @@ const createInvoice = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 });
 exports.createInvoice = createInvoice;
 const generateInvoicePDF_1 = require("../pdf/generateInvoicePDF");
+const mailer_1 = require("../utils/mailer");
 const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { tenantId, receiptNumber } = Object.assign(Object.assign({}, req.params), req.query);
@@ -225,6 +226,22 @@ const recieptRoutes = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return;
         }
         const pdfBuffer = yield (0, generateInvoicePDF_1.generateInvoicePDF)(invoice, settings);
+        // ✉️ Send email with PDF attached
+        yield (0, mailer_1.sendMail)({
+            to: invoice.customer.email,
+            subject: `Invoice ${receiptNumber} from ${settings.businessName}`,
+            html: `<p>Hi ${invoice.customer.name},</p>
+             <p>Thank you for your business. Please find your invoice attached.</p>
+             <p><strong>Invoice No:</strong> ${receiptNumber}<br>
+             <strong>Total:</strong> ₹${invoice.totalPrice.toFixed(2)}</p>`,
+            attachments: [
+                {
+                    filename: `${receiptNumber}.pdf`,
+                    content: pdfBuffer,
+                    contentType: 'application/pdf',
+                },
+            ],
+        });
         res.set({
             'Content-Type': 'application/pdf',
             'Content-Disposition': `inline; filename="${receiptNumber}.pdf"`,
