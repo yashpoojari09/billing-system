@@ -47,11 +47,15 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
   try {
       const { id: tenantId } = (req as any).tenant;
       const { search } = req.query;
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 10;
+      const offset = (page - 1) * limit;
 
       if (search && typeof search === "string" && search.trim()) {
           console.log("🔍 Searching for customers by:", search.trim().toLowerCase());
 
-          const customers = await prisma.customer.findMany({
+          const customers = await 
+            prisma.customer.findMany({
               where: {
                   tenantId,
                   OR: [
@@ -59,15 +63,16 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
                       { email: { contains: search.trim(), mode: "insensitive" } },
                       { phone: { contains: search.trim(), mode: "insensitive" } },
                   ],
+                  
               },
               select: {
                   id: true,
                   name: true,
                   email: true,
                   phone: true,
-              },
-          });
-
+              }
+            });
+         
           if (!customers.length) {
               return next(new AppError("No customers found with this search term", 404));
           }
@@ -78,17 +83,22 @@ export const getCustomers = async (req: Request, res: Response, next: NextFuncti
 
       console.log("📋 Fetching all customers under tenant:", tenantId);
 
-      const customers = await prisma.customer.findMany({
+      const[ customers, total] = await Promise.all([
+        prisma.customer.findMany({
           where: { tenantId },
+          skip: offset,
+          take: limit,
           select: {
               id: true,
               name: true,
               email: true,
               phone: true,
           },
-      });
+      }), prisma.customer.count({ where: { tenantId } }),
+    ]);
 
-      res.status(200).json(customers);
+
+      res.status(200).json({ customers, total });
   } catch (error) {
       console.error("❌ Error in getCustomers:", error);
       next(error);

@@ -11778,3 +11778,1093 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:32:07.154Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m50[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'page' is declared but its value is never read.
+
+[7m50[0m       const page = parseInt(req.query.page as string) || 1;
+[7m  [0m [91m            ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m51[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'limit' is declared but its value is never read.
+
+[7m51[0m       const limit = parseInt(req.query.limit as string) || 10;
+[7m  [0m [91m            ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m50[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'page' is declared but its value is never read.
+
+[7m50[0m       const page = parseInt(req.query.page as string) || 1;
+[7m  [0m [91m            ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m51[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'limit' is declared but its value is never read.
+
+[7m51[0m       const limit = parseInt(req.query.limit as string) || 10;
+[7m  [0m [91m            ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:32:25.717Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:32:56.918Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m74[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m74[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m74[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m74[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:34:30.928Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m65[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'skip' does not exist in type 'CustomerWhereInput'.
+
+[7m65[0m                   skip: offset,
+[7m  [0m [91m                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m76[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m65[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'skip' does not exist in type 'CustomerWhereInput'.
+
+[7m65[0m                   skip: offset,
+[7m  [0m [91m                  ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; tenantId: string; id: string; phone: string | null; }'.
+
+[7m76[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:36:01.494Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m75[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m75[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:36:23.131Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m77[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m77[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:37:57.679Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m77[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'length' does not exist on type '{ name: string; email: string; id: string; phone: string | null; }'.
+
+[7m77[0m           if (!customers.length) {
+[7m  [0m [91m                         ~~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:39:01.447Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m57[0m           const [customers, total] = await Promise.all([prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m13[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m           });
+[7m  [0m [91m            ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m57[0m           const [customers, total] = await Promise.all([prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([prisma.customer.findMany({
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m13[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m           });
+[7m  [0m [91m            ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:39:27.300Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m13[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m76[0m           });
+[7m  [0m [91m            ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m13[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m76[0m           });
+[7m  [0m [91m            ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:40:09.057Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m18[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                 ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m13[0m
+    [7m88[0m       const customers = await prisma.customer.findMany({
+    [7m  [0m [96m            ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m13[0m
+    [7m88[0m       const customers = await prisma.customer.findMany({
+    [7m  [0m [96m            ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m                                                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m89[0m:[93m20[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m89[0m           where: { tenantId },
+[7m  [0m [91m                   ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m101[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.invoice.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m11[0m - [91merror[0m[90m TS1137: [0mExpression or comma expected.
+
+[7m76[0m           });
+[7m  [0m [91m          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m12[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m76[0m           });
+[7m  [0m [91m           ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m7[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m      ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m   } catch (error) {
+[7m  [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m103[0m };
+[7m   [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m18[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                 ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m13[0m
+    [7m88[0m       const customers = await prisma.customer.findMany({
+    [7m  [0m [96m            ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m13[0m
+    [7m88[0m       const customers = await prisma.customer.findMany({
+    [7m  [0m [96m            ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m                                                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m89[0m:[93m20[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m89[0m           where: { tenantId },
+[7m  [0m [91m                   ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m101[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.invoice.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m11[0m - [91merror[0m[90m TS1137: [0mExpression or comma expected.
+
+[7m76[0m           });
+[7m  [0m [91m          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m12[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m76[0m           });
+[7m  [0m [91m           ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m7[0m - [91merror[0m[90m TS1472: [0m'catch' or 'finally' expected.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m      ~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m   } catch (error) {
+[7m  [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m103[0m };
+[7m   [0m [91m~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:40:19.052Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.invoice.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.invoice.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:42:01.010Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m16[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m               ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:44:06.771Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:44:30.382Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m43[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m82[0m           res.status(200).json(customers, total);
+[7m  [0m [91m                                          ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m43[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m82[0m           res.status(200).json(customers, total);
+[7m  [0m [91m                                          ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:45:49.211Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m29[0m - [91merror[0m[90m TS6133: [0m'total' is declared but its value is never read.
+
+[7m57[0m           const [customers, total] = await Promise.all([
+[7m  [0m [91m                            ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:46:22.466Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:46:40.045Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m98[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:46:59.820Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m88[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m99[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       });
+[7m  [0m [91m        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m88[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m99[0m       res.status(200).json(customers, total);
+[7m  [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       });
+[7m  [0m [91m        ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:47:22.901Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m88[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m101[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       });
+[7m  [0m [91m        ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m88[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m101[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m9[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       });
+[7m  [0m [91m        ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:47:46.385Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:48:14.155Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m17[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m57[0m           const customers = await
+[7m  [0m [91m                ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m58[0m             prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m21[0m
+    [7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m                    ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m21[0m - [91merror[0m[90m TS7005: [0mVariable 'prisma' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                    ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m28[0m - [91merror[0m[90m TS7005: [0mVariable 'customer' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                           ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m37[0m - [91merror[0m[90m TS7005: [0mVariable 'count' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m42[0m - [91merror[0m[90m TS2695: [0mLeft side of comma operator is unused and has no side effects.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m14[0m
+    [7m88[0m       const[ customers, total] = await Promise.all([
+    [7m  [0m [96m             ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m14[0m
+    [7m88[0m       const[ customers, total] = await Promise.all([
+    [7m  [0m [96m             ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m                                                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m90[0m:[93m20[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m90[0m           where: { tenantId },
+[7m  [0m [91m                   ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m91[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'offset'.
+
+[7m91[0m           skip: offset,
+[7m  [0m [91m                ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m92[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'limit'.
+
+[7m92[0m           take: limit,
+[7m  [0m [91m                ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m44[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m99[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                           ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m106[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m106[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m27[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m36[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m42[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m11[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m76[0m           ]);
+[7m  [0m [91m          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m12[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m76[0m           ]);
+[7m  [0m [91m           ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m84[0m:[93m7[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m84[0m       }
+[7m  [0m [91m      ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m104[0m   } catch (error) {
+[7m   [0m [91m  ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'try' expected.
+
+[7m104[0m   } catch (error) {
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m108[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m108[0m };
+[7m   [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m57[0m:[93m17[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m57[0m           const customers = await
+[7m  [0m [91m                ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m58[0m             prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m21[0m
+    [7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m                    ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m21[0m - [91merror[0m[90m TS7005: [0mVariable 'prisma' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                    ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m28[0m - [91merror[0m[90m TS7005: [0mVariable 'customer' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                           ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m37[0m - [91merror[0m[90m TS7005: [0mVariable 'count' implicitly has an 'any' type.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m42[0m - [91merror[0m[90m TS2695: [0mLeft side of comma operator is unused and has no side effects.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                         ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m14[0m
+    [7m88[0m       const[ customers, total] = await Promise.all([
+    [7m  [0m [96m             ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m16[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m78[0m           if (!customers.length) {
+[7m  [0m [91m               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m11[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'customers' used before its declaration.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m88[0m:[93m14[0m
+    [7m88[0m       const[ customers, total] = await Promise.all([
+    [7m  [0m [96m             ~~~~~~~~~[0m
+    'customers' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m82[0m:[93m32[0m - [91merror[0m[90m TS2454: [0mVariable 'customers' is used before being assigned.
+
+[7m82[0m           res.status(200).json(customers);
+[7m  [0m [91m                               ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m62[0m - [91merror[0m[90m TS2304: [0mCannot find name 'tenantId'.
+
+[7m86[0m       console.log("📋 Fetching all customers under tenant:", tenantId);
+[7m  [0m [91m                                                             ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m90[0m:[93m20[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m90[0m           where: { tenantId },
+[7m  [0m [91m                   ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m91[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'offset'.
+
+[7m91[0m           skip: offset,
+[7m  [0m [91m                ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m92[0m:[93m17[0m - [91merror[0m[90m TS2304: [0mCannot find name 'limit'.
+
+[7m92[0m           take: limit,
+[7m  [0m [91m                ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m44[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'tenantId'. Either declare one or provide an initializer.
+
+[7m99[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                           ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m106[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m106[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m27[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m36[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                   ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m42[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m75[0m               }}),  prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                                         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m11[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m76[0m           ]);
+[7m  [0m [91m          ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m76[0m:[93m12[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m76[0m           ]);
+[7m  [0m [91m           ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m84[0m:[93m7[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m84[0m       }
+[7m  [0m [91m      ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m104[0m   } catch (error) {
+[7m   [0m [91m  ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'try' expected.
+
+[7m104[0m   } catch (error) {
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m108[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m108[0m };
+[7m   [0m [91m~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:48:32.289Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m18[0m - [91merror[0m[90m TS1009: [0mTrailing comma not allowed.
+
+[7m75[0m               }}),
+[7m  [0m [91m                 ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m102[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m75[0m:[93m18[0m - [91merror[0m[90m TS1009: [0mTrailing comma not allowed.
+
+[7m75[0m               }}),
+[7m  [0m [91m                 ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m102[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:48:48.556Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T14:51:04.998Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m103[0m:[93m39[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m103[0m       res.status(200).json(customers, total);
+[7m   [0m [91m                                      ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
