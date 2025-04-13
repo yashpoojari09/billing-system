@@ -284,15 +284,17 @@ const listInvoices = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
         const offset = (page - 1) * limit;
-        const invoices = yield prisma.invoice.findMany({
-            where: { tenantId },
-            skip: offset,
-            take: limit,
-            include: {
-                customer: true,
-            },
-            orderBy: { createdAt: 'desc' },
-        });
+        const [invoices, total] = yield Promise.all([
+            prisma.invoice.findMany({
+                where: { tenantId },
+                skip: offset,
+                take: limit,
+                include: {
+                    customer: true,
+                },
+                orderBy: { createdAt: 'desc' },
+            }), prisma.invoice.count({ where: { tenantId } }),
+        ]);
         const formatted = invoices.map((invoice) => ({
             id: invoice.id,
             receiptNumber: invoice.receiptNumber,
@@ -301,7 +303,7 @@ const listInvoices = (req, res) => __awaiter(void 0, void 0, void 0, function* (
             date: invoice.createdAt.toISOString().split('T')[0],
             downloadUrl: `/receipt/${invoice.receiptNumber}?tenantId=${tenantId}`, // 🔗 Add query param for tenantId
         }));
-        res.json(formatted);
+        res.json({ invoices: formatted, total });
     }
     catch (error) {
         console.error('Error listing invoices:', error);

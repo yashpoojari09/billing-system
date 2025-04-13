@@ -11466,4 +11466,315 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      2025-04-13T13:20:28.418Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m34[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                                 ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m34[0m - [91merror[0m[90m TS2304: [0mCannot find name 'total'.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                                 ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:21:15.848Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m32[0m - [91merror[0m[90m TS2339: [0mProperty 'map' does not exist on type '{ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }'.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                               ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'invoice' implicitly has an 'any' type.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m32[0m - [91merror[0m[90m TS2339: [0mProperty 'map' does not exist on type '{ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; }'.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                               ~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'invoice' implicitly has an 'any' type.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:21:46.169Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'allprisma' does not exist on type 'PromiseConstructor'.
+
+[7m325[0m     const [invoices, total] = await Promise.allprisma.invoice.findMany({
+[7m   [0m [91m                                            ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'invoice' implicitly has an 'any' type.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m45[0m - [91merror[0m[90m TS2339: [0mProperty 'allprisma' does not exist on type 'PromiseConstructor'.
+
+[7m325[0m     const [invoices, total] = await Promise.allprisma.invoice.findMany({
+[7m   [0m [91m                                            ~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m335[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'invoice' implicitly has an 'any' type.
+
+[7m335[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m                                    ~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:21:56.050Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m22[0m - [91merror[0m[90m TS2493: [0mTuple type '[({ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; })[]]' of length '1' has no element at index '1'.
+
+[7m325[0m     const [invoices, total] = await Promise.all([prisma.invoice.findMany({
+[7m   [0m [91m                     ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m333[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m333[0m     });
+[7m   [0m [91m      ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m22[0m - [91merror[0m[90m TS2493: [0mTuple type '[({ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; })[]]' of length '1' has no element at index '1'.
+
+[7m325[0m     const [invoices, total] = await Promise.all([prisma.invoice.findMany({
+[7m   [0m [91m                     ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m333[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m333[0m     });
+[7m   [0m [91m      ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m344[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m344[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:22:15.746Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m22[0m - [91merror[0m[90m TS2493: [0mTuple type '[({ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; })[]]' of length '1' has no element at index '1'.
+
+[7m325[0m     const [invoices, total] = await Promise.all([
+[7m   [0m [91m                     ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m345[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m345[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m334[0m     });
+[7m   [0m [91m      ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m345[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m345[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m325[0m:[93m22[0m - [91merror[0m[90m TS2493: [0mTuple type '[({ customer: { name: string; email: string; tenantId: string; id: string; phone: string | null; }; } & { tenantId: string; id: string; createdAt: Date; updatedAt: Date; customerId: string; totalPrice: number; totalTax: number; receiptNumber: string; })[]]' of length '1' has no element at index '1'.
+
+[7m325[0m     const [invoices, total] = await Promise.all([
+[7m   [0m [91m                     ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m345[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m345[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m334[0m:[93m7[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m334[0m     });
+[7m   [0m [91m      ~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m345[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m345[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:22:40.043Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m5[0m - [91merror[0m[90m TS1137: [0mExpression or comma expected.
+
+[7m337[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m337[0m:[93m5[0m - [91merror[0m[90m TS1137: [0mExpression or comma expected.
+
+[7m337[0m     const formatted = invoices.map((invoice) => ({
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:22:52.484Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m23[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 3.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m22[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m346[0m     res.json(invoices:formatted, total);
+[7m   [0m [91m                     ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T13:23:32.239Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m25[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m346[0m     res.json(formatted, total);
+[7m   [0m [91m                        ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/tenantController.ts[0m:[93m346[0m:[93m25[0m - [91merror[0m[90m TS2554: [0mExpected 0-1 arguments, but got 2.
+
+[7m346[0m     res.json(formatted, total);
+[7m   [0m [91m                        ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

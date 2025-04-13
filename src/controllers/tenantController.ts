@@ -322,7 +322,8 @@ export const listInvoices = async (req: Request, res: Response): Promise<void> =
 
     const offset = (page - 1) * limit;
 
-    const invoices = await prisma.invoice.findMany({
+    const [invoices, total] = await Promise.all([
+      prisma.invoice.findMany({
       where: { tenantId },
       skip: offset,
       take: limit,
@@ -330,7 +331,8 @@ export const listInvoices = async (req: Request, res: Response): Promise<void> =
         customer: true,
       },
       orderBy: { createdAt: 'desc' },
-    });
+    }),      prisma.invoice.count({ where: { tenantId } }),
+    ]);
 
     const formatted = invoices.map((invoice) => ({
       id: invoice.id,
@@ -341,7 +343,7 @@ export const listInvoices = async (req: Request, res: Response): Promise<void> =
       downloadUrl: `/receipt/${invoice.receiptNumber}?tenantId=${tenantId}`, // 🔗 Add query param for tenantId
     }));
 
-    res.json(formatted);
+    res.json({invoices:formatted, total});
   } catch (error) {
     console.error('Error listing invoices:', error);
     res.status(500).json({ error: 'Failed to list invoices' });
