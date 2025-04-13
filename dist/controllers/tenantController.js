@@ -281,8 +281,13 @@ exports.recieptRoutes = recieptRoutes;
 const listInvoices = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id: tenantId } = req.tenant;
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        const offset = (page - 1) * limit;
         const invoices = yield prisma.invoice.findMany({
             where: { tenantId },
+            skip: offset,
+            take: limit,
             include: {
                 customer: true,
             },
