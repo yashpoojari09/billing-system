@@ -12868,3 +12868,707 @@ TSError: ⨯ Unable to compile TypeScript:
     at Module.load (node:internal/modules/cjs/loader:1469:32)
     at Function._load (node:internal/modules/cjs/loader:1286:12)
     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T15:39:56.678Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m86[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m86[0m:[93m25[0m - [91merror[0m[90m TS2493: [0mTuple type '[{ name: string; email: string; id: string; phone: string | null; }[]]' of length '1' has no element at index '1'.
+
+[7m86[0m       const[ customers, total] = await Promise.all([
+[7m  [0m [91m                        ~~~~~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:43:59.290Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m58[0m             prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m
+    [7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m          ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m87[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m87[0m       const customers = await prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m87[0m       const customers = await prisma.customer.findMany({
+[7m  [0m [91m                              ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m
+    [7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m          ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'prisma' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m18[0m - [91merror[0m[90m TS7005: [0mVariable 'customer' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                 ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m27[0m - [91merror[0m[90m TS7005: [0mVariable 'count' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m32[0m - [91merror[0m[90m TS2695: [0mLeft side of comma operator is unused and has no side effects.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'getCustomers'?
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m                             ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'total'. Either declare one or provide an initializer.
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m                                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m104[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m26[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m32[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m98[0m     ]);
+[7m  [0m [91m    ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m6[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m98[0m     ]);
+[7m  [0m [91m     ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m102[0m   } catch (error) {
+[7m   [0m [91m  ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'try' expected.
+
+[7m102[0m   } catch (error) {
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m106[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m106[0m };
+[7m   [0m [91m~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m58[0m:[93m13[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m58[0m             prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m
+    [7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m          ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m87[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'customers' is declared but its value is never read.
+
+[7m87[0m       const customers = await prisma.customer.findMany({
+[7m  [0m [91m            ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'prisma' used before its declaration.
+
+[7m87[0m       const customers = await prisma.customer.findMany({
+[7m  [0m [91m                              ~~~~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m
+    [7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+    [7m  [0m [96m          ~~~~~~[0m
+    'prisma' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'prisma' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m18[0m - [91merror[0m[90m TS7005: [0mVariable 'customer' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                 ~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m27[0m - [91merror[0m[90m TS7005: [0mVariable 'count' implicitly has an 'any' type.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                          ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m32[0m - [91merror[0m[90m TS2695: [0mLeft side of comma operator is unused and has no side effects.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                               ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'res'.
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m30[0m - [91merror[0m[90m TS2552: [0mCannot find name 'customers'. Did you mean 'getCustomers'?
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m                             ~~~~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m41[0m - [91merror[0m[90m TS18004: [0mNo value exists in scope for the shorthand property 'total'. Either declare one or provide an initializer.
+
+[7m101[0m       res.status(200).json({ customers, total });
+[7m   [0m [91m                                        ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m104[0m:[93m7[0m - [91merror[0m[90m TS2304: [0mCannot find name 'next'.
+
+[7m104[0m       next(error);
+[7m   [0m [91m      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m26[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m97[0m:[93m32[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m97[0m       }), prisma.customer.count({ where: { tenantId } }),
+[7m  [0m [91m                               ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m5[0m - [91merror[0m[90m TS1109: [0mExpression expected.
+
+[7m98[0m     ]);
+[7m  [0m [91m    ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m98[0m:[93m6[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m98[0m     ]);
+[7m  [0m [91m     ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m3[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m102[0m   } catch (error) {
+[7m   [0m [91m  ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m102[0m:[93m5[0m - [91merror[0m[90m TS1005: [0m'try' expected.
+
+[7m102[0m   } catch (error) {
+[7m   [0m [91m    ~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m106[0m:[93m1[0m - [91merror[0m[90m TS1128: [0mDeclaration or statement expected.
+
+[7m106[0m };
+[7m   [0m [91m~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:44:25.092Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m
+    [7m101[0m       res.status(200).json( customers);
+    [7m   [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m
+    [7m101[0m       res.status(200).json( customers);
+    [7m   [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json( customers);
+[7m   [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:44:32.630Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m
+    [7m101[0m       res.status(200).json(customers);
+    [7m   [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m
+    [7m101[0m       res.status(200).json(customers);
+    [7m   [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m101[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m101[0m       res.status(200).json(customers);
+[7m   [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:44:55.834Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m7[0m
+    [7m99[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m52[0m:[93m13[0m - [91merror[0m[90m TS6133: [0m'offset' is declared but its value is never read.
+
+[7m52[0m       const offset = (page - 1) * limit;
+[7m  [0m [91m            ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m81[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m81[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m7[0m
+    [7m99[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m99[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m99[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:45:07.651Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m78[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m
+    [7m96[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m78[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m
+    [7m96[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:46:14.962Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m78[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m
+    [7m96[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m78[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m78[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m
+    [7m96[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m96[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m96[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+2025-04-13T17:46:28.137Z [ERROR]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m77[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m7[0m
+    [7m95[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/customerController.ts[0m:[93m42[0m:[93m50[0m - [91merror[0m[90m TS6133: [0m'res' is declared but its value is never read.
+
+[7m42[0m export const getCustomers = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+[7m  [0m [91m                                                 ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m77[0m:[93m11[0m - [91merror[0m[90m TS2448: [0mBlock-scoped variable 'res' used before its declaration.
+
+[7m77[0m           res.status(200).json(customers);
+[7m  [0m [91m          ~~~[0m
+
+  [96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m7[0m
+    [7m95[0m       res.status(200).json(customers);
+    [7m  [0m [96m      ~~~[0m
+    'res' is declared here.
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m7[0m - [91merror[0m[90m TS7005: [0mVariable 'res' implicitly has an 'any' type.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m      ~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m11[0m - [91merror[0m[90m TS7005: [0mVariable 'status' implicitly has an 'any' type.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m          ~~~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m23[0m - [91merror[0m[90m TS2339: [0mProperty 'json' does not exist on type '200'.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m                      ~~~~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m10[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m         ~[0m
+[96msrc/controllers/customerController.ts[0m:[93m95[0m:[93m17[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m95[0m       res.status(200).json(customers);
+[7m  [0m [91m                ~[0m
+
+    at createTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1617:30)
+    at loadTS (node:internal/modules/cjs/loader:1826:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/yash/Documents/billing-system/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1469:32)
+    at Function._load (node:internal/modules/cjs/loader:1286:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)

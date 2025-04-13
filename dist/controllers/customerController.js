@@ -48,9 +48,6 @@ const getCustomers = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
     try {
         const { id: tenantId } = req.tenant;
         const { search } = req.query;
-        const page = parseInt(req.query.page) || 1;
-        const limit = parseInt(req.query.limit) || 10;
-        const offset = (page - 1) * limit;
         if (search && typeof search === "string" && search.trim()) {
             console.log("🔍 Searching for customers by:", search.trim().toLowerCase());
             const customers = yield prisma.customer.findMany({
@@ -76,20 +73,16 @@ const getCustomers = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
             return;
         }
         console.log("📋 Fetching all customers under tenant:", tenantId);
-        const [customers, total] = yield Promise.all([
-            prisma.customer.findMany({
-                where: { tenantId },
-                skip: offset,
-                take: limit,
-                select: {
-                    id: true,
-                    name: true,
-                    email: true,
-                    phone: true,
-                },
-            }), prisma.customer.count({ where: { tenantId } }),
-        ]);
-        res.status(200).json({ customers, total });
+        const customers = yield prisma.customer.findMany({
+            where: { tenantId },
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                phone: true,
+            },
+        });
+        res.status(200).json(customers);
     }
     catch (error) {
         console.error("❌ Error in getCustomers:", error);
