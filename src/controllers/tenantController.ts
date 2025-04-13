@@ -228,8 +228,6 @@ export const createInvoice = async (req: Request, res: Response): Promise<any> =
     // Generate PDF
     const pdfBuffer = await generateInvoicePDF(newInvoice, settings);
 
-  
-
     await transporter.sendMail({
       from: `"${settings.businessName}" <${process.env.EMAIL_USER}>`,
       to: newInvoice.customer.email,
@@ -319,9 +317,15 @@ export const recieptRoutes = async (req: Request, res: Response): Promise<void> 
 export const listInvoices = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id: tenantId } = (req as any).tenant;
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+
+    const offset = (page - 1) * limit;
 
     const invoices = await prisma.invoice.findMany({
       where: { tenantId },
+      skip: offset,
+      take: limit,
       include: {
         customer: true,
       },
