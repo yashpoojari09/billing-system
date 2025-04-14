@@ -17,7 +17,14 @@ export const createCustomer = async (req: Request, res: Response, next: NextFunc
    if (!name || !email || !phone) {
     return next(new AppError("Name and email are required", 400));
   }
+  // Check if a customer with the same email already exists under the tenant
+  const existingCustomer = await prisma.customer.findFirst({
+    where: { email, tenantId: (req as any).tenant.id },
+  });
 
+  if (existingCustomer) {
+    return next(new AppError("Customer with this email already exists", 400));
+  }
 
     // ✅ Get tenant data from the request (set by validateTenant middleware)
     const {id:tenantId}= (req as any).tenant;

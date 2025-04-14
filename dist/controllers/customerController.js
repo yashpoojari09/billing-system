@@ -23,6 +23,13 @@ const createCustomer = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
         if (!name || !email || !phone) {
             return next(new error_1.AppError("Name and email are required", 400));
         }
+        // Check if a customer with the same email already exists under the tenant
+        const existingCustomer = yield prisma.customer.findFirst({
+            where: { email, tenantId: req.tenant.id },
+        });
+        if (existingCustomer) {
+            return next(new error_1.AppError("Customer with this email already exists", 400));
+        }
         // ✅ Get tenant data from the request (set by validateTenant middleware)
         const { id: tenantId } = req.tenant;
         // ✅ Create customer linked to the tenant
